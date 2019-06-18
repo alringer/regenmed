@@ -14,8 +14,27 @@ function theme_header_scripts()
 {
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
 
-        wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0'); // Custom scripts
-        wp_enqueue_script('html5blankscripts'); // Enqueue it!
+        // wp_register_script('html5blankscripts',
+        //     get_template_directory_uri() . '/js/scripts.js',
+        //     array('jquery'), '1.0.0'); // Custom scripts
+        // wp_enqueue_script('html5blankscripts'); // Enqueue it!
+    }
+}
+
+
+function theme_footer_scripts()
+{
+    if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
+        wp_register_script('footerScripts', get_template_directory_uri() . '/js/main.js', '', '1.0', true);
+        wp_enqueue_script('footerScripts'); // Enqueue it!
+    }
+}
+
+function theme_homepage_scripts()
+{
+    if(is_front_page()){
+        wp_register_script('frontPageScripts', get_template_directory_uri() . '/js/front-page.js', '', '1.0', true);
+        wp_enqueue_script('frontPageScripts'); // Enqueue it!
     }
 }
 
@@ -27,6 +46,9 @@ function theme_styles()
 
     wp_register_style('site', get_template_directory_uri() . '/css/site.css', array(), '1.0', 'all');
     wp_enqueue_style('site'); // Enqueue it!   
+
+    wp_register_style('sitesass', get_template_directory_uri() . '/css/site.scss', array(), '1.0', 'all');
+    wp_enqueue_style('sitesass'); // Enqueue it!   
 }
 
 // HTML5 Blank navigation
@@ -47,7 +69,7 @@ function theme_nav()
 		'after'           => '',
 		'link_before'     => '',
 		'link_after'      => '',
-		'items_wrap'      => '<ul class="menu-nav">%3$s</ul>',
+		'items_wrap'      => '<ul class="menu__list">%3$s</ul>',
 		'depth'           => 0,
 		'walker'          => ''
 		)
@@ -73,7 +95,8 @@ function register_theme_menu()
 
  add_action('init', 'register_theme_menu'); // Adds Menu
 //  add_action('init', 'theme_header_scripts'); // Add Custom Scripts to wp_head
+ add_action('wp_enqueue_scripts', 'theme_footer_scripts'); // Add Custom Scripts to wp_footer
 add_action('wp_enqueue_scripts', 'theme_styles'); // Add Theme Stylesheet
-
+add_action('wp_enqueue_scripts','theme_homepage_scripts'); // Add custom scripts to frontpage
 
 ?>

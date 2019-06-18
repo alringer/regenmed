@@ -1,7 +1,113 @@
 /*
-Theme Name: Quidel
-Author: Frank Garcia
-Description: custom theme for Quidel
-Version: 0.0.1
-Tags: bootstrap
+Theme Name: RegenMed
+Author: Jorge Marin
+Description: Custom theme for RegenMed
+Version: 0.1.0
 */
+
+.hidden{
+    display: none !important;
+}
+
+/* Colors */
+.white{
+    color: white;
+}
+
+
+/* Icons */
+.icon-button{
+    width: 3.2rem;
+    height: 3.2rem;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.icon-button-sm, .icon.icon-sm{
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
+.icon-button:focus{
+    outline: none;
+}
+
+.body--locked{
+    overflow: hidden;
+}
+
+
+
+
+/* Header */
+.header {
+    width: 100vw;
+    height: 6rem;
+    object-fit: contain;
+    display: flex;
+    color: #3d3d3d;
+    transition: all 0.2s;
+    position: fixed;
+    z-index: 500;
+    /* background-color: black; */
+}
+
+.header--scrolled{
+    background-color: #FFFFFF;
+    color: #3d3d3d;
+}
+
+.logo-img--main{    
+    display: inline-block;
+}
+
+.logo-img--alt{    
+    display: none;
+}
+
+.header--scrolled .logo-img--main{    
+    display: none;
+}
+
+.header--scrolled .logo-img--alt{    
+    display: inline-block;
+}
+
+.header--active .logo-img--main{    
+    display: inline-block;
+}
+
+.header--active .logo-img--alt{    
+    display: none;
+}
+
+.header--active{
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+.header--active .header__right{
+    border-left: 2px solid #252525;
+}
+
+.header__container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 2.9rem; */
+}
+
+.header__left{
+    margin: 0 2.9rem;
+}
+
+.header__right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 9rem;
+    height: 100%;
+}

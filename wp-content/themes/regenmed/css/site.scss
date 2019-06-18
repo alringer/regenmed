@@ -1,1 +1,12 @@
+@import './sass/mixins/include-media';
+
 @import './sass/base';
+@import './sass/colors';
+@import './sass/fonts';
+
+@import './sass//components/buttons';
+@import './sass//components/icons';
+@import './sass/components/header';
+@import './sass/components/footer';
+
+@import './sass/pages/frontpage';
