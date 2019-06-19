@@ -15,6 +15,7 @@
  */
 
 get_header();
+
 ?>
 
 	<section id="primary" class="content-area">
@@ -23,8 +24,16 @@ get_header();
                 <div id="heroSlide1" class="hero__slide hero__slide--first">
                     Slide1
                     <div class="hero__slide__text">
-                        <p class="hero__slide__text__top">We co-invest in establishing, operating and expanding</p>
-                        <p class="hero__slide__text__bottom">Regenerative Medicine Centers of Excellence</p>
+                        <p class="hero__slide__text__top">
+                            <?php 
+                                echo get_theme_mod('hero_title','We co-invest in establishing, operating and expanding');
+                            ?>
+                        </p>
+                        <p class="hero__slide__text__bottom">
+                            <?php 
+                                echo get_theme_mod('hero_subtitle','Regenerative Medicine Centers of Excellence');
+                            ?>
+                        </p>
                     </div>
                 </div>
                 <div id="heroSlide2" class="hero__slide hero__slide--disciplines">
@@ -129,118 +138,15 @@ get_header();
                 </div>
             </section>
             <div id="" class="standard-scroll">
-                <section class="rgn-our-work">
-                    <h1 class="rgn-section-title">Our Work</h1>
-                    <div class="rgn-our-work__body">
-                        <div class="rgn-our-work__body__image rgn-appear-animation">
-                            <img src="<?php echo get_template_directory_uri()?>/img/frontpage/our-work/screencapture-regain-galeazzi-2019-04-18-10-34-24.png">
-                        </div>
-                        <div class="rgn-out-work__body__info rgn-appear-animation">
-                            <div id="ourWorkSlides" class="rgn-out-work__body__info__slides">
-                                <div class="rgn-out-work__body__info__slide rgn-out-work__body__info__slide--active">
-                                    <h2 class="rgn-out-work__body__info__title">RE.GA.IN</h2>
-                                    <h3 class="rgn-out-work__body__info__subtitle">Overview</h3>
-                                    <p class="rgn-out-work__body__info__description">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    </p>
-                                    <a href="#" class="rgn-out-work__body__info__action rgn-button--blue">
-                                        READ CASE STUDY
-                                    </a>
-                                </div>
-                                <div class="rgn-out-work__body__info__slide">
-                                    <h2 class="rgn-out-work__body__info__title">RE.GA.IN</h2>
-                                    <h3 class="rgn-out-work__body__info__subtitle">Overview 2</h3>
-                                    <p class="rgn-out-work__body__info__description">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    </p>
-                                    <a href="#" class="rgn-out-work__body__info__action rgn-button--blue">
-                                        READ CASE STUDY
-                                    </a>
-                                </div>
-                                <div class="rgn-out-work__body__info__slide">
-                                    <h2 class="rgn-out-work__body__info__title">RE.GA.IN</h2>
-                                    <h3 class="rgn-out-work__body__info__subtitle">Overview 3</h3>
-                                    <p class="rgn-out-work__body__info__description">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    </p>
-                                    <a href="#" class="rgn-out-work__body__info__action rgn-button--blue">
-                                        READ CASE STUDY
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="rgn-put-work__body__info__pagination">
-                                <button class="rgn-put-work__body__info__pagination__page rgn-put-work__body__info__pagination__page--active" data-page="1"></button>
-                                <button class="rgn-put-work__body__info__pagination__page" data-page="2"></button>
-                                <button class="rgn-put-work__body__info__pagination__page" data-page="3"></button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="rgn-literature">
-                    <h1 class="rgn-literature-title rgn-section-title">Literature</h1>
-                    <div class="rgn-literature__left">
-                        <article class="rgn-literature__article rgn-literature__article--main rgn-appear-animation">
-                            <div class="rgn-literature__article__image rgn-tablet-start" style="background-image:url('<?php echo get_template_directory_uri()?>/img/frontpage/literature/literature1-tablet.png')"></div>
-                            <div class="rgn-literature__article__image rgn-mobile-only" style="background-image:url('<?php echo get_template_directory_uri()?>/img/frontpage/literature/literature1.png')"></div>
-                            <div class="rgn-literature__article__info">
-                                <div class="rgn-literature__article__type">BLOG</div>
-                                <div class="rgn-literature__article__title">Balancing Safety</div>
-                                <div class="rgn-literature__article__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae tempus risus. </div>
-                            </div>
-                        </article>
-                        <article class="rgn-literature__article rgn-literature__article--white-image rgn-appear-animation">
-                            <div class="rgn-literature__article__info">
-                                <div class="rgn-literature__article__type">WHITE PAPERS</div>
-                                <div class="rgn-literature__article__title">Title</div>
-                                <div class="rgn-literature__article__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae tempus.</div>
-                            </div>
-                            <div class="rgn-literature__article__image" style="background-image:url('<?php echo get_template_directory_uri()?>/img/frontpage/literature/literature2.png')"></div>
-                        </article>
-                    </div>
-                    <div class="rgn-literature__right">
-                        <article class="rgn-literature__article rgn-literature__article--white-image rgn-appear-animation">
-                        <div class="rgn-literature__article__image rgn-tablet-start" style="background-image:url('<?php echo get_template_directory_uri()?>/img/frontpage/literature/literature3.png')"></div>
-                            <div class="rgn-literature__article__info">
-                                <div class="rgn-literature__article__type">WHITE PAPERS</div>
-                                <div class="rgn-literature__article__title">Title</div>
-                                <div class="rgn-literature__article__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae tempus.</div>
-                            </div>
-                        </article>
-                        <article class="rgn-literature__article rgn-literature__article--black rgn-appear-animation">
-                            <div class="rgn-literature__article__info">
-                                <div class="rgn-literature__article__type">BLOG</div>
-                                <div class="rgn-literature__article__title">Balancing Safety</div>
-                                <div class="rgn-literature__article__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae tempus risus. Curabitur finibus vestibulum risus, quis aliquam sapien iaculis in</div>
-                            </div>
-                        </article>
-                        <article class="rgn-literature__article rgn-literature__article--white-image rgn-literature__article--white-image--reverse rgn-appear-animation">
-                            <div class="rgn-literature__article__image rgn-tablet-start" style="background-image:url('<?php echo get_template_directory_uri()?>/img/frontpage/literature/literature4@2x.png')"></div>
-                            <div class="rgn-literature__article__info">
-                                <div class="rgn-literature__article__type">WHITE PAPERS</div>
-                                <div class="rgn-literature__article__title">Title</div>
-                                <div class="rgn-literature__article__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae tempus.</div>
-                            </div>
-                        </article>
-                    </div>
-                    <a class="rgn-literature__read-more rgn-read-more-link" href="#">READ MORE <i class="icon icon-sm icon-right-arrow"></i></a>
-                </section>
-                <section class="rgn-ebooks">
-                    <div class="rgn-ebooks__left rgn-appear-animation">
-                        <h2 class="rgn-ebooks__title">
-                            Building a Successful Regenerative Medicine Practice eBook
-                        </h2>
-                        <h3 class="rgn-ebooks__subtitle">
-                            Overview
-                        </h3>
-                        <p class="rgn-ebooks__body">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        </p>
-                        <button class="rgn-button--dark-gray rgn-ebooks__action">DOWNLOAD THE EBOOK</button>
-                    </div>
-                    <div class="rgn-ebooks__right rgn-appear-animation">
-                        <img class="rgn-ebooks__image" src="<?php echo get_template_directory_uri() ?>/img/frontpage/ebook/ebook.png">
-                    </div>
-                </section>
+                <?php                    
+                    include("includes/sections/our-work.php");
+                ?>
+                <?php                    
+                    include("includes/sections/literature.php");
+                ?>
+                <?php                    
+                    include("includes/sections/ebooks.php");
+                ?>
             </div>
 
 		</main><!-- .site-main -->

@@ -19,19 +19,41 @@
     @extend %button-shared;
     color: $color-white;
     border: solid .16rem $color-white;
+    &:hover{
+        background-color: $color-white;
+        color: $color-dark-gray;
+    }
+    &--dark-gray{
+        @extend %button-shared;
+        color: $color-dark-gray;
+        border: solid .16rem $color-dark-gray;
+        &:hover{
+            background-color: $color-dark-gray;
+            color: $color-white;
+        }
+    }
+    &--blue{
+        @extend %button-shared;
+        color: $color-blue;
+        border: solid .16rem $color-blue;
+        &:hover{
+            background-color: $color-blue;
+            color: $color-white;
+        }
+    }
 }
 
-.rgn-button--dark-gray{
-    @extend %button-shared;
-    color: $color-dark-gray;
-    border: solid .16rem $color-dark-gray;
-}
+// .rgn-button--dark-gray{
+//     @extend %button-shared;
+//     color: $color-dark-gray;
+//     border: solid .16rem $color-dark-gray;
+// }
 
-.rgn-button--blue{
-    @extend %button-shared;
-    color: $color-blue;
-    border: solid .16rem $color-blue;
-}
+// .rgn-button--blue{
+//     @extend %button-shared;
+//     color: $color-blue;
+//     border: solid .16rem $color-blue;
+// }
 
 .rgn-read-more-link{
     color: $color-dark-gray;

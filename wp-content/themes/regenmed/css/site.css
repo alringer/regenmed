@@ -320,15 +320,25 @@ h3 {
   color: #FFF;
   border: solid 0.16rem #FFF;
 }
-
+.rgn-button:hover {
+  background-color: #FFF;
+  color: #2c2c2c;
+}
 .rgn-button--dark-gray {
   color: #2c2c2c;
   border: solid 0.16rem #2c2c2c;
 }
-
+.rgn-button--dark-gray:hover {
+  background-color: #2c2c2c;
+  color: #FFF;
+}
 .rgn-button--blue {
   color: #007aff;
   border: solid 0.16rem #007aff;
+}
+.rgn-button--blue:hover {
+  background-color: #007aff;
+  color: #FFF;
 }
 
 .rgn-read-more-link {
