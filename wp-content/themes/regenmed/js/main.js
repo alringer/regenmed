@@ -10,20 +10,25 @@ function toggleMenu(event){
     document.body.classList.toggle("body--locked");
 }
 
+function checkIfScrolled(event){
+    if( (window.scrollY >=10 && !window.isScrolled) || (window.scrollY <10 && window.isScrolled) ){
+        window.isScrolled=!window.isScrolled;
+        var header = document.getElementById('header');
+        header.classList.toggle("header--scrolled");
+    }
+}
+
 function createMobileScroll(){
-    var isScrolled = window.scrollY>10;
-    if(isScrolled){
+    window.isScrolled = window.scrollY>10;
+    if(window.isScrolled){
         document.getElementById("header").classList.add("header--scrolled")
     }
-    document.addEventListener("scroll", function(event){
+    document.addEventListener("scroll", checkIfScrolled);
+}
 
-        if( (window.scrollY >=10 && !isScrolled) || (window.scrollY <10 && isScrolled) ){
-            isScrolled=!isScrolled;
-            var header = document.getElementById('header');
-            header.classList.toggle("header--scrolled");
-        }
-    });
-    
+function removeMobileScroll(){
+    window.isScrolled = null;
+    document.removeEventListener("scroll",checkIfScrolled);
 }
 
 function initAppearAnimation(){
@@ -41,11 +46,28 @@ function initAppearAnimation(){
     }
 }
 
+function initCarouselPagination(){
+    console.log("carousel");
+    var currentPage = 1;
+    $('.rgn-put-work__body__info__pagination__page').click(function(){
+        var button = $(this);
+        var page = button.data('page');
+        if(currentPage != page){
+            currentPage = page;
+            document.getElementById("ourWorkSlides").className = "rgn-out-work__body__info__slides rgn-out-work__body__info__slides--"+page;
+            $('.rgn-put-work__body__info__pagination__page--active').removeClass('rgn-put-work__body__info__pagination__page--active');
+            button.addClass('rgn-put-work__body__info__pagination__page--active');
+        }
+    })
+}
+
 (function(){
+    console.log("Main");
     var menuButton = document.getElementById('mainMenuButton');
     if(menuButton){
         menuButton.addEventListener("click", toggleMenu);
     }
-    
+    createMobileScroll();
     initAppearAnimation();
+    initCarouselPagination();
 })();

@@ -329,7 +329,7 @@
     }
 
     .hero__slide--disciplines__section, .hero__slide--disciplines__subsection{
-        background: none;
+        background: none !important;
         width: 100%;
         height: 100vh;
         position: absolute;
@@ -795,6 +795,9 @@
     position: relative;
     width: 100%;
     height: 58.7rem;
+    @include media(">desktop"){
+        height: 60.5rem;
+    }
     .rgn-literature__article__image{
         position: absolute;
         width: 100%;

@@ -14,14 +14,20 @@
  * @since 1.0.0
  */
 
-get_header();
+$slideImage = get_theme_mod('hero_image_slide1');
+$slide2MainImage = get_theme_mod('hero_image_slide2_main');
+$slide2BusinessImage = get_theme_mod('hero_image_slide2_business');
+$slide2ClinicalImage = get_theme_mod('hero_image_slide2_clinical');
+$slide2ScienceImage = get_theme_mod('hero_image_slide2_science');
+$slide2CommunicationsImage = get_theme_mod('hero_image_slide2_communications');
 
+get_header();
 ?>
 
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main">
             <section id="heroJack" class="hero hero--jacked">
-                <div id="heroSlide1" class="hero__slide hero__slide--first">
+                <div id="heroSlide1" class="hero__slide hero__slide--first" <?php if($slideImage){ ?> style="background-image:url(' <?php echo $slideImage ?>')" <?php } ?> >
                     Slide1
                     <div class="hero__slide__text">
                         <p class="hero__slide__text__top">
@@ -37,12 +43,12 @@ get_header();
                     </div>
                 </div>
                 <div id="heroSlide2" class="hero__slide hero__slide--disciplines">
-                    <section class="hero__slide--disciplines__section hero__slide--disciplines__section--main">
+                    <section class="hero__slide--disciplines__section hero__slide--disciplines__section--main" <?php if($slide2MainImage){ ?> style="background-image:url(' <?php echo $slide2MainImage ?>')" <?php } ?> >
                         <p class="hero__slide--disciplines__section--main__title">RMCE’s are built on the foundation of four integrated disciplines</p>
                     </section>
                     <div class="hero__slide--disciplines__subsections">
                         <section class="hero__slide--disciplines__subsection hero__slide--disciplines__subsection--active">
-                            <div class="hero__slide--disciplines__subsection__background"></div>
+                            <div class="hero__slide--disciplines__subsection__background" <?php if($slide2BusinessImage){ ?> style="background-image:url(' <?php echo $slide2BusinessImage ?>')" <?php } ?> ></div>
                             <div class="hero__slide--disciplines__subsection__item hero__slide--disciplines__subsection__info">
                                 <p class="hero__slide--disciplines__subsection__title">
                                     Business
@@ -55,7 +61,7 @@ get_header();
                             <button class="hero__slide--disciplines__subsection__item hero__slide--disciplines__subsection__trigger" id="heroCircleTrigger1" data-number="1"></button>
                         </section>
                         <section class="hero__slide--disciplines__subsection">
-                            <div class="hero__slide--disciplines__subsection__background"></div>
+                            <div class="hero__slide--disciplines__subsection__background" <?php if($slide2ClinicalImage){ ?> style="background-image:url(' <?php echo $slide2ClinicalImage ?>')" <?php } ?> ></div>
                             <div class="hero__slide--disciplines__subsection__item hero__slide--disciplines__subsection__info">
                                 <p class="hero__slide--disciplines__subsection__title">
                                     Clinical
@@ -68,7 +74,7 @@ get_header();
                             <button class="hero__slide--disciplines__subsection__item hero__slide--disciplines__subsection__trigger" id="heroCircleTrigger3" data-number="3"></button>
                         </section>
                         <section class="hero__slide--disciplines__subsection">
-                            <div class="hero__slide--disciplines__subsection__background"></div>
+                            <div class="hero__slide--disciplines__subsection__background" <?php if($slide2ScienceImage){ ?> style="background-image:url(' <?php echo $slide2ScienceImage ?>')" <?php } ?> ></div>
                             <div class="hero__slide--disciplines__subsection__item hero__slide--disciplines__subsection__info">
                                 <p class="hero__slide--disciplines__subsection__title">
                                     Science
@@ -81,7 +87,7 @@ get_header();
                             <button class="hero__slide--disciplines__subsection__item hero__slide--disciplines__subsection__trigger" id="heroCircleTrigger2" data-number="2"></button>
                         </section>
                         <section class="hero__slide--disciplines__subsection">
-                            <div class="hero__slide--disciplines__subsection__background"></div>
+                            <div class="hero__slide--disciplines__subsection__background" <?php if($slide2CommunicationsImage){ ?> style="background-image:url(' <?php echo $slide2CommunicationsImage ?>')" <?php } ?> ></div>
                             <div class="hero__slide--disciplines__subsection__item hero__slide--disciplines__subsection__info">
                                 <p class="hero__slide--disciplines__subsection__title">
                                     Communications

@@ -16,6 +16,30 @@ function init_hero_section( $wp_customize ){
         'default'   => 'Regenerative Medicine Centers of Excellence',
         'transport' => 'refresh',
     ) );
+    $wp_customize->add_setting( 'hero_image_slide1' , array(
+        'default'   => get_template_directory_uri().'/img/frontpage/hero-image-big-desktop/slide1.png',
+        'transport' => 'refresh',
+    ) );
+    $wp_customize->add_setting( 'hero_image_slide2_main' , array(
+        'default'   => get_template_directory_uri().'/img/frontpage/hero-image-big-desktop/slide2-science.png',
+        'transport' => 'refresh',
+    ) );
+    $wp_customize->add_setting( 'hero_image_slide2_business' , array(
+        'default'   => get_template_directory_uri().'/img/frontpage/hero-image-big-desktop/slide2-business.png',
+        'transport' => 'refresh',
+    ) );
+    $wp_customize->add_setting( 'hero_image_slide2_clinical' , array(
+        'default'   => get_template_directory_uri().'/img/frontpage/hero-image-big-desktop/slide2-science.png',
+        'transport' => 'refresh',
+    ) );
+    $wp_customize->add_setting( 'hero_image_slide2_science' , array(
+        'default'   => get_template_directory_uri().'/img/frontpage/hero-image-big-desktop/slide2-communications.png',
+        'transport' => 'refresh',
+    ) );
+    $wp_customize->add_setting( 'hero_image_slide2_communications' , array(
+        'default'   => get_template_directory_uri().'/img/frontpage/hero-image-big-desktop/slide2-clinical.png',
+        'transport' => 'refresh',
+    ) );
 
     //CONTROLS
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'hero_title', array(
@@ -29,6 +53,36 @@ function init_hero_section( $wp_customize ){
         'section'   => 'regenmed_hero_section',
         'settings'  => 'hero_subtitle',
         'type'      => 'text'
+    ) ) );
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'hero_image_slide1', array(
+        'label'     => __( 'Hero image', 'regenmed' ),
+        'section'   => 'regenmed_hero_section',
+        'settings'  => 'hero_image_slide1',
+    ) ) );
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'hero_image_slide2_main', array(
+        'label'     => __( 'Slide 2 main image', 'regenmed' ),
+        'section'   => 'regenmed_hero_section',
+        'settings'  => 'hero_image_slide2_main',
+    ) ) );
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'hero_image_slide2_business', array(
+        'label'     => __( 'Business image', 'regenmed' ),
+        'section'   => 'regenmed_hero_section',
+        'settings'  => 'hero_image_slide2_business',
+    ) ) );
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'hero_image_slide2_clinical', array(
+        'label'     => __( 'Clinical image', 'regenmed' ),
+        'section'   => 'regenmed_hero_section',
+        'settings'  => 'hero_image_slide2_clinical',
+    ) ) );
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'hero_image_slide2_science', array(
+        'label'     => __( 'Science image', 'regenmed' ),
+        'section'   => 'regenmed_hero_section',
+        'settings'  => 'hero_image_slide2_science',
+    ) ) );
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'hero_image_slide2_communications', array(
+        'label'     => __( 'Communications image', 'regenmed' ),
+        'section'   => 'regenmed_hero_section',
+        'settings'  => 'hero_image_slide2_communications',
     ) ) );
 }
 
@@ -57,7 +111,7 @@ function init_our_work_section( $wp_customize ){
         'transport' => 'refresh',
     ) );
     $wp_customize->add_setting( 'our_work_slide1_image' , array(
-        'default'   => get_template_directory_uri().'/img/frontpage/our-work/screencapture-regain-galeazzi-2019-04-18-10-34-24',
+        'default'   => get_template_directory_uri().'/img/frontpage/our-work/screencapture-regain-galeazzi-2019-04-18-10-34-24.png',
         'transport' => 'refresh',
     ) );
     //slide2
@@ -74,7 +128,7 @@ function init_our_work_section( $wp_customize ){
         'transport' => 'refresh',
     ) );
     $wp_customize->add_setting( 'our_work_slide2_image' , array(
-        'default'   => get_template_directory_uri().'/img/frontpage/our-work/screencapture-regain-galeazzi-2019-04-18-10-34-24',
+        'default'   => get_template_directory_uri().'/img/frontpage/our-work/screencapture-regain-galeazzi-2019-04-18-10-34-24.png',
         'transport' => 'refresh',
     ) );
     //slide3
@@ -91,7 +145,7 @@ function init_our_work_section( $wp_customize ){
         'transport' => 'refresh',
     ) );
     $wp_customize->add_setting( 'our_work_slide3_image' , array(
-        'default'   => get_template_directory_uri().'/img/frontpage/our-work/screencapture-regain-galeazzi-2019-04-18-10-34-24',
+        'default'   => get_template_directory_uri().'/img/frontpage/our-work/screencapture-regain-galeazzi-2019-04-18-10-34-24.png',
         'transport' => 'refresh',
     ) );
 

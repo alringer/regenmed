@@ -1,7 +1,7 @@
 (function () {
+    console.log("Frontpage");
     var scrollify = $.scrollify;
     var isMobileSize;
-    var currentPage=1;
     var createScroll = function(){
         $.scrollify({
             section : ".hero__slide",
@@ -78,28 +78,12 @@
             $(this).parent().addClass("hero__slide--disciplines__subsection--active");
         })
     }
-    var initCarouselPagination = function(){
-        $('.rgn-put-work__body__info__pagination__page').click(function(){
-            var button = $(this);
-            var page = button.data('page');
-            if(currentPage != page){
-                currentPage = page;
-                document.getElementById("ourWorkSlides").className = "rgn-out-work__body__info__slides rgn-out-work__body__info__slides--"+page;
-                $('.rgn-put-work__body__info__pagination__page--active').removeClass('rgn-put-work__body__info__pagination__page--active');
-                button.addClass('rgn-put-work__body__info__pagination__page--active');
-            }
-        })
-    }
+    
 
     if( !window.isMobileAndTablet() ){
+        removeMobileScroll();
         isMobileSize = checkIfMobile();
         createScroll();
         section2Button();
-    }
-    else{
-        createMobileScroll();
-    }
-
-    
-    initCarouselPagination();
+    } 
 })();
