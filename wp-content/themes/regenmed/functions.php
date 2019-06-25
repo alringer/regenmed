@@ -15,7 +15,7 @@ add_theme_support( 'post-thumbnails' ); //adds featured image field
 \*------------------------------------*/
 include( get_template_directory() . '/includes/theme-customizer.php'); 
 include( get_template_directory() . '/includes/white-papers.php' );
-
+add_post_type_support( 'page', 'excerpt' );
 
 function theme_header_scripts()
 {
@@ -90,7 +90,11 @@ function register_theme_menu()
     register_nav_menus(array( // Using array to specify more menus if needed
         'header-menu' => __('Header Menu', 'html5blank'), // Main Navigation
         'sidebar-menu' => __('Sidebar Menu', 'html5blank'), // Sidebar Navigation
-        'extra-menu' => __('Extra Menu', 'html5blank') // Extra Navigation if needed (duplicate as many as you need!)
+        'extra-menu' => __('Extra Menu', 'html5blank'), // Extra Navigation if needed (duplicate as many as you need!)
+        'communications-menu' => __('Communications Menu', 'html5blank'),
+        'business-menu' => __('Business Menu', 'html5blank'),
+        'clinical-menu' => __('Clinical Menu', 'html5blank'),
+        'science-menu' => __('Science Menu', 'html5blank'),
     ));
 }
 
@@ -101,7 +105,7 @@ function custom_menu() {
         'edit_posts', 
         'menu_slug', 
         'page_callback_function', 
-        'dashicons-media-spreadsheet' 
+        'dashicons-media-spreadsheet'
        );
   }
 
