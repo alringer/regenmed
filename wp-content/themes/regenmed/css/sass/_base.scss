@@ -57,6 +57,11 @@ input:focus {
 	outline:0;
 	// border:1px solid #04A4CC;
 }
+button {
+    &:hover {
+      cursor: pointer;
+    }
+}
 
 /*------------------------------------*\
     STRUCTURE
@@ -320,5 +325,18 @@ a img.aligncenter {
     &.visible{
         opacity: 1;
         transform: none;
+    }
+}
+
+.rgn-gradient-overlay{
+    &:after{
+        content: '';
+        display: block;
+        position: absolute;
+        left:0;
+        top:0;
+        width:100%;
+        height: 100%;
+        background-image: linear-gradient(354deg, #151722, rgba(0, 8, 67, 0))
     }
 }

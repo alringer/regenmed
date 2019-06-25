@@ -224,7 +224,7 @@
     width: 264px;
 }
 
-@media only screen and ( min-width : 768px){
+@include media(">=tablet"){
     .hero__slide, .hero__slide--disciplines__section, .hero__slide--disciplines__subsection{
         width: 100%;
         height: 70rem;
@@ -235,22 +235,6 @@
     }
     .hero__slide--first{
         background-image: url('../img/frontpage/hero-image-tablet/slide1.png');
-    }
-    
-    .hero__slide--disciplines__subsection:nth-child(1) .hero__slide--disciplines__subsection__background{
-        background-image: linear-gradient(354deg, #151722, rgba(0, 8, 67, 0)), url('../img/frontpage/hero-image-tablet/slide2-business.png');
-    }
-    
-    .hero__slide--disciplines__subsection:nth-child(2) .hero__slide--disciplines__subsection__background{
-        background-image: linear-gradient(354deg, #01092f, rgba(0, 8, 67, 0)), url('../img/frontpage/hero-image-tablet/slide2-clinical.png');
-    }
-    
-    .hero__slide--disciplines__subsection:nth-child(3) .hero__slide--disciplines__subsection__background{
-        background-image: linear-gradient(354deg, #01092f, rgba(0, 8, 67, 0)),  url('../img/frontpage/hero-image-tablet/slide2-science.png');
-    }
-    
-    .hero__slide--disciplines__subsection:nth-child(4) .hero__slide--disciplines__subsection__background{
-        background-image: linear-gradient(354deg, #01092f, rgba(0, 8, 67, 0)),  url('../img/frontpage/hero-image-tablet/slide2-communications.png');
     }
 
     .hero__slide__text{
@@ -288,7 +272,7 @@
     }
 }
 
-@media only screen and ( min-width : 1024px){
+@include media(">=desktop"){
     .hero {
         scroll-snap-type: mandatory;
         scroll-snap-points-y: repeat(100vh);
@@ -387,22 +371,6 @@
     
     .hero__slide--disciplines__subsection--active .hero__slide--disciplines__subsection__background{
         opacity: 1;
-    }
-
-    .hero__slide--disciplines__subsection:nth-child(1) .hero__slide--disciplines__subsection__background{
-        background-image: url('../img/frontpage/hero-image-big-desktop/slide2-business.png');
-    }
-
-    .hero__slide--disciplines__subsection:nth-child(2) .hero__slide--disciplines__subsection__background{
-        background-image: url('../img/frontpage/hero-image-big-desktop/slide2-clinical.png');
-    }
-
-    .hero__slide--disciplines__subsection:nth-child(3) .hero__slide--disciplines__subsection__background{
-        background-image: url('../img/frontpage/hero-image-big-desktop/slide2-science.png');
-    }
-
-    .hero__slide--disciplines__subsection:nth-child(4) .hero__slide--disciplines__subsection__background{
-        background-image: url('../img/frontpage/hero-image-big-desktop/slide2-communications.png');
     }
 
     .hero__slide--disciplines__subsection:nth-child(1) .hero__slide--disciplines__subsection__item{

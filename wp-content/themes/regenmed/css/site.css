@@ -67,6 +67,10 @@ input:focus {
   outline: 0;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 /*------------------------------------*\
     STRUCTURE
 \*------------------------------------*/
@@ -290,6 +294,17 @@ h3 {
 .rgn-appear-animation.visible {
   opacity: 1;
   transform: none;
+}
+
+.rgn-gradient-overlay:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(354deg, #151722, rgba(0, 8, 67, 0));
 }
 
 .rgn-white {
@@ -901,22 +916,6 @@ h3 {
     background-image: url("../img/frontpage/hero-image-tablet/slide1.png");
   }
 
-  .hero__slide--disciplines__subsection:nth-child(1) .hero__slide--disciplines__subsection__background {
-    background-image: linear-gradient(354deg, #151722, rgba(0, 8, 67, 0)), url("../img/frontpage/hero-image-tablet/slide2-business.png");
-  }
-
-  .hero__slide--disciplines__subsection:nth-child(2) .hero__slide--disciplines__subsection__background {
-    background-image: linear-gradient(354deg, #01092f, rgba(0, 8, 67, 0)), url("../img/frontpage/hero-image-tablet/slide2-clinical.png");
-  }
-
-  .hero__slide--disciplines__subsection:nth-child(3) .hero__slide--disciplines__subsection__background {
-    background-image: linear-gradient(354deg, #01092f, rgba(0, 8, 67, 0)), url("../img/frontpage/hero-image-tablet/slide2-science.png");
-  }
-
-  .hero__slide--disciplines__subsection:nth-child(4) .hero__slide--disciplines__subsection__background {
-    background-image: linear-gradient(354deg, #01092f, rgba(0, 8, 67, 0)), url("../img/frontpage/hero-image-tablet/slide2-communications.png");
-  }
-
   .hero__slide__text {
     max-width: 68.4rem;
     bottom: 5rem;
@@ -951,7 +950,7 @@ h3 {
     width: 33%;
   }
 }
-@media only screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
   .hero {
     scroll-snap-type: mandatory;
     scroll-snap-points-y: repeat(100vh);
@@ -1007,12 +1006,12 @@ h3 {
     top: 14.4rem;
   }
 }
-@media only screen and (min-width: 1024px) and (min-width: 1024px) and (max-width: 1439px) {
+@media (min-width: 1024px) and (min-width: 1024px) and (max-width: 1439px) {
   .hero__slide--disciplines__section--main__title {
     top: 11.4%;
   }
 }
-@media only screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
   .hero__slide--disciplines__subsection__item {
     position: absolute;
     left: 50%;
@@ -1030,24 +1029,24 @@ h3 {
     padding: 3.4rem;
   }
 }
-@media only screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
   .hero__slide--disciplines__subsection__trigger {
     background: transparent;
     display: block;
     z-index: 11;
   }
 }
-@media only screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
   .hero__slide--disciplines__subsection__trigger:focus {
     outline: none;
   }
 }
-@media only screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
   .hero__slide--disciplines__subsection--active .hero__slide--disciplines__subsection__trigger {
     display: none;
   }
 }
-@media only screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
   .hero__slide--disciplines__subsection__background {
     width: 100%;
     height: 100%;
@@ -1055,32 +1054,12 @@ h3 {
     transition: 0.5s;
   }
 }
-@media only screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
   .hero__slide--disciplines__subsection--active .hero__slide--disciplines__subsection__background {
     opacity: 1;
   }
 }
-@media only screen and (min-width: 1024px) {
-  .hero__slide--disciplines__subsection:nth-child(1) .hero__slide--disciplines__subsection__background {
-    background-image: url("../img/frontpage/hero-image-big-desktop/slide2-business.png");
-  }
-}
-@media only screen and (min-width: 1024px) {
-  .hero__slide--disciplines__subsection:nth-child(2) .hero__slide--disciplines__subsection__background {
-    background-image: url("../img/frontpage/hero-image-big-desktop/slide2-clinical.png");
-  }
-}
-@media only screen and (min-width: 1024px) {
-  .hero__slide--disciplines__subsection:nth-child(3) .hero__slide--disciplines__subsection__background {
-    background-image: url("../img/frontpage/hero-image-big-desktop/slide2-science.png");
-  }
-}
-@media only screen and (min-width: 1024px) {
-  .hero__slide--disciplines__subsection:nth-child(4) .hero__slide--disciplines__subsection__background {
-    background-image: url("../img/frontpage/hero-image-big-desktop/slide2-communications.png");
-  }
-}
-@media only screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
   .hero__slide--disciplines__subsection:nth-child(1) .hero__slide--disciplines__subsection__item {
     transform: translate(-100%, -100%);
     border-radius: 100% 0 0 0;
@@ -1089,7 +1068,7 @@ h3 {
     align-items: flex-end;
   }
 }
-@media only screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
   .hero__slide--disciplines__subsection:nth-child(2) .hero__slide--disciplines__subsection__item {
     transform: translateY(-100%);
     border-radius: 0 100% 0 0;
@@ -1098,7 +1077,7 @@ h3 {
     align-items: flex-start;
   }
 }
-@media only screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
   .hero__slide--disciplines__subsection:nth-child(3) .hero__slide--disciplines__subsection__item {
     transform: translateX(-100%);
     border-radius: 0 0 0 100%;
@@ -1107,7 +1086,7 @@ h3 {
     align-items: flex-end;
   }
 }
-@media only screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
   .hero__slide--disciplines__subsection:nth-child(4) .hero__slide--disciplines__subsection__item {
     border-radius: 0 0 100% 0;
     border-width: 0.1rem 1rem 1rem 0.1rem;
@@ -1115,42 +1094,42 @@ h3 {
     align-items: flex-start;
   }
 }
-@media only screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
   .hero__slide--disciplines__subsection--active .hero__slide--disciplines__subsection__info > * {
     max-width: 200px;
   }
 }
-@media only screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
   .hero__slide--disciplines__subsection__title {
     margin: 5rem;
   }
 }
-@media only screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
   .hero__slide--disciplines__subsection--active .hero__slide--disciplines__subsection__title {
     width: 100%;
     margin: 0;
   }
 }
-@media only screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
   .hero__slide--disciplines__subsection__title::after {
     width: 0;
     transition: 0.5s;
   }
 }
-@media only screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
   .hero__slide--disciplines__subsection--active .hero__slide--disciplines__subsection__title::after {
     width: 100%;
     transition: 0.5s;
   }
 }
-@media only screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
   .hero__slide--disciplines__subsection__description {
     height: 0;
     opacity: 0;
     margin-top: -1.5rem;
   }
 }
-@media only screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
   .hero__slide--disciplines__subsection--active .hero__slide--disciplines__subsection__description {
     height: auto;
     margin-top: 0;
@@ -1158,7 +1137,7 @@ h3 {
     transition: 0.5s;
   }
 }
-@media only screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
   .hero__slide--disciplines__center {
     width: 7.65rem;
     height: 7.65rem;
@@ -1183,7 +1162,7 @@ h3 {
     text-align: center;
   }
 }
-@media only screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
   .hero__indicator {
     position: fixed;
     bottom: 22%;
@@ -1197,7 +1176,7 @@ h3 {
     z-index: 50;
   }
 }
-@media only screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
   .hero__indicator__bar {
     width: 100%;
     height: 33.3%;
@@ -1208,17 +1187,17 @@ h3 {
     transition: 0.2s;
   }
 }
-@media only screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
   .hero__indicator__bar--66 .hero__indicator__bar {
     height: 66.6%;
   }
 }
-@media only screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
   .hero__indicator__bar--100 .hero__indicator__bar {
     height: 100%;
   }
 }
-@media only screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
   .hero__indicator__page {
     width: 1.6rem;
     height: 1.6rem;
@@ -1236,7 +1215,7 @@ h3 {
     color: rgba(255, 255, 255, 0.75);
   }
 }
-@media only screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
   .hero__slide--process {
     padding: 0 8.9rem 0 4.4rem;
     display: flex;
@@ -1246,12 +1225,12 @@ h3 {
     border-top: none;
   }
 }
-@media only screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
   .hero__slide--process__title {
     width: 100%;
   }
 }
-@media only screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
   .hero__slide--process__step {
     width: 30%;
   }

@@ -48,7 +48,7 @@ get_header();
                     </section>
                     <div class="hero__slide--disciplines__subsections">
                         <section class="hero__slide--disciplines__subsection hero__slide--disciplines__subsection--active">
-                            <div class="hero__slide--disciplines__subsection__background" <?php if($slide2BusinessImage){ ?> style="background-image:url(' <?php echo $slide2BusinessImage ?>')" <?php } ?> ></div>
+                            <div class="hero__slide--disciplines__subsection__background rgn-gradient-overlay" <?php if($slide2BusinessImage){ ?> style="background-image:url(' <?php echo $slide2BusinessImage ?>')" <?php } ?> ></div>
                             <div class="hero__slide--disciplines__subsection__item hero__slide--disciplines__subsection__info">
                                 <p class="hero__slide--disciplines__subsection__title">
                                     Business
@@ -61,7 +61,7 @@ get_header();
                             <button class="hero__slide--disciplines__subsection__item hero__slide--disciplines__subsection__trigger" id="heroCircleTrigger1" data-number="1"></button>
                         </section>
                         <section class="hero__slide--disciplines__subsection">
-                            <div class="hero__slide--disciplines__subsection__background" <?php if($slide2ClinicalImage){ ?> style="background-image:url(' <?php echo $slide2ClinicalImage ?>')" <?php } ?> ></div>
+                            <div class="hero__slide--disciplines__subsection__background rgn-gradient-overlay" <?php if($slide2ClinicalImage){ ?> style="background-image:url(' <?php echo $slide2ClinicalImage ?>')" <?php } ?> ></div>
                             <div class="hero__slide--disciplines__subsection__item hero__slide--disciplines__subsection__info">
                                 <p class="hero__slide--disciplines__subsection__title">
                                     Clinical
@@ -74,7 +74,7 @@ get_header();
                             <button class="hero__slide--disciplines__subsection__item hero__slide--disciplines__subsection__trigger" id="heroCircleTrigger3" data-number="3"></button>
                         </section>
                         <section class="hero__slide--disciplines__subsection">
-                            <div class="hero__slide--disciplines__subsection__background" <?php if($slide2ScienceImage){ ?> style="background-image:url(' <?php echo $slide2ScienceImage ?>')" <?php } ?> ></div>
+                            <div class="hero__slide--disciplines__subsection__background rgn-gradient-overlay" <?php if($slide2ScienceImage){ ?> style="background-image:url(' <?php echo $slide2ScienceImage ?>')" <?php } ?> ></div>
                             <div class="hero__slide--disciplines__subsection__item hero__slide--disciplines__subsection__info">
                                 <p class="hero__slide--disciplines__subsection__title">
                                     Science
@@ -87,7 +87,7 @@ get_header();
                             <button class="hero__slide--disciplines__subsection__item hero__slide--disciplines__subsection__trigger" id="heroCircleTrigger2" data-number="2"></button>
                         </section>
                         <section class="hero__slide--disciplines__subsection">
-                            <div class="hero__slide--disciplines__subsection__background" <?php if($slide2CommunicationsImage){ ?> style="background-image:url(' <?php echo $slide2CommunicationsImage ?>')" <?php } ?> ></div>
+                            <div class="hero__slide--disciplines__subsection__background rgn-gradient-overlay" <?php if($slide2CommunicationsImage){ ?> style="background-image:url(' <?php echo $slide2CommunicationsImage ?>')" <?php } ?> ></div>
                             <div class="hero__slide--disciplines__subsection__item hero__slide--disciplines__subsection__info">
                                 <p class="hero__slide--disciplines__subsection__title">
                                     Communications

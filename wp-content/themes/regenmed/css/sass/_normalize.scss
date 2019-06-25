@@ -161,6 +161,15 @@ textarea {
 }
 
 /**
+ * Change cursor to pointer in all buttons
+ */
+button {
+    &:hover {
+      cursor: pointer;
+    }
+   }
+
+/**
  * Show the overflow in IE.
  * 1. Show the overflow in Edge.
  */
