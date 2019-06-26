@@ -1,5 +1,5 @@
 <?php
-function create_posttype() {
+function create_whitepaper_posttype() {
     $whitepaper_labels = array(
         'name'                => _x( 'White Papers', 'Post Type General Name', 'regenmed' ),
         'singular_name'       => _x( 'White Paper', 'Post Type Singular Name', 'regenmed' ),
@@ -17,8 +17,8 @@ function create_posttype() {
     );
     
     $whitepaper_args = array(
-        'label'               => __( 'movies', 'regenmed' ),
-        'description'         => __( 'Movie news and reviews', 'regenmed' ),
+        'label'               => __( 'whitepapers', 'regenmed' ),
+        'description'         => __( 'White Papers', 'regenmed' ),
         'labels'              => $whitepaper_labels,
         // Features this CPT supports in Post Editor
         'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),

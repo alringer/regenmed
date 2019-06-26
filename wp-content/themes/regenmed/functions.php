@@ -14,7 +14,9 @@ add_theme_support( 'post-thumbnails' ); //adds featured image field
 	Includes
 \*------------------------------------*/
 include( get_template_directory() . '/includes/theme-customizer.php'); 
-include( get_template_directory() . '/includes/white-papers.php' );
+include( get_template_directory() . '/includes/post-types/white-papers.php' );
+include( get_template_directory() . '/includes/post-types/services.php' );
+include( get_template_directory() . '/includes/post-types/service-categories.php' );
 add_post_type_support( 'page', 'excerpt' );
 
 function theme_header_scripts()
@@ -118,7 +120,7 @@ function custom_menu() {
 add_action('admin_menu', 'custom_menu');
 
  add_action('init', 'register_theme_menu'); // Adds Menu
- add_action( 'init', 'create_posttype' );
+ add_action( 'init', 'create_whitepaper_posttype' );
 //  add_action('init', 'theme_header_scripts'); // Add Custom Scripts to wp_head
  add_action('wp_enqueue_scripts', 'theme_footer_scripts'); // Add Custom Scripts to wp_footer
 add_action('wp_enqueue_scripts', 'theme_styles'); // Add Theme Stylesheet
