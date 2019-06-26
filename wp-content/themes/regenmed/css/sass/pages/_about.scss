@@ -1,0 +1,31 @@
+.rgn-about{
+    width: 100%;
+    min-height: 80vh;
+    margin-bottom: 9rem;
+    padding: 16.8rem 2.3rem 5rem;
+    color: $color-white;
+    background-color: $color-black;
+    @include media(">=desktop"){
+        padding: 17rem 10.8rem 3.2rem 14.9rem;
+    }
+    &__header{
+        font-family: $noto-tc;
+        font-size: 4rem;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: $color-white;
+        padding-bottom: 3.65rem;
+    }
+    &__body{
+        font-family: $nunito-sans;
+        font-size: 1.8rem;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+    }
+}

@@ -1,0 +1,152 @@
+/* Header */
+.header {
+    width: 100vw;
+    height: 6rem;
+    object-fit: contain;
+    display: flex;
+    color: $color-gray;
+    transition: all 0.2s;
+    position: fixed;
+    z-index: 500;
+    /* background-color: black; */
+}
+
+.header--scrolled{
+    background-color: #FFFFFF;
+    color: $color-gray;
+}
+
+.logo-img--main{    
+    display: inline-block;
+}
+
+.logo-img--alt{    
+    display: none;
+}
+
+.header--scrolled .logo-img--main{    
+    display: none;
+}
+
+.header--scrolled .logo-img--alt{    
+    display: inline-block;
+}
+
+.header--active .logo-img--main{    
+    display: inline-block;
+}
+
+.header--active .logo-img--alt{    
+    display: none;
+}
+
+.header--active{
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+.header--active .header__right{
+    border-left: 2px solid #252525;
+}
+
+.header__container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 2.9rem; */
+}
+
+.header__left{
+    margin: 0 2.9rem;
+}
+
+.header__right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 9rem;
+    height: 100%;
+}
+
+/* Menu Navbar */
+.main-nav{
+    width: 100vw;
+    height: calc( 100vh - 6rem );
+    position: fixed;
+    top: 6rem;
+    left: 100vw;
+    z-index: 500;
+    /* transition: left 0.5s; */
+    transition: left 0.3s, opacity 2s;
+    background-color: black;
+    border-top: solid 2px #252525;
+    opacity: 0;
+
+    /* 1444px; */
+    padding-top: 17.8rem;
+    padding-left: 4.2rem;
+    overscroll-behavior-y: contain;
+}
+
+@media only screen and (min-width: 768px) {
+
+}
+
+/* @media only screen and (min-width: 1024x) {
+
+} */
+
+@media only screen and (min-width: 1440px) {
+    .main-nav{
+        padding-left: 16.1rem;
+    }    
+}
+
+.header--active .main-nav{
+/* .main-nav.main-nav--active{ */
+    left: 0;
+    opacity: 1;
+    transition: left 0.5s;
+    /* transition: left 2s, opacity 0s */
+}
+
+.menu{
+    display: flex;
+}
+
+.menu-button{
+    color:#FFF;
+}
+
+.header--scrolled .menu-button{
+    color: $color-gray;
+}
+
+.header--active .menu-button{
+    color: #FFF;
+}
+
+.menu__list{
+    list-style: none;
+}
+
+.menu__list li{
+    margin-bottom: 1.6rem;
+}
+
+
+.menu__list li a{
+    font-family: NotoSerifTC;
+    font-size: 25px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #7e7e7e;
+}
+
+.menu__list li a:hover{
+    color:white;
+}

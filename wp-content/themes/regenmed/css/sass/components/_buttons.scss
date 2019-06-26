@@ -1,0 +1,65 @@
+%button-shared{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-family: $nunito-sans;
+    font-size: 1.4rem;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.12rem;
+    text-align: center;
+    height: 5.6rem;
+    background: none;
+}
+
+.rgn-button{
+    @extend %button-shared;
+    color: $color-white;
+    border: solid .16rem $color-white;
+    &:hover{
+        background-color: $color-white;
+        color: $color-dark-gray;
+    }
+    &--dark-gray{
+        @extend %button-shared;
+        color: $color-dark-gray;
+        border: solid .16rem $color-dark-gray;
+        &:hover{
+            background-color: $color-dark-gray;
+            color: $color-white;
+        }
+    }
+    &--blue{
+        @extend %button-shared;
+        color: $color-blue;
+        border: solid .16rem $color-blue;
+        &:hover{
+            background-color: $color-blue;
+            color: $color-white;
+        }
+    }
+}
+
+// .rgn-button--dark-gray{
+//     @extend %button-shared;
+//     color: $color-dark-gray;
+//     border: solid .16rem $color-dark-gray;
+// }
+
+// .rgn-button--blue{
+//     @extend %button-shared;
+//     color: $color-blue;
+//     border: solid .16rem $color-blue;
+// }
+
+.rgn-read-more-link{
+    color: $color-dark-gray;
+    display: flex;
+    align-items: center;
+    i{
+        margin-left:0.8rem;
+    }
+}
