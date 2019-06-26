@@ -1964,6 +1964,7 @@ h3 {
 }
 .rgn-services__category-icon {
   margin: 0 auto 5.4rem;
+  height: 7rem;
 }
 .rgn-services__category-title {
   font-family: "Noto Serif TC", serif;
