@@ -24,23 +24,80 @@ function regenmed_service_category_post_type() {
     );
 	
 	$args = array(
-		'labels'			=> $labels,
-		'show_ui'			=> true,
-		'show_in_menu'		=> true,
-		'capability_type'	=> 'post',
-		'hierarchical'		=> false,
-		'menu_position'		=> 6,
-		'menu_icon'			=> 'dashicons-list-view',
-		'supports'			=> array( 'title', 'excerpt', 'thumbnail')
+		// 'labels'			=> $labels,
+		// 'show_ui'			=> true,
+		// 'show_in_menu'		=> true,
+		// 'capability_type'	=> 'post',
+		// 'hierarchical'		=> false,
+		// 'menu_position'		=> 6,
+		// 'menu_icon'			=> 'dashicons-list-view',
+        // 'supports'			=> array( 'title', 'excerpt', 'thumbnail')
+        
+        'label'                 => 'Service Category',
+		'description'           => 'Categories included in the services the company gives',
+		'labels'                => $labels,
+		'supports'              => array( 'title', 'excerpt', 'thumbnail'),
+		'taxonomies'            => array( 'product_category' ),
+		'hierarchical'          => false,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+        'menu_position'         => 5,
+        'menu_icon'			    => 'dashicons-list-view',
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => true,
+		'has_archive'           => true,
+		'exclude_from_search'   => false,
+		'publicly_queryable'    => true,
+		'capability_type'       => 'post',
 	);
 	
-	register_post_type( 'regenmed-categories', $args );
+	register_post_type( 'service-categories', $args );
 	
 }
 
 /* SERVICE META BOXES */
 function regenmed_service_category_add_meta_box() {
-    add_meta_box( 'service_alt_image', 'Icon image', 'regenmed_service_category_alt_image_callback', 'regenmed-categories', 'side', 'high' );
+    add_meta_box( 'service_alt_image', 'Icon image', 'regenmed_service_category_alt_image_callback', 'service-categories', 'side', 'high' );
+    add_meta_box( 'service_category_description', 'Main Description', 'regenmed_service_category_description_callback', 'service-categories', 'advanced', 'high' );
+}
+
+//DESCRIPTION
+function regenmed_service_category_description_callback( $post ) {
+	wp_nonce_field( 'regenmed_save_service_category_description_data', 'regenmed_service_category_description_meta_box_nonce' );
+	
+	$value = get_post_meta( $post->ID, '_service_category_description_value_key', true );
+	
+	echo '<label for="regenmed_service_category_description_field">Categories description: </label>';
+	echo '<textarea id="regenmed_service_category_description_field" name="regenmed_service_category_description_field" value="" />' . esc_attr( $value ) . '</textarea>';
+}
+function regenmed_save_service_category_description_data( $post_id ) {
+	
+	if( ! isset( $_POST['regenmed_service_category_description_meta_box_nonce'] ) ){
+		return;
+	}
+	
+	if( ! wp_verify_nonce( $_POST['regenmed_service_category_description_meta_box_nonce'], 'regenmed_save_service_category_description_data') ) {
+		return;
+	}
+	
+	if( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ){
+		return;
+	}
+	
+	if( ! current_user_can( 'edit_post', $post_id ) ) {
+		return;
+	}
+	
+	if( ! isset( $_POST['regenmed_service_category_description_field'] ) ) {
+		return;
+	}
+	
+	$my_data = sanitize_text_field( $_POST['regenmed_service_category_description_field'] );
+	
+	update_post_meta( $post_id, '_service_category_description_value_key', $my_data );
+	
 }
 
 //ALT IMAGE
@@ -91,4 +148,5 @@ function regenmed_save_service_category_alt_image_data( $post_id ) {
 add_action( 'init', 'regenmed_service_category_post_type' );
 add_action( 'add_meta_boxes', 'regenmed_service_category_add_meta_box' );
 add_action( 'save_post', 'regenmed_save_service_category_alt_image_data' );
+add_action( 'save_post', 'regenmed_save_service_category_description_data' );
 add_action( 'admin_enqueue_scripts', 'regenmed_service_category_register_admin_script');
