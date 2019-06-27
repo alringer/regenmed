@@ -2005,5 +2005,141 @@ h3 {
   letter-spacing: normal;
   color: #858585;
 }
+.rgn-service-categories__header {
+  width: 100%;
+  height: 33.6rem;
+  padding: 0 3.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media (min-width: 768px) {
+  .rgn-service-categories__header {
+    height: 35.7rem;
+    padding: 0 14.8rem;
+  }
+}
+@media (min-width: 1024px) {
+  .rgn-service-categories__header {
+    height: 45rem;
+  }
+}
+.rgn-service-categories__title {
+  font-family: "Noto Serif TC", serif;
+  font-size: 3rem;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #FFF;
+  margin: 7.2rem 0 3.6rem;
+}
+@media (min-width: 768px) {
+  .rgn-service-categories__title {
+    font-size: 4rem;
+  }
+}
+.rgn-service-categories__subtitle {
+  font-family: NunitoSans;
+  font-size: 1.8rem;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #FFF;
+}
+
+.rgn-service-categories__categories-section {
+  padding: 12.6rem 5.8rem;
+  width: 100%;
+  background-color: black;
+}
+.rgn-service-categories__categories-title {
+  width: 100%;
+  font-family: "Noto Serif TC", serif;
+  font-size: 3rem;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #FFF;
+}
+@media (min-width: 768px) {
+  .rgn-service-categories__categories-title {
+    text-align: center;
+  }
+}
+.rgn-service-categories__categories-description {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.8rem;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #858585;
+  margin-bottom: 12.3rem;
+}
+@media (min-width: 768px) {
+  .rgn-service-categories__categories-description {
+    text-align: center;
+    margin-bottom: 6.2rem;
+  }
+}
+.rgn-service-categories__categories-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.rgn-service-categories__category {
+  width: 100%;
+}
+@media (max-width: 1023px) {
+  .rgn-service-categories__category {
+    margin-bottom: 9.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .rgn-service-categories__category {
+    width: 45%;
+  }
+}
+@media (min-width: 1024px) {
+  .rgn-service-categories__category {
+    width: 22%;
+  }
+}
+.rgn-service-categories__category-icon {
+  margin: 0 auto 5.4rem;
+  height: 7rem;
+}
+.rgn-service-categories__category-title {
+  font-family: "Noto Serif TC", serif;
+  font-size: 2rem;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #FFF;
+  margin-bottom: 1.2rem;
+}
+.rgn-service-categories__category-description {
+  height: 18.9rem;
+  overflow-y: hidden;
+  margin-bottom: 3.2rem;
+  font-family: NunitoSans;
+  font-size: 1.8rem;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #858585;
+}
 
 /*# sourceMappingURL=site.css.map */
