@@ -151,7 +151,7 @@ get_header();
                     include("includes/sections/literature.php");
                 ?>
                 <?php                    
-                    include("includes/sections/ebooks.php");
+                    //include("includes/sections/ebooks.php");
                 ?>
             </div>
 
