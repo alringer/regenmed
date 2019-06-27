@@ -1,0 +1,94 @@
+.rgn-contact{
+    padding: 8.8rem 2.8rem 5.9rem;
+    width: 100%;
+    @include media(">=tablet"){
+        display: flex;
+        padding: 8.8rem 0 0;
+    }
+
+    &__image-container, &__form-container{
+        @include media(">=tablet"){
+            width: 50%;
+        }
+    }
+
+    &__form-container{
+        @include media(">=tablet"){
+            padding: 3.3rem 9rem 6.2rem 3rem;
+            background-color: $color-lighter-gray;
+        }
+    }
+    
+    &__image{
+        width: 100%;
+        height: 26.6rem;
+        background-position: center;
+        background-size: cover;
+        background-repeat:  no-repeat;
+        @include media(">=tablet"){
+            height: 58rem;
+        }
+        @include media(">=desktop"){
+            height: 100%;
+        }
+        @include media(">=bigdesktop"){
+            height: 77.3rem;
+        }
+    }
+
+    &__header{
+        font-family: $noto-tc;
+        font-size: 3rem;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: $color-gray;
+        margin-bottom: 1.2rem;    
+    }
+
+    &__image-container, &__form-container, &__submit{
+        @include media(">=desktop"){
+            width: 100%;
+            margin: 0 auto;
+        }
+    }
+
+    &__submit{
+        max-width: 26.21rem;
+    }
+
+    &__subheader{
+        margin-bottom: 4.2rem;
+    }
+    &__label{
+        display:inline;
+    }
+    &__subheader, &__label{
+        font-family: $nunito-sans;
+        font-size: 1.8rem;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        color: $color-mid-gray;
+    }
+    
+    &__input{
+        width: 100%;
+        height: 3.2rem;
+        border: solid 0.1rem rgba(151, 151, 151, 0.43);
+        margin-bottom: 3.2rem;
+        &--half-width{
+            width: 50%;
+        }
+        &:focus{
+            border: solid 0.1rem $color-blue;
+        }
+        &.wpcf7-textarea{
+            height: 18.2rem;
+        }
+    }    
+}

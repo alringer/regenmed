@@ -14,8 +14,10 @@ add_theme_support( 'post-thumbnails' ); //adds featured image field
 	Includes
 \*------------------------------------*/
 include( get_template_directory() . '/includes/theme-customizer.php'); 
-include( get_template_directory() . '/includes/white-papers.php' );
-
+include( get_template_directory() . '/includes/post-types/white-papers.php' );
+include( get_template_directory() . '/includes/post-types/services.php' );
+include( get_template_directory() . '/includes/post-types/service-categories.php' );
+add_post_type_support( 'page', 'excerpt' );
 
 function theme_header_scripts()
 {
@@ -90,7 +92,11 @@ function register_theme_menu()
     register_nav_menus(array( // Using array to specify more menus if needed
         'header-menu' => __('Header Menu', 'html5blank'), // Main Navigation
         'sidebar-menu' => __('Sidebar Menu', 'html5blank'), // Sidebar Navigation
-        'extra-menu' => __('Extra Menu', 'html5blank') // Extra Navigation if needed (duplicate as many as you need!)
+        'extra-menu' => __('Extra Menu', 'html5blank'), // Extra Navigation if needed (duplicate as many as you need!)
+        'communications-menu' => __('Communications Menu', 'html5blank'),
+        'business-menu' => __('Business Menu', 'html5blank'),
+        'clinical-menu' => __('Clinical Menu', 'html5blank'),
+        'science-menu' => __('Science Menu', 'html5blank'),
     ));
 }
 
@@ -101,7 +107,7 @@ function custom_menu() {
         'edit_posts', 
         'menu_slug', 
         'page_callback_function', 
-        'dashicons-media-spreadsheet' 
+        'dashicons-media-spreadsheet'
        );
   }
 
@@ -114,7 +120,7 @@ function custom_menu() {
 add_action('admin_menu', 'custom_menu');
 
  add_action('init', 'register_theme_menu'); // Adds Menu
- add_action( 'init', 'create_posttype' );
+ add_action( 'init', 'create_whitepaper_posttype' );
 //  add_action('init', 'theme_header_scripts'); // Add Custom Scripts to wp_head
  add_action('wp_enqueue_scripts', 'theme_footer_scripts'); // Add Custom Scripts to wp_footer
 add_action('wp_enqueue_scripts', 'theme_styles'); // Add Theme Stylesheet

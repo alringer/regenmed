@@ -249,6 +249,25 @@ function init_literature_section( $wp_customize ){
     ) ) );
 }
 
+function init_contact_page( $wp_customize ){
+    $wp_customize->add_section( 'regenmed_contact_page' , array(
+        'title'      => __( 'Contact', 'regenmed' ),
+        'priority'   => 30,
+    ) );
+
+    $wp_customize->add_setting( 'contact_page_image' , array(
+        'default'   => get_template_directory_uri().'/img/contact/contact.png',
+        'transport' => 'refresh',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'contact_page_image', array(
+        'label'     => __( 'Contact image', 'regenmed' ),
+        'section'   => 'regenmed_contact_page',
+        'settings'  => 'contact_page_image',
+    ) ) );
+}
+
+
 function theme_customize_register( $wp_customize ) {
     init_hero_section( $wp_customize );
     init_our_work_section(  $wp_customize );
