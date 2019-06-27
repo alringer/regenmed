@@ -66,7 +66,7 @@ function theme_nav()
             'theme_location'  => 'header-menu',
             'menu'            => '',
             'container'       => 'div',
-            'container_class' => 'menu-{menu slug}-container',
+            'container_class' => 'menu-main-menu-container',
             'container_id'    => '',
             'menu_class'      => 'menu',
             'menu_id'         => '',
