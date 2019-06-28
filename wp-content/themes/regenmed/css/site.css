@@ -566,7 +566,7 @@ h3 {
   .footer {
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    padding: 16.4rem 27.8rem 0 16.4rem;
   }
 }
 
@@ -2118,7 +2118,7 @@ h3 {
   }
 }
 .rgn-services__subtitle {
-  font-family: NunitoSans;
+  font-family: "Nunito Sans", sans-serif;
   font-size: 1.8rem;
   font-weight: normal;
   font-style: normal;
@@ -2126,6 +2126,11 @@ h3 {
   line-height: 1.5;
   letter-spacing: normal;
   color: #FFF;
+}
+@media (min-width: 1440px) {
+  .rgn-services__subtitle {
+    width: 45.1rem;
+  }
 }
 
 .rgn-services__categories-section {
@@ -2216,6 +2221,12 @@ h3 {
 .rgn-services__category-icon {
   margin: 0 auto 5.4rem;
   height: 7rem;
+  display: block;
+}
+@media (min-width: 1024px) {
+  .rgn-services__category-icon {
+    padding-right: 3.2rem;
+  }
 }
 .rgn-services__category-title {
   font-family: "Noto Serif TC", serif;
@@ -2237,7 +2248,7 @@ h3 {
   height: 18.9rem;
   overflow-y: hidden;
   margin-bottom: 3.2rem;
-  font-family: NunitoSans;
+  font-family: "Nunito Sans", sans-serif;
   font-size: 1.8rem;
   font-weight: normal;
   font-style: normal;

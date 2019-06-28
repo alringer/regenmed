@@ -26,7 +26,7 @@
         }
     }
     &__subtitle{
-        font-family: NunitoSans;
+        font-family: $nunito-sans;
         font-size: 1.8rem;
         font-weight: normal;
         font-style: normal;
@@ -34,6 +34,9 @@
         line-height: 1.5;
         letter-spacing: normal;
         color: $color-white;
+        @include media(">=bigdesktop"){
+            width: 45.1rem;
+        }
     }
 }
 .rgn-services__categories{
@@ -105,7 +108,11 @@
     }
     &-icon{
         margin: 0 auto 5.4rem;
-        height: 7rem
+        height: 7rem;
+        display:block;
+        @include media(">=desktop"){
+            padding-right: 3.2rem;
+        }
     }
     &-title{
         font-family: $noto-tc;
@@ -125,7 +132,7 @@
         height: 18.9rem;
         overflow-y: hidden;
         margin-bottom: 3.2rem;
-        font-family: NunitoSans;
+        font-family: $nunito-sans;
         font-size: 1.8rem;
         font-weight: normal;
         font-style: normal;
