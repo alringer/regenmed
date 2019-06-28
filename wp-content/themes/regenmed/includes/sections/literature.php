@@ -35,13 +35,13 @@ function get_post_type_text($type){
         <?php if($primaryNav[1]){ 
             $post1 = get_post($primaryNav[1]->object_id)
         ?>
-        <article class="rgn-literature__article rgn-literature__article--white-image rgn-appear-animation">
+        <article class="rgn-literature__article rgn-literature__article--white-image rgn-literature__article--white-image--reverse rgn-appear-animation">
+            <div class="rgn-literature__article__image" style="background-image:url('<?php echo get_the_post_thumbnail_url($post1->ID)?>')"></div>
             <div class="rgn-literature__article__info">
                 <div class="rgn-literature__article__type"><?php echo get_post_type_text($post1->post_type); ?></div>
                 <div class="rgn-literature__article__title"><?php echo $post1->post_title ?></div>
                 <div class="rgn-literature__article__description"><?php echo $post1->post_excerpt ?></div>
             </div>
-            <div class="rgn-literature__article__image" style="background-image:url('<?php echo get_the_post_thumbnail_url($post1->ID)?>')"></div>
         </article>
         <?php } ?>
         

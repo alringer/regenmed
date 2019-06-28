@@ -12,7 +12,7 @@
     <main id="main" class="site-main">
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
             <div class="rgn-services">
-<div class="rgn-services__header rgn-background-image" <?php if (has_post_thumbnail() ): ?>style="background-image:url('<?php echo the_post_thumbnail_url() ?>')"<?php endif; ?> >
+                <div class="rgn-services__header rgn-background-image" <?php if (has_post_thumbnail() ): ?>style="background-image:url('<?php echo the_post_thumbnail_url() ?>')"<?php endif; ?> >
                     <h1 class="rgn-services__title"><?php the_title() ?></h1>
                     <?php the_excerpt() ?>
                 </div>

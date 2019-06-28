@@ -36,7 +36,7 @@ function regenmed_service_category_post_type() {
         'label'                 => 'Service Category',
 		'description'           => 'Categories included in the services the company gives',
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'excerpt', 'thumbnail'),
+		'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail'),
 		'taxonomies'            => array( 'product_category' ),
 		'hierarchical'          => false,
 		'public'                => true,

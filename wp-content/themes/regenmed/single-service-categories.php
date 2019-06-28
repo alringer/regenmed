@@ -18,7 +18,7 @@
                     <?php the_excerpt() ?>
                 </div>
                 <div class="rgn-service-categories__categories-section">
-                    <p class="rgn-service-categories__categories-description"><?php echo get_post_meta( get_the_ID(), '_service_category_description_value_key', true ); ?> </p>
+                    <div class="rgn-service-categories__categories-description"><?php the_content(); ?> </div>
                 </div>
                 <div class="rgn-our-people">
                     <div class="rgn-our-people__card"></div>
