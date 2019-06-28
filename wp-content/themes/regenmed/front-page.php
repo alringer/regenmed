@@ -15,11 +15,11 @@
  */
 
 $slideImage = get_theme_mod('hero_image_slide1');
-$slide2MainImage = get_theme_mod('hero_image_slide2_main');
-$slide2BusinessImage = get_theme_mod('hero_image_slide2_business');
-$slide2ClinicalImage = get_theme_mod('hero_image_slide2_clinical');
-$slide2ScienceImage = get_theme_mod('hero_image_slide2_science');
-$slide2CommunicationsImage = get_theme_mod('hero_image_slide2_communications');
+$slide2MainImage = get_theme_mod('hero_image_slide2_main' );
+$slide2BusinessImage = get_theme_mod('hero_image_slide2_business', get_template_directory_uri().'/img/frontpage/hero-image-big-desktop/slide2-business.png');
+$slide2ClinicalImage = get_theme_mod('hero_image_slide2_clinical', get_template_directory_uri().'/img/frontpage/hero-image-big-desktop/slide2-clinical.png');
+$slide2ScienceImage = get_theme_mod('hero_image_slide2_science', get_template_directory_uri().'/img/frontpage/hero-image-big-desktop/slide2-science.png');
+$slide2CommunicationsImage = get_theme_mod('hero_image_slide2_communications', get_template_directory_uri().'/img/frontpage/hero-image-big-desktop/slide2-communications.png');
 
 get_header();
 ?>
@@ -48,53 +48,53 @@ get_header();
                     </section>
                     <div class="hero__slide--disciplines__subsections">
                         <section class="hero__slide--disciplines__subsection hero__slide--disciplines__subsection--active">
-                            <div class="hero__slide--disciplines__subsection__background rgn-gradient-overlay" <?php if($slide2BusinessImage){ ?> style="background-image:url(' <?php echo $slide2BusinessImage ?>')" <?php } ?> ></div>
+                            <div class="hero__slide--disciplines__subsection__background rgn-gradient-overlay--side" <?php if($slide2BusinessImage){ ?> style="background-image:url(' <?php echo $slide2BusinessImage ?>')" <?php } ?> ></div>
                             <div class="hero__slide--disciplines__subsection__item hero__slide--disciplines__subsection__info">
                                 <p class="hero__slide--disciplines__subsection__title">
                                     Business
                                 </p>
                                 <div class="hero__slide--disciplines__subsection__description">
                                     <p>Modest capital requirements, enduring equity value.</p>
-                                    <a href="#">READ MORE <i class="icon icon-sm icon-right-arrow"></i></a>
+                                    <a href="#" class="rgn-read-more-link rgn-read-more-link--white">READ MORE <i class="icon icon-sm icon-right-arrow"></i></a>
                                 </div>
                             </div>
                             <button class="hero__slide--disciplines__subsection__item hero__slide--disciplines__subsection__trigger" id="heroCircleTrigger1" data-number="1"></button>
                         </section>
                         <section class="hero__slide--disciplines__subsection">
-                            <div class="hero__slide--disciplines__subsection__background rgn-gradient-overlay" <?php if($slide2ClinicalImage){ ?> style="background-image:url(' <?php echo $slide2ClinicalImage ?>')" <?php } ?> ></div>
+                            <div class="hero__slide--disciplines__subsection__background rgn-gradient-overlay--side" <?php if($slide2ClinicalImage){ ?> style="background-image:url(' <?php echo $slide2ClinicalImage ?>')" <?php } ?> ></div>
                             <div class="hero__slide--disciplines__subsection__item hero__slide--disciplines__subsection__info">
                                 <p class="hero__slide--disciplines__subsection__title">
                                     Clinical
                                 </p>
                                 <div class="hero__slide--disciplines__subsection__description">
                                     <p>Standardized, product agnostic, and regulatorily-compliant procedures.</p>
-                                    <a href="#">READ MORE <i class="icon icon-sm icon-right-arrow"></i></a>
+                                    <a href="#" class="rgn-read-more-link rgn-read-more-link--white">READ MORE <i class="icon icon-sm icon-right-arrow"></i></a>
                                 </div>
                             </div>
                             <button class="hero__slide--disciplines__subsection__item hero__slide--disciplines__subsection__trigger" id="heroCircleTrigger3" data-number="3"></button>
                         </section>
                         <section class="hero__slide--disciplines__subsection">
-                            <div class="hero__slide--disciplines__subsection__background rgn-gradient-overlay" <?php if($slide2ScienceImage){ ?> style="background-image:url(' <?php echo $slide2ScienceImage ?>')" <?php } ?> ></div>
+                            <div class="hero__slide--disciplines__subsection__background rgn-gradient-overlay--side" <?php if($slide2ScienceImage){ ?> style="background-image:url(' <?php echo $slide2ScienceImage ?>')" <?php } ?> ></div>
                             <div class="hero__slide--disciplines__subsection__item hero__slide--disciplines__subsection__info">
                                 <p class="hero__slide--disciplines__subsection__title">
                                     Science
                                 </p>
                                 <div class="hero__slide--disciplines__subsection__description">
                                     <p>Predictable outcomes, correlatable to Pre, Peri and Post-Tx evidence.</p>
-                                    <a href="#">READ MORE <i class="icon icon-sm icon-right-arrow"></i></a>
+                                    <a href="#" class="rgn-read-more-link rgn-read-more-link--white">READ MORE <i class="icon icon-sm icon-right-arrow"></i></a>
                                 </div>
                             </div>
                             <button class="hero__slide--disciplines__subsection__item hero__slide--disciplines__subsection__trigger" id="heroCircleTrigger2" data-number="2"></button>
                         </section>
                         <section class="hero__slide--disciplines__subsection">
-                            <div class="hero__slide--disciplines__subsection__background rgn-gradient-overlay" <?php if($slide2CommunicationsImage){ ?> style="background-image:url(' <?php echo $slide2CommunicationsImage ?>')" <?php } ?> ></div>
+                            <div class="hero__slide--disciplines__subsection__background rgn-gradient-overlay--side" <?php if($slide2CommunicationsImage){ ?> style="background-image:url(' <?php echo $slide2CommunicationsImage ?>')" <?php } ?> ></div>
                             <div class="hero__slide--disciplines__subsection__item hero__slide--disciplines__subsection__info">
                                 <p class="hero__slide--disciplines__subsection__title">
                                     Communications
                                 </p>
                                 <div class="hero__slide--disciplines__subsection__description">
                                     <p>Sustainable patient and professional marketing tactics.</p>
-                                    <a href="#">READ MORE <i class="icon icon-sm icon-right-arrow"></i></a>
+                                    <a href="services/communications" class="rgn-read-more-link rgn-read-more-link--white">READ MORE <i class="icon icon-sm icon-right-arrow"></i></a>
                                 </div>
                             </div>
                             <button class="hero__slide--disciplines__subsection__item hero__slide--disciplines__subsection__trigger" id="heroCircleTrigger4" data-number="4"></button>
@@ -136,7 +136,7 @@ get_header();
                             </div>
                         </div>
                     </div>
-                    <a href="#" class="rgn-button hero__slide--process__action">BEGIN THE PROCESS</a>
+                    <a href="contact" class="rgn-button hero__slide--process__action">BEGIN THE PROCESS</a>
                 </div>
                 <div id="heroIndicator" class="hero__indicator">
                     <div class="hero__indicator__bar"></div>

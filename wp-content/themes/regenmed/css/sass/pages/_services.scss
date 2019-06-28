@@ -55,6 +55,9 @@
         @include media(">=tablet"){
             text-align: center;
         }
+        @include media(">=bigdesktop"){
+            margin-bottom: 2.3rem;
+        }
     }
     &-description{
         font-family: $nunito-sans;
@@ -70,11 +73,20 @@
             text-align: center;
             margin-bottom: 6.2rem;
         }
+        @include media(">=bigdesktop"){
+            width: 100%;
+            max-width: 813px;
+            margin: 0 auto 13.1rem;
+        }
     }
     &-container{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        @include media(">=bigdesktop"){
+            max-width: 112.4rem;
+            margin: 0 auto;
+        }
     }
 }
 .rgn-services__category{
@@ -87,6 +99,9 @@
     }
     @include media(">=desktop"){
         width: 22%;
+    }
+    @include media(">=bigdesktop"){
+        max-width: 19rem;
     }
     &-icon{
         margin: 0 auto 5.4rem;
@@ -102,6 +117,9 @@
         letter-spacing: normal;
         color: $color-white;
         margin-bottom: 1.2rem;
+        @include media(">=bigdesktop"){
+            min-height: 6.9rem;
+        }
     }
     &-description{
         height: 18.9rem;

@@ -26,6 +26,7 @@ wp-includes
 wp-mail.php
 xmlrpc.php
 index.php
+!wp-content/themes/regenmed/index.php
 wp-admin
 wp-config.php
 wp-links-opml.php

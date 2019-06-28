@@ -24,14 +24,6 @@ function regenmed_service_post_type() {
     );
 	
 	$args = array(
-		// 'labels'			=> $labels,
-		// 'show_ui'			=> true,
-		// 'show_in_menu'		=> true,
-		// 'capability_type'	=> 'post',
-		// 'hierarchical'		=> false,
-		// 'menu_position'		=> 6,
-		// 'menu_icon'			=> 'dashicons-businessman',
-        // 'supports'			=> array( 'title', 'excerpt', 'thumbnail'),
 
         'label'                 => 'Service',
 		'description'           => 'Services the company gives',
