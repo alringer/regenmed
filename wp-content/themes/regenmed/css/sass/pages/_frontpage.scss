@@ -675,6 +675,7 @@
             max-height: 61.1rem;
             height: unset;
             margin: 0 auto;
+            margin: 0 2.5rem 0 auto;
         }
     }
 }
@@ -976,9 +977,13 @@
             width: 65.21%;
         }
     }
-    @include media(">=desktop"){
+    @include media(">=bigdesktop"){
         .rgn-literature__article__title{
             margin: 1.6rem 0;
+        }
+        .rgn-literature__article__description{
+            max-width: 26.9rem;
+            width: 100%;
         }
     }
 
@@ -1012,12 +1017,15 @@
         color: $color-mid-light-gray;
         @include media(">=bigdesktop"){
             font-size: 1.8rem;
+            max-width: 500px;
+            width: 100%;
         }
     }
     .rgn-literature__article__title{
         color: $color-white;
         @include media(">=bigdesktop"){
             font-size: 4rem;
+            margin-bottom: 1.8rem;
         }
     }
 }

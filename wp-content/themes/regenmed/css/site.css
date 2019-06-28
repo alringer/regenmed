@@ -1438,6 +1438,7 @@ h3 {
     max-height: 61.1rem;
     height: unset;
     margin: 0 auto;
+    margin: 0 2.5rem 0 auto;
   }
 }
 
@@ -1778,9 +1779,13 @@ h3 {
     width: 65.21%;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1440px) {
   .rgn-literature__article--white-image .rgn-literature__article__title {
     margin: 1.6rem 0;
+  }
+  .rgn-literature__article--white-image .rgn-literature__article__description {
+    max-width: 26.9rem;
+    width: 100%;
   }
 }
 .rgn-literature__article--white-image.rgn-literature__article--white-image--reverse {
@@ -1819,6 +1824,8 @@ h3 {
 @media (min-width: 1440px) {
   .rgn-literature__article--black .rgn-literature__article__type, .rgn-literature__article--black .rgn-literature__article__description {
     font-size: 1.8rem;
+    max-width: 500px;
+    width: 100%;
   }
 }
 .rgn-literature__article--black .rgn-literature__article__title {
@@ -1827,6 +1834,7 @@ h3 {
 @media (min-width: 1440px) {
   .rgn-literature__article--black .rgn-literature__article__title {
     font-size: 4rem;
+    margin-bottom: 1.8rem;
   }
 }
 
