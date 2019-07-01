@@ -54,8 +54,8 @@ get_header();
                                     Business
                                 </p>
                                 <div class="hero__slide--disciplines__subsection__description">
-                                    <p>Modest capital requirements, enduring equity value.</p>
-                                    <a href="#" class="rgn-read-more-link rgn-read-more-link--white">READ MORE <i class="icon icon-sm icon-right-arrow"></i></a>
+                                    <p>Detailed business plan leading to enduring equity value.</p>
+                                    <a href="services/business" class="rgn-read-more-link rgn-read-more-link--white">READ MORE <i class="icon icon-sm icon-right-arrow"></i></a>
                                 </div>
                             </div>
                             <button class="hero__slide--disciplines__subsection__item hero__slide--disciplines__subsection__trigger" id="heroCircleTrigger1" data-number="1"></button>
@@ -68,7 +68,7 @@ get_header();
                                 </p>
                                 <div class="hero__slide--disciplines__subsection__description">
                                     <p>Standardized, product agnostic, and regulatorily-compliant procedures.</p>
-                                    <a href="#" class="rgn-read-more-link rgn-read-more-link--white">READ MORE <i class="icon icon-sm icon-right-arrow"></i></a>
+                                    <a href="services/clinical" class="rgn-read-more-link rgn-read-more-link--white">READ MORE <i class="icon icon-sm icon-right-arrow"></i></a>
                                 </div>
                             </div>
                             <button class="hero__slide--disciplines__subsection__item hero__slide--disciplines__subsection__trigger" id="heroCircleTrigger3" data-number="3"></button>
@@ -80,8 +80,8 @@ get_header();
                                     Science
                                 </p>
                                 <div class="hero__slide--disciplines__subsection__description">
-                                    <p>Predictable outcomes, correlatable to Pre, Peri and Post-Tx evidence.</p>
-                                    <a href="#" class="rgn-read-more-link rgn-read-more-link--white">READ MORE <i class="icon icon-sm icon-right-arrow"></i></a>
+                                    <p>Predictable outcomes, correlatable to pre-, peri- and post-Tx evidence.</p>
+                                    <a href="services/science" class="rgn-read-more-link rgn-read-more-link--white">READ MORE <i class="icon icon-sm icon-right-arrow"></i></a>
                                 </div>
                             </div>
                             <button class="hero__slide--disciplines__subsection__item hero__slide--disciplines__subsection__trigger" id="heroCircleTrigger2" data-number="2"></button>
@@ -93,7 +93,7 @@ get_header();
                                     Communications
                                 </p>
                                 <div class="hero__slide--disciplines__subsection__description">
-                                    <p>Sustainable patient and professional marketing tactics.</p>
+                                    <p>Multi-channel, continuing patient and professional engagement.</p>
                                     <a href="services/communications" class="rgn-read-more-link rgn-read-more-link--white">READ MORE <i class="icon icon-sm icon-right-arrow"></i></a>
                                 </div>
                             </div>
@@ -112,7 +112,7 @@ get_header();
                             </div>
                             <div class="hero__slide--process__step__title">Discover</div>
                             <div class="hero__slide--process__step__description">
-                                Understanding the needs and involvement of the medical centers and medical professionals. 
+                                We analyze the particular capabilities, objectives and environment of each clinical partner.
                             </div>
                         </div>
                         <div class="hero__slide--process__step">
@@ -120,9 +120,9 @@ get_header();
                                 <p class="hero__slide--process__step__header__number">02</p>
                                 <img src="<?php echo get_template_directory_uri()  ?>/img/icons/establish.svg" class="hero__slide--process__step__header__icon">
                             </div>
-                            <div class="hero__slide--process__step__title">Establish</div>
+                            <div class="hero__slide--process__step__title">Plan</div>
                             <div class="hero__slide--process__step__description">
-                                Providing expertise and leveraging science, clinical, marketing, and business services to consult and enhance centers.
+                                We prepare a thorough business plan comprising strategic recommendations, financial forecasts, and a detailed project plan. 
                             </div>
                         </div>
                         <div class="hero__slide--process__step">
@@ -130,9 +130,9 @@ get_header();
                                 <p class="hero__slide--process__step__header__number">03</p>
                                 <img src="<?php echo get_template_directory_uri()  ?>/img/icons/legacy.svg" class="hero__slide--process__step__header__icon">
                             </div>
-                            <div class="hero__slide--process__step__title">Create a Legacy</div>
+                            <div class="hero__slide--process__step__title">Execute</div>
                             <div class="hero__slide--process__step__description">
-                                At RegenMed building a legacy of medical professionals is our promise. 
+                            Regen Med performs its financial and operational responsibilities, as does the clinical partner, aiming to achieve RMCE cash-flow breakeven within 6 months.
                             </div>
                         </div>
                     </div>
