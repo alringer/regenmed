@@ -7,10 +7,11 @@
     <div class="rgn-our-people__body">
         <?php 
         $posts = get_posts([
-            'post_type' => 'bios',
-            'post_status' => 'publish',
-            'numberposts' => 6,
-            'order'    => 'ASC'
+            'post_type'     => 'bios',
+            'post_status'   => 'publish',
+            'numberposts'   => 6,
+            'order'         => 'ASC',
+            'orderby'       => 'menu_order'
         ]);
         foreach ($posts as $post):
             setup_postdata( $post );
