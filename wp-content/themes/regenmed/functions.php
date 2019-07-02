@@ -17,6 +17,7 @@ include( get_template_directory() . '/includes/theme-customizer.php');
 include( get_template_directory() . '/includes/post-types/white-papers.php' );
 include( get_template_directory() . '/includes/post-types/services.php' );
 include( get_template_directory() . '/includes/post-types/service-categories.php' );
+include( get_template_directory() . '/includes/post-types/bios.php' );
 add_post_type_support( 'page', 'excerpt' );
 
 function theme_header_scripts()

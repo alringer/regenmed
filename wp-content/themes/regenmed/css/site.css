@@ -722,6 +722,109 @@ h3 {
   color: #858585;
 }
 
+.rgn-our-people {
+  width: 100%;
+}
+.rgn-our-people__body {
+  width: 100%;
+  max-width: 28.8rem;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+@media (min-width: 768px) {
+  .rgn-our-people__body {
+    max-width: 72.7rem;
+  }
+}
+@media (min-width: 1024px) {
+  .rgn-our-people__body {
+    max-width: 74.5rem;
+  }
+}
+@media (min-width: 1440px) {
+  .rgn-our-people__body {
+    max-width: 117rem;
+  }
+}
+.rgn-our-people__card {
+  width: 100%;
+  max-width: 28.8rem;
+  margin-bottom: 5.34rem;
+}
+@media (min-width: 768px) and (max-width: 1439px) {
+  .rgn-our-people__card {
+    max-width: 35.5rem;
+  }
+  .rgn-our-people__card:nth-child(odd) {
+    margin-right: 1.7rem;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .rgn-our-people__card:nth-child(odd) {
+    margin-right: 3.5rem;
+  }
+}
+@media (min-width: 1440px) {
+  .rgn-our-people__card {
+    max-width: 35.5rem;
+    margin-right: 3.5rem;
+  }
+  .rgn-our-people__card:nth-child(3n) {
+    margin-right: 0;
+  }
+}
+.rgn-our-people__card__image {
+  width: 100%;
+  height: 23.8rem;
+}
+@media (min-width: 768px) {
+  .rgn-our-people__card__image {
+    height: 29.3rem;
+  }
+}
+.rgn-our-people__card__info {
+  width: 100%;
+  border: solid 0.8px #e7e7e7;
+  background-color: #ffffff;
+  padding: 2.4rem 1.7rem 3rem 1.6rem;
+}
+.rgn-our-people__card__name {
+  font-family: "Noto Serif TC", serif;
+  font-size: 2rem;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #3d3d3d;
+}
+.rgn-our-people__card__position, .rgn-our-people__card__company {
+  font-family: "Noto Serif TC", serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.67;
+  letter-spacing: normal;
+  color: #666666;
+  margin: 0;
+}
+.rgn-our-people__card__description {
+  margin: 2.1rem 0 3.26rem;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.8rem;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #666666;
+}
+.rgn-our-people__card__read-more {
+  justify-content: flex-end;
+}
+
 /*--- Frontpage ---*/
 /* Hero */
 .hero {
@@ -2424,6 +2527,194 @@ h3 {
   line-height: 1.5;
   letter-spacing: normal;
   color: #d8d8d8;
+}
+.rgn-bio {
+  width: 100%;
+}
+.rgn-bio__banner {
+  width: 100%;
+  height: 32rem;
+  background-color: #01082d;
+}
+@media (min-width: 768px) {
+  .rgn-bio__banner {
+    height: 39rem;
+  }
+}
+@media (min-width: 1024px) {
+  .rgn-bio__banner {
+    height: 38.8rem;
+  }
+}
+.rgn-bio__body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 5.7rem 1.6rem 6.2rem;
+}
+@media (min-width: 768px) {
+  .rgn-bio__body {
+    padding: 7.5rem 16.8rem 7.4rem 14.8rem;
+  }
+}
+@media (min-width: 1024px) {
+  .rgn-bio__body {
+    padding: 2.6rem 4.2rem 9.5rem 5.4rem;
+    flex-direction: row;
+  }
+}
+@media (min-width: 1440px) {
+  .rgn-bio__body {
+    padding: 8.6rem 28.2rem 12.1rem 16.1rem;
+  }
+}
+.rgn-bio__left {
+  width: 100%;
+}
+.rgn-bio__image {
+  width: 28.2rem;
+  height: 24.6rem;
+  margin-top: -24.6rem;
+  margin-bottom: 3.9rem;
+}
+@media (min-width: 768px) {
+  .rgn-bio__image {
+    width: 44.7rem;
+    height: 39rem;
+    margin-top: -39rem;
+  }
+}
+@media (min-width: 1024px) {
+  .rgn-bio__image {
+    width: 39rem;
+    height: 34rem;
+    margin-top: -23.98rem;
+    margin-bottom: 1.8rem;
+  }
+}
+@media (min-width: 1440px) {
+  .rgn-bio__image {
+    width: 39rem;
+    height: 33.98rem;
+  }
+}
+.rgn-bio__name {
+  font-family: "Noto Serif TC", serif;
+  font-size: 4rem;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #2c2c2c;
+}
+.rgn-bio__job {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.8rem;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #666666;
+  margin-bottom: 6.3rem;
+}
+@media (min-width: 768px) {
+  .rgn-bio__job {
+    margin-bottom: 3.1rem;
+  }
+}
+.rgn-bio__job p {
+  display: inline;
+}
+.rgn-bio__position::after {
+  content: " - ";
+}
+.rgn-bio__field-name {
+  font-family: "Noto Serif TC", serif;
+  font-size: 3rem;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #3d3d3d;
+  margin-bottom: 1.4rem;
+}
+@media (min-width: 768px) {
+  .rgn-bio__field-name {
+    margin-bottom: 2.1rem;
+  }
+}
+.rgn-bio__field-value, .rgn-bio__field-value h6 {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.8rem;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #666666;
+}
+.rgn-bio__education {
+  margin-bottom: 6.2rem;
+}
+@media (max-width: 767px) {
+  .rgn-bio__education > * {
+    display: inline;
+  }
+  .rgn-bio__education h6::after {
+    content: " - ";
+  }
+  .rgn-bio__education p::after {
+    content: "";
+    display: block;
+  }
+}
+@media (min-width: 768px) {
+  .rgn-bio__education {
+    max-width: 31.8rem;
+    margin-bottom: 4.8rem;
+  }
+  .rgn-bio__education h6 {
+    margin: 1.2rem 0 0;
+  }
+  .rgn-bio__education h6:first-child {
+    margin-top: 0;
+  }
+  .rgn-bio__education p {
+    margin: 0;
+  }
+}
+.rgn-bio__education h6 {
+  font-weight: bold;
+}
+.rgn-bio__links {
+  margin-bottom: 4.2rem;
+}
+@media (min-width: 768px) {
+  .rgn-bio__links {
+    margin-bottom: 6.2rem;
+  }
+}
+@media (min-width: 1024px) {
+  .rgn-bio__links {
+    margin-bottom: 1.8rem;
+  }
+}
+.rgn-bio__right {
+  width: 100%;
+}
+.rgn-bio__right p {
+  margin-bottom: 2.4rem;
+}
+@media (min-width: 768px) {
+  .rgn-bio__right p {
+    margin-bottom: 3.1rem;
+  }
+}
+.rgn-bio__right p:last-child {
+  margin-bottom: 0;
 }
 
 /*# sourceMappingURL=site.css.map */

@@ -37,7 +37,7 @@ function regenmed_service_category_post_type() {
 		'description'           => 'Categories included in the services the company gives',
 		'labels'                => $labels,
 		'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail'),
-		'taxonomies'            => array( 'product_category' ),
+		'taxonomies'            => array( 'parent_category', 'post_tag'),
 		'hierarchical'          => false,
 		'public'                => true,
 		'show_ui'               => true,
@@ -53,8 +53,9 @@ function regenmed_service_category_post_type() {
 		'capability_type'       => 'post',
 	);
 	
-	register_post_type( 'service-categories', $args );
-	
+    register_post_type( 'service-categories', $args );
+    register_taxonomy_for_object_type( 'parent_category', 'bios' );
+    register_taxonomy_for_object_type( 'post_tag', 'bios' );
 }
 
 /* SERVICE META BOXES */
