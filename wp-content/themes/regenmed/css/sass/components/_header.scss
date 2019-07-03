@@ -24,13 +24,13 @@
     display: none;
 }
 
-.header--scrolled, .header--white {
+.header--scrolled, .header--white, .header--light {
     .logo-img--main{    
         display: none;
     }
 }
 
-.header--scrolled, .header--white {
+.header--scrolled, .header--white, .header--light {
     .logo-img--alt{    
         display: inline-block;
     }
@@ -123,7 +123,7 @@
     color:#FFF;
 }
 
-.header--scrolled, .header--white{
+.header--scrolled, .header--white, .header--light{
     .menu-button{
         color: $color-gray;
     }

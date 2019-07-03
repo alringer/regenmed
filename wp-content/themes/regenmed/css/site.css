@@ -438,11 +438,11 @@ h3 {
   display: none;
 }
 
-.header--scrolled .logo-img--main, .header--white .logo-img--main {
+.header--scrolled .logo-img--main, .header--white .logo-img--main, .header--light .logo-img--main {
   display: none;
 }
 
-.header--scrolled .logo-img--alt, .header--white .logo-img--alt {
+.header--scrolled .logo-img--alt, .header--white .logo-img--alt, .header--light .logo-img--alt {
   display: inline-block;
 }
 
@@ -526,7 +526,7 @@ h3 {
   color: #FFF;
 }
 
-.header--scrolled .menu-button, .header--white .menu-button {
+.header--scrolled .menu-button, .header--white .menu-button, .header--light .menu-button {
   color: #3d3d3d;
 }
 
@@ -2356,6 +2356,170 @@ h3 {
 }
 .rgn-blog__content p:first-child::first-letter {
   font-size: 3.8rem;
+}
+
+.rgn-white-paper {
+  margin-bottom: 11.2rem;
+}
+.rgn-white-paper__banner {
+  height: 49.9rem;
+  background-color: #FFF;
+}
+@media (min-width: 1024px) {
+  .rgn-white-paper__banner {
+    height: 58.5rem;
+  }
+}
+@media (min-width: 1440px) {
+  .rgn-white-paper__banner {
+    background-color: #fbfbfb;
+  }
+}
+.rgn-white-paper__container {
+  margin-top: -49.9rem;
+}
+@media (min-width: 1024px) {
+  .rgn-white-paper__container {
+    margin-top: -58.5rem;
+  }
+}
+.rgn-white-paper__header {
+  width: 100%;
+  height: 49.9rem;
+  padding: 16.4rem 1.5rem 5.3rem;
+}
+@media (min-width: 768px) {
+  .rgn-white-paper__header {
+    padding: 16.2rem 9.4rem 6rem;
+  }
+}
+@media (min-width: 1024px) {
+  .rgn-white-paper__header {
+    padding: 16.2rem 14.6rem 4.8rem;
+    height: 39rem;
+  }
+}
+.rgn-white-paper__title {
+  font-family: "Noto Serif TC", serif;
+  font-size: 3rem;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #2c2c2c;
+  margin-bottom: 3.4rem;
+}
+@media (min-width: 768px) {
+  .rgn-white-paper__title {
+    font-size: 4rem;
+  }
+}
+@media (min-width: 1024px) {
+  .rgn-white-paper__title {
+    width: 100%;
+    max-width: 58.1rem;
+    margin: 0 auto 3.4rem;
+  }
+}
+.rgn-white-paper__subtitle {
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 767px) {
+  .rgn-white-paper__subtitle {
+    flex-direction: column;
+  }
+}
+.rgn-white-paper__author {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.8rem;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  text-align: center;
+  color: #666666;
+}
+@media (min-width: 768px) {
+  .rgn-white-paper__author {
+    display: inline;
+  }
+  .rgn-white-paper__author:first-child::after {
+    content: " - ";
+  }
+}
+.rgn-white-paper__body {
+  width: 100%;
+}
+@media (min-width: 1024px) {
+  .rgn-white-paper__body {
+    max-width: 874px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1440px) {
+  .rgn-white-paper__body {
+    max-width: 99.6rem;
+  }
+}
+.rgn-white-paper__abstract {
+  width: 100%;
+  background-color: black;
+  padding: 5.8rem 1.9rem 4rem 2.3rem;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.8rem;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #d8d8d8;
+}
+@media (min-width: 768px) {
+  .rgn-white-paper__abstract {
+    padding: 6rem 2.3rem 6.3rem;
+  }
+}
+@media (min-width: 1024px) {
+  .rgn-white-paper__abstract {
+    padding: 6.3rem 9.2rem;
+  }
+  .rgn-white-paper__abstract p {
+    margin-bottom: 3.1rem;
+  }
+  .rgn-white-paper__abstract p:last-child {
+    margin: 0;
+  }
+}
+@media (min-width: 1440px) {
+  .rgn-white-paper__abstract {
+    padding: 6.3rem 15.3rem;
+  }
+}
+.rgn-white-paper__abstract__title {
+  font-family: "Noto Serif TC", serif;
+  font-size: 2rem;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #FFF;
+  text-align: center;
+  margin-bottom: 1.9rem;
+}
+.rgn-white-paper__abstract__title::after {
+  content: "";
+  width: 8.92rem;
+  border: solid 2px #007aff;
+  display: block;
+  margin: 0.8rem auto 0;
+}
+.rgn-white-paper__download {
+  margin: 4.8rem auto 0;
 }
 
 .rgn-services__header {
