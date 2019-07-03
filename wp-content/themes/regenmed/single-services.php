@@ -42,9 +42,9 @@
                         wp_reset_postdata();?>
                     </div>
                 </div>
-                <div class="rgn-our-people">
-                    <div class="rgn-our-people__card"></div>
-                </div>
+                <?php                    
+                    include("includes/sections/our-people.php");
+                ?>
             </div>
         <?php endwhile; ?>
         <?php else: ?>

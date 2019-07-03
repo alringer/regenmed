@@ -22,13 +22,20 @@ function get_post_type_text($type){
             $post0 = get_post($primaryNav[0]->object_id)
         ?>
             <article class="rgn-literature__article rgn-literature__article--main rgn-appear-animation">
-            <div class="rgn-literature__article__image" style="background-image:url('<?php echo get_the_post_thumbnail_url($post0->ID)?>')"></div>
+                <div class="rgn-literature__article__image" style="background-image:url('<?php echo get_the_post_thumbnail_url($post0->ID)?>')"></div>
                 <div class="rgn-literature__article__info">
                     <div class="rgn-literature__article__type">
                         <?php echo get_post_type_text($post0->post_type); ?>
                     </div>
-                    <div class="rgn-literature__article__title"><?php echo $post0->post_title ?></div>
-                    <div class="rgn-literature__article__description"><?php echo $post0->post_excerpt ?></div>
+                    <div class="rgn-literature__article__title"><a href="<?php echo get_post_permalink($post0->ID); ?>"><?php echo $post0->post_title ?></a></div>
+                    <div class="rgn-literature__article__description">
+                    <?php 
+                    if (strlen($post0->post_excerpt) >= 140)
+                        echo substr($post0->post_excerpt , 0, 140). "...";
+                    else
+                        echo $post0->post_excerpt;
+                    ?>
+                </div>
                 </div>
             </article>
         <?php } ?>
@@ -39,8 +46,15 @@ function get_post_type_text($type){
             <div class="rgn-literature__article__image" style="background-image:url('<?php echo get_the_post_thumbnail_url($post1->ID)?>')"></div>
             <div class="rgn-literature__article__info">
                 <div class="rgn-literature__article__type"><?php echo get_post_type_text($post1->post_type); ?></div>
-                <div class="rgn-literature__article__title"><?php echo $post1->post_title ?></div>
-                <div class="rgn-literature__article__description"><?php echo $post1->post_excerpt ?></div>
+                <div class="rgn-literature__article__title"><a href="<?php echo get_post_permalink($post1->ID); ?>"><?php echo $post1->post_title ?></a></div>
+                <div class="rgn-literature__article__description">
+                    <?php 
+                    if (strlen($post1->post_excerpt) >= 140)
+                        echo substr($post1->post_excerpt , 0, 140). "...";
+                    else
+                        echo $post1->post_excerpt;
+                    ?>
+                </div>
             </div>
         </article>
         <?php } ?>
@@ -54,8 +68,15 @@ function get_post_type_text($type){
                 <div class="rgn-literature__article__image rgn-tablet-start" style="background-image:url('<?php echo get_the_post_thumbnail_url($post2->ID)?>')"></div>
                 <div class="rgn-literature__article__info">
                     <div class="rgn-literature__article__type"><?php echo get_post_type_text($post2->post_type); ?></div>
-                    <div class="rgn-literature__article__title"><?php echo $post2->post_title ?></div>
-                    <div class="rgn-literature__article__description"><?php echo $post2->post_excerpt ?></div>
+                    <div class="rgn-literature__article__title"><a href="<?php echo get_post_permalink($post2->ID);?>"><?php echo $post2->post_title ?></a></div>
+                    <div class="rgn-literature__article__description">
+                    <?php 
+                    if (strlen($post2->post_excerpt) >= 140)
+                        echo substr($post2->post_excerpt , 0, 140). "...";
+                    else
+                        echo $post2->post_excerpt;
+                    ?>
+                </div>
                 </div>
             </article>
         <?php } ?>
@@ -65,8 +86,15 @@ function get_post_type_text($type){
             <article class="rgn-literature__article rgn-literature__article--black rgn-appear-animation">
                 <div class="rgn-literature__article__info">
                     <div class="rgn-literature__article__type"><?php echo get_post_type_text($post3->post_type); ?></div>
-                    <div class="rgn-literature__article__title"><?php echo $post3->post_title ?></div>
-                    <div class="rgn-literature__article__description"><?php echo $post3->post_excerpt ?></div>
+                    <div class="rgn-literature__article__title"><a href="<?php echo get_post_permalink($post3->ID); ?>"><?php echo $post3->post_title ?></a></div>
+                    <div class="rgn-literature__article__description">
+                    <?php 
+                        if (strlen($post3->post_excerpt) >= 140)
+                            echo substr($post3->post_excerpt , 0, 140). "...";
+                        else
+                            echo $post3->post_excerpt;
+                        ?>
+                    </div>
                 </div>
             </article>
         <?php } ?>
@@ -77,8 +105,15 @@ function get_post_type_text($type){
             <div class="rgn-literature__article__image rgn-tablet-start" style="background-image:url('<?php echo get_the_post_thumbnail_url($post4->ID)?>')"></div>
             <div class="rgn-literature__article__info">
                 <div class="rgn-literature__article__type"><?php echo get_post_type_text($post4->post_type);?></div>
-                <div class="rgn-literature__article__title"><?php echo $post4->post_title ?></div>
-                <div class="rgn-literature__article__description"><?php echo $post4->post_excerpt ?></div>
+                <div class="rgn-literature__article__title"><a href="<?php echo get_post_permalink($post4->ID); ?>"><?php echo $post4->post_title ?></a></div>
+                <div class="rgn-literature__article__description">
+                    <?php 
+                    if (strlen($post4->post_excerpt) >= 140)
+                        echo substr($post4->post_excerpt , 0, 140). "...";
+                    else
+                        echo $post4->post_excerpt;
+                    ?>
+                </div>
             </div>
         </article>
         <?php } ?>

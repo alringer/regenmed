@@ -1,0 +1,180 @@
+.rgn-bio{
+    width:100%;
+
+    &__banner{
+        width: 100%;
+        height: 32rem;
+        background-color: $color-bio;
+        @include media(">=tablet"){
+            height: 39rem;
+        }
+        @include media(">=desktop"){
+            height: 38.8rem;
+        }
+    }
+    &__body{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 5.7rem 1.6rem 6.2rem;
+        @include media(">=tablet"){
+            padding: 7.5rem 16.8rem 7.4rem 14.8rem;
+        }
+        @include media(">=desktop"){
+            padding: 2.6rem 4.2rem 9.5rem 5.4rem;
+            flex-direction: row;
+        }
+        @include media(">=bigdesktop"){
+            padding: 8.6rem 28.2rem 12.1rem 16.1rem;
+        }
+    }
+    &__left{
+        width: 100%;
+    }
+    &__image{
+        width: 28.2rem;
+        height: 24.6rem;
+        margin-top: -24.6rem;
+        margin-bottom: 3.9rem;
+        @include media(">=tablet"){
+            width: 44.7rem;
+            height: 39rem;
+            margin-top: -39rem;
+        }
+        @include media(">=desktop"){
+            width: 39rem;
+            height: 34rem;
+            margin-top: -23.98rem;
+            margin-bottom: 1.8rem;
+        }
+        @include media(">=bigdesktop"){
+            width: 39rem;
+            height: 33.98rem;            
+        }
+    }
+    &__name{
+        font-family: $noto-tc;
+        font-size: 4rem;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: $color-dark-gray;
+        @include media(">=tablet"){
+            
+        }
+        @include media(">=desktop"){
+            
+        }
+        @include media(">=bigdesktop"){
+            
+        }
+    }
+    &__job{
+        font-family: $nunito-sans;
+        font-size: 1.8rem;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        color: $color-mid-gray;
+        margin-bottom: 6.3rem;
+        @include media(">=tablet"){
+            margin-bottom: 3.1rem;
+        }
+        @include media(">=desktop"){
+            
+        }
+        @include media(">=bigdesktop"){
+            
+        }
+        p{
+            display: inline;
+        }
+    }
+    &__position{
+        &::after{
+            content: ' - ';
+        }
+    }
+    &__company{}
+
+    &__field-name{
+        font-family: $noto-tc;
+        font-size: 3rem;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: $color-gray;
+        margin-bottom: 1.4rem;
+        @include media(">=tablet"){
+            margin-bottom: 2.1rem;
+        }
+    }
+    &__field-value, &__field-value h6{
+        font-family: $nunito-sans;
+        font-size: 1.8rem;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        color: $color-mid-gray;
+    }
+    &__education{
+        margin-bottom: 6.2rem;
+        @include media("<tablet"){
+            &>*{
+                display: inline;
+            }
+            h6::after{
+                content: ' - ';
+            }
+            p::after{
+                content: '';
+                display: block;
+            }
+        }
+        @include media(">=tablet"){
+            max-width: 31.8rem;
+            margin-bottom: 4.8rem;
+            h6{
+                margin: 1.2rem 0 0;
+                &:first-child{
+                    margin-top: 0;
+                }
+            }
+            p{
+                margin: 0;
+            }
+        }
+        h6{
+            font-weight: bold;
+        }
+    }
+    &__links{
+        margin-bottom: 4.2rem;
+        @include media(">=tablet"){
+            margin-bottom: 6.2rem;
+        }
+        @include media(">=desktop"){
+            margin-bottom: 1.8rem;
+        }
+    }
+    &__right{
+        width: 100%;
+        p{
+            margin-bottom: 2.4rem;
+            @include media(">=tablet"){
+                margin-bottom: 3.1rem;
+            }
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+    }
+}
