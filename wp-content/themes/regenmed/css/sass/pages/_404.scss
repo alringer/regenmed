@@ -1,0 +1,86 @@
+.rgn-404{
+    width: 100%;
+    margin-bottom: 7.2rem;
+    @include media(">=tablet"){
+        margin-bottom: 12rem;
+        display: flex;
+    }
+    &__main{
+        height: 74.3rem;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        // align-items: center;
+        padding: 2.8rem;
+        @include media(">=tablet"){
+            width: 60.5%;
+            padding: 4.5rem;
+            height: 91.9rem;
+        }
+        @include media(">=desktop"){
+            width: 58.6%;
+        }
+        @include media(">=bigdesktop"){
+            padding: 16.3rem;
+            width: 50%;
+        }
+    }
+    &__title{
+        font-family: $noto-tc;
+        font-size: 4rem;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        // text-align: center;
+        color: $color-white;
+        margin-bottom: 3.1rem;
+        @include media(">=tablet"){
+            max-width: 33.7rem;
+            margin-bottom: 1.7rem;
+        }
+
+    }
+    &__description{
+        // background-color: #d8d8d8;
+        font-family: $nunito-sans;
+        font-size: 1.8rem;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        color: $color-mid-light-gray-2;
+        margin-bottom: 3.9rem;
+        @include media(">=tablet"){
+            margin-bottom: 7.1rem;
+        }
+        @include media(">=bigdesktop"){
+            margin-bottom: 4.7rem;
+        }
+    }
+    &__button{
+        width: 100%;
+        @include media(">=tablet"){
+            max-width: 26.2rem;
+        }
+    }
+    &__bg{
+        background-image: url('../img/404-bg.svg');
+        @include media("<tablet"){
+            display: none;
+        }
+        @include media(">=tablet"){
+            width: 39.6%;
+            background-position-x: 0;
+        }
+        @include media(">=desktop"){
+            width: 41.5%;
+        }
+        @include media(">=bigdesktop"){
+            width: 50%;
+        }
+    }
+}

@@ -2082,6 +2082,113 @@ h3 {
 }
 
 /*--- EndFrontpage --*/
+.rgn-404 {
+  width: 100%;
+  margin-bottom: 7.2rem;
+}
+@media (min-width: 768px) {
+  .rgn-404 {
+    margin-bottom: 12rem;
+    display: flex;
+  }
+}
+.rgn-404__main {
+  height: 74.3rem;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2.8rem;
+}
+@media (min-width: 768px) {
+  .rgn-404__main {
+    width: 60.5%;
+    padding: 4.5rem;
+    height: 91.9rem;
+  }
+}
+@media (min-width: 1024px) {
+  .rgn-404__main {
+    width: 58.6%;
+  }
+}
+@media (min-width: 1440px) {
+  .rgn-404__main {
+    padding: 16.3rem;
+    width: 50%;
+  }
+}
+.rgn-404__title {
+  font-family: "Noto Serif TC", serif;
+  font-size: 4rem;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #FFF;
+  margin-bottom: 3.1rem;
+}
+@media (min-width: 768px) {
+  .rgn-404__title {
+    max-width: 33.7rem;
+    margin-bottom: 1.7rem;
+  }
+}
+.rgn-404__description {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.8rem;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #d8d8d8;
+  margin-bottom: 3.9rem;
+}
+@media (min-width: 768px) {
+  .rgn-404__description {
+    margin-bottom: 7.1rem;
+  }
+}
+@media (min-width: 1440px) {
+  .rgn-404__description {
+    margin-bottom: 4.7rem;
+  }
+}
+.rgn-404__button {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .rgn-404__button {
+    max-width: 26.2rem;
+  }
+}
+.rgn-404__bg {
+  background-image: url("../img/404-bg.svg");
+}
+@media (max-width: 767px) {
+  .rgn-404__bg {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .rgn-404__bg {
+    width: 39.6%;
+    background-position-x: 0;
+  }
+}
+@media (min-width: 1024px) {
+  .rgn-404__bg {
+    width: 41.5%;
+  }
+}
+@media (min-width: 1440px) {
+  .rgn-404__bg {
+    width: 50%;
+  }
+}
+
 .rgn-about {
   width: 100%;
   min-height: 80vh;
