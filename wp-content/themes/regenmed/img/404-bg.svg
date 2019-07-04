@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="721" height="919" viewBox="0 0 721 919">
+    <defs>
+        <path id="a" d="M0 0h721v919H0z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <mask id="b" fill="#fff">
+            <use xlink:href="#a"/>
+        </mask>
+        <use fill="#0A113F" xlink:href="#a"/>
+        <g mask="url(#b)" opacity=".378">
+            <g opacity=".556" transform="translate(-205 370)">
+                <circle cx="210.5" cy="149.5" r="149.5" fill="#B8D5F6"/>
+                <circle cx="299.5" cy="233.5" r="149.5" fill="#79B8FD"/>
+                <circle cx="149.5" cy="249.5" r="149.5" fill="#3997FE"/>
+            </g>
+        </g>
+        <g mask="url(#b)" opacity=".378">
+            <g opacity=".556" transform="rotate(-23 189.045 -380.998)">
+                <circle cx="210.5" cy="149.5" r="149.5" fill="#B8D5F6"/>
+                <circle cx="299.5" cy="233.5" r="149.5" fill="#79B8FD"/>
+                <circle cx="149.5" cy="249.5" r="149.5" fill="#3997FE"/>
+            </g>
+        </g>
+        <g mask="url(#b)" opacity=".378">
+            <g opacity=".556" transform="translate(417 581)">
+                <circle cx="210.5" cy="149.5" r="149.5" fill="#B8D5F6"/>
+                <circle cx="299.5" cy="233.5" r="149.5" fill="#79B8FD"/>
+                <circle cx="149.5" cy="249.5" r="149.5" fill="#3997FE"/>
+            </g>
+        </g>
+    </g>
+</svg>
