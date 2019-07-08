@@ -28,4 +28,14 @@ if(wp.media){
         img.removeAttribute('style');
         hidden.removeAttribute('value');
     })
+
+    window.addEventListener('DOMContentLoaded', function(){
+        if(customUploads && customUploads.imageData){
+            if(customUploads.imageData.src){
+                img.setAttribute( 'src', customUploads.imageData.src);
+                img.setAttribute('style','width:100%');
+            }
+            hidden.setAttribute( 'value', JSON.stringify( [customUploads.imageData] ));
+        }
+    })
 }
