@@ -1,0 +1,208 @@
+
+
+rgn-our-work__body__image--active
+.rng-our-work{
+    background:$color-white;
+}
+
+.rgn-our-work__body{
+    @include media(">=desktop") {
+        display: flex;
+    }
+}
+
+.rgn-our-work__body__image-container{
+    width: 100%;
+    min-height: 40.1rem;
+    @include media(">=tablet", "<desktop")  {
+        // margin: 3.9rem auto;
+        min-height: 0;
+    }
+    @include media(">=desktop") {
+        width: 53%;
+        margin: 3.9rem auto;
+    }
+    @include media(">=bigdesktop"){
+        margin: 8.3rem auto 0;
+    }
+
+    .rgn-our-work__body__image{
+        display: none;
+        max-width: 26.3rem;
+        width: 100%;
+        margin: 13rem auto 3.7rem;
+        &.rgn-our-work__body__image--active{
+            display:block;
+        }
+        @include media(">=tablet", "<desktop") {
+            margin: auto;
+            width: 33.2rem;
+            height: 37rem;
+        }
+        @include media(">=desktop"){
+            max-width: 46.7rem;
+            height: 52rem;
+        }
+        @include media(">=bigdesktop"){
+            max-width: 55.6rem;
+            max-height: 61.1rem;
+            height: unset;
+            margin: 0 auto;
+            margin: 0 2.5rem 0 auto;
+        }
+    }
+}
+
+.rgn-our-work__body__info{
+    min-height: 65rem;
+    background-color: $color-light-gray;
+    // padding: 6rem 2.7rem 6.7rem 3rem;
+    position: relative;
+    overflow: hidden;
+    @include media(">=tablet","<desktop"){
+        background-color: $color-white;
+        text-align: center;
+    }
+    @include media(">=desktop") {
+        width: 47%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    @include media(">=bigdesktop"){
+        padding: 4.8rem 0 11.68rem
+    }
+}
+
+.rgn-our-work__body__info__slides{
+    display: flex;
+    width: 300vw;
+    transition: 1s;
+
+    @include media(">=desktop") {
+        width: 300%;
+    }
+    &--1{
+        margin-left:0;
+    }
+    &--2{
+        margin-left:-100%;
+    }
+    &--3{
+        margin-left: -200%;
+    }
+}
+
+.rgn-our-work__body__info__slide{
+    height: 100%;
+    width: 100vw;
+    top:0;
+    left:0;
+    padding: 6rem 2.7rem 6.7rem 3rem;
+    @include media(">=desktop") {
+        width: 100%;
+        padding-left: 3.96%;
+    }
+    @include media(">=bigdesktop"){
+        padding-left: 3.23%;
+    }
+}
+
+.rgn-our-work__body__info__title{
+    margin-bottom: 3.3rem;
+    font-family: $noto-tc;
+    font-size: 2.4rem;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: $color-gray;
+    @include media(">=bigdesktop"){
+        font-size: 3rem;
+        margin-bottom: 4.46rem;
+    }
+}
+
+.rgn-our-work__body__info__subtitle{
+    font-family: $nunito-sans;
+    font-size: 2rem;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: $color-gray;
+    margin-bottom: 5.7rem;
+    @include media(">=bigdesktop"){
+        margin-bottom: 1.88rem;
+    }
+}
+
+.rgn-our-work__body__info__description{
+    font-family: $nunito-sans;
+    font-size: 1.8rem;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: $color-mid-gray;
+    margin-bottom: 5.8rem;
+    @include media(">=tablet","<desktop"){
+        max-width: 52.8rem;
+        margin: 0 auto 3.3rem; 
+    }
+    @include media(">=desktop") {
+        // max-width: 61.9%;
+        width: 29.72rem;
+        width: 100%;
+    }
+    @include media(">=bigdesktop"){
+        max-width: 41.8rem;
+    }
+}
+
+.rgn-our-work__body__info__action {
+    margin:0 auto;
+    @include media(">=tablet","<desktop"){
+        max-width: 26.21rem;
+    }
+    @include media(">=desktop"){
+        max-width: 18.6rem;
+        margin: 0 auto 0 0;
+    }
+    @include media(">=bigdesktop"){
+        max-width: 262.1px;
+        margin: 0 auto 0 0;
+    }
+}
+
+.rgn-our-work__body__info__pagination{
+    max-width: 6rem;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    @include media(">=desktop"){
+        margin-left: 11.9%;
+    }
+    @include media(">=bigdesktop"){
+        margin-left: 9.7%;
+    }
+}
+
+.rgn-our-work__body__info__pagination__page{
+    width: 1.12rem;
+    height: 1.12rem;
+    border-radius: 50%;
+    background: none;
+    border: 0.1rem solid $color-dark-gray;
+    padding:0;
+    &:focus{
+        outline: none;
+    }
+    &--active{
+        background-color: $color-dark-gray;
+    }
+}

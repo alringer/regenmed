@@ -1,80 +1,70 @@
+<?php 
+        $posts = get_posts([
+            'post_type'     => 'case-studies',
+            'post_status'   => 'publish',
+            'numberposts'   => 3,
+            'order'         => 'ASC',
+            'orderby'       => 'menu_order'
+        ]);
+?>
+
 <section class="rgn-our-work">
     <h1 class="rgn-section-title">
         <?php 
             echo get_theme_mod('our_work_title','Our Work');
         ?>
     </h1>
+    
     <div class="rgn-our-work__body">
-        <div class="rgn-our-work__body__image rgn-appear-animation">
-            <img src="<?php echo get_theme_mod('our_work_slide1_image',get_template_directory_uri().'/img/frontpage/our-work/screencapture-regain-galeazzi-2019-04-18-10-34-24.png');?>">
+        <div class="rgn-our-work__body__image-container rgn-appear-animation">
+            <?php foreach ($posts as $key=>$post):
+                setup_postdata( $post );
+                $id = get_the_ID();
+                $img = get_post_meta( $id, '_case_study_alt_image_value_key', true );
+            ?>
+            
+            <img src="<?php echo $img['src'] ?>" class="rgn-our-work__body__image <?php if($key==0){?>rgn-our-work__body__image--active<?php } ?>">
+            <?php endforeach; ?> 
         </div>
-        <div class="rgn-out-work__body__info rgn-appear-animation">
-            <div id="ourWorkSlides" class="rgn-out-work__body__info__slides">
-                <div class="rgn-out-work__body__info__slide rgn-out-work__body__info__slide--active">
-                    <h2 class="rgn-out-work__body__info__title">
+        <div class="rgn-our-work__body__info rgn-appear-animation">
+            <div id="ourWorkSlides" class="rgn-our-work__body__info__slides">
+                <?php foreach ($posts as $key=>$post):
+                    setup_postdata( $post );
+                    $id = get_the_ID();
+                    $headline = get_post_meta( $id, '_case_study_headline_value_key', true );
+                ?>
+                <div class="rgn-our-work__body__info__slide rgn-our-work__body__info__slide--active">
+                    <h2 class="rgn-our-work__body__info__title">
                         <?php 
-                            echo get_theme_mod('our_work_slide1_title','RE.GA.IN');
+                            the_title();
                         ?>
                     </h2>
-                    <h3 class="rgn-out-work__body__info__subtitle">
+                    <h3 class="rgn-our-work__body__info__subtitle">
                         <?php 
                             echo get_theme_mod('our_work_slide1_subtitle','Overview');
                         ?>
                     </h3>
-                    <p class="rgn-out-work__body__info__description">
+                    <p class="rgn-our-work__body__info__description">
                         <?php 
-                            echo get_theme_mod('our_work_slide1_description','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
+                            echo $headline;
                         ?>
                     </p>
-                    <a href="#" class="rgn-out-work__body__info__action rgn-button--blue">
+                    <a href="<?php the_permalink() ?>" class="rgn-our-work__body__info__action rgn-button--blue">
                         READ CASE STUDY
                     </a>
                 </div>
-                <div class="rgn-out-work__body__info__slide rgn-out-work__body__info__slide--active">
-                    <h2 class="rgn-out-work__body__info__title">
-                        <?php 
-                            echo get_theme_mod('our_work_slide2_title','RE.GA.IN');
-                        ?>
-                    </h2>
-                    <h3 class="rgn-out-work__body__info__subtitle">
-                        <?php 
-                            echo get_theme_mod('our_work_slide2_subtitle','Overview');
-                        ?>
-                    </h3>
-                    <p class="rgn-out-work__body__info__description">
-                        <?php 
-                            echo get_theme_mod('our_work_slide2_description','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
-                        ?>
-                    </p>
-                    <a href="#" class="rgn-out-work__body__info__action rgn-button--blue">
-                        READ CASE STUDY
-                    </a>
-                </div>
-                <div class="rgn-out-work__body__info__slide rgn-out-work__body__info__slide--active">
-                    <h2 class="rgn-out-work__body__info__title">
-                        <?php 
-                            echo get_theme_mod('our_work_slide3_title','RE.GA.IN');
-                        ?>
-                    </h2>
-                    <h3 class="rgn-out-work__body__info__subtitle">
-                        <?php 
-                            echo get_theme_mod('our_work_slide3_subtitle','Overview');
-                        ?>
-                    </h3>
-                    <p class="rgn-out-work__body__info__description">
-                        <?php 
-                            echo get_theme_mod('our_work_slide3_description','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
-                        ?>
-                    </p>
-                    <a href="#" class="rgn-out-work__body__info__action rgn-button--blue">
-                        READ CASE STUDY
-                    </a>
-                </div>
+                <?php endforeach; ?> 
             </div>
-            <div class="rgn-put-work__body__info__pagination">
-                <button class="rgn-put-work__body__info__pagination__page rgn-put-work__body__info__pagination__page--active" data-page="1"></button>
-                <button class="rgn-put-work__body__info__pagination__page" data-page="2"></button>
-                <button class="rgn-put-work__body__info__pagination__page" data-page="3"></button>
+            <div class="rgn-our-work__body__info__pagination">
+                <?php foreach ($posts as $key=>$post):
+                    setup_postdata( $post );
+                    $id = get_the_ID();
+                    $headline = get_post_meta( $id, '_case_study_headline_value_key', true );
+                ?>
+                <button class="rgn-our-work__body__info__pagination__page <?php if($key==0){echo 'rgn-our-work__body__info__pagination__page--active';} ?>" data-page="<?php echo $key + 1;  ?>"></button>
+                <!-- <button class="rgn-our-work__body__info__pagination__page" data-page="2"></button>
+                <button class="rgn-our-work__body__info__pagination__page" data-page="3"></button> -->
+                <?php endforeach; ?> 
             </div>
         </div>
     </div>

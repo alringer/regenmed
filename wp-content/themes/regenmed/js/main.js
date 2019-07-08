@@ -49,14 +49,14 @@ function initAppearAnimation(){
 function initCarouselPagination(){
     console.log("carousel");
     var currentPage = 1;
-    $('.rgn-put-work__body__info__pagination__page').click(function(){
+    $('.rgn-our-work__body__info__pagination__page').click(function(){
         var button = $(this);
         var page = button.data('page');
         if(currentPage != page){
             currentPage = page;
-            document.getElementById("ourWorkSlides").className = "rgn-out-work__body__info__slides rgn-out-work__body__info__slides--"+page;
-            $('.rgn-put-work__body__info__pagination__page--active').removeClass('rgn-put-work__body__info__pagination__page--active');
-            button.addClass('rgn-put-work__body__info__pagination__page--active');
+            document.getElementById("ourWorkSlides").className = "rgn-our-work__body__info__slides rgn-our-work__body__info__slides--"+page;
+            $('.rgn-our-work__body__info__pagination__page--active').removeClass('rgn-our-work__body__info__pagination__page--active');
+            button.addClass('rgn-our-work__body__info__pagination__page--active');
         }
     })
 }

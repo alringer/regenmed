@@ -1,4 +1,11 @@
 <?php
+function regenmed_case_study_register_admin_script(){
+    wp_register_script('imgUploads', get_template_directory_uri() . '/js/admin-image-upload.js', '', '1.0', true);
+    wp_enqueue_script('imgUploads');
+    $postId = get_the_ID();
+    wp_localize_script('imgUploads', 'customUploads', array( 'imageData'=> get_post_meta( $postId, '_case_study_alt_image_value_key', true )));
+}
+
 function create_case_study_posttype() {
     $labels = array(
         'name'                => _x( 'Case Studies', 'Post Type General Name', 'regenmed' ),
@@ -166,3 +173,4 @@ add_action( 'init', 'create_case_study_posttype' );
 add_action( 'add_meta_boxes', 'regenmed_case_study_add_meta_box' );
 add_action( 'save_post', 'regenmed_save_case_study_fields_data' );
 add_action( 'save_post', 'regenmed_save_case_study_alt_image_data' );
+add_action( 'admin_enqueue_scripts', 'regenmed_case_study_register_admin_script');

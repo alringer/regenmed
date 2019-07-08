@@ -33,7 +33,7 @@
         }
     }
     &__header{
-        color:white;
+        color:$color-white;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -152,6 +152,7 @@
         }
         @include media(">=bigdesktop"){
             padding: 0;
+            max-width: 114.5rem;
         }
         .wp-block-columns.has-2-columns{
             margin-bottom:11.8rem;
@@ -171,10 +172,15 @@
             }
             @include media(">=bigdesktop"){
                 margin-bottom: 17.2rem;
+                justify-content: space-between;
+                align-items: center;
             }
             .wp-block-column{
                 @include media(">=tablet"){
                     margin: 0;
+                }
+                @include media(">=bigdesktop"){
+                    max-width: 52rem;
                 }
             }
             
@@ -195,7 +201,8 @@
                 max-height: 37.7rem;
             }
             @include media(">=bigdesktop"){
-                max-width: 44.8rem;
+                max-width: unset;
+                max-height: unset;
             }
         }
         h3{
@@ -216,11 +223,11 @@
             letter-spacing: normal;
             color: $color-gray;
         }
-        &>p{
-            @include media(">=tablet"){
-                max-width: 63.5rem;
-            }
-        }
+        // &>p{
+        //     @include media(">=tablet"){
+        //         max-width: 63.5rem;
+        //     }
+        // }
     }
     &__background{
         max-width: 82.1rem;
@@ -249,14 +256,23 @@
         &-inner{
             max-width: 110.4rem;
             margin: 0 auto;
+            @include media(">=bigdesktop"){
+                max-width: 114.5rem;
+            }
         }
         h3{
             text-align: left;
-            max-width: 110.4rem;
+            @include media(">=bigdesktop"){
+                max-width: 114.5rem;
+            }
         }
         &-text{
             @include media(">=desktop"){
                 max-width: 85.5rem;
+            }
+            @include media(">=bigdesktop"){
+                width: 100%;
+                max-width: 114.5rem;
             }
         }
     }
