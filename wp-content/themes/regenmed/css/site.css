@@ -2225,10 +2225,16 @@ rgn-our-work__body__image--active .rng-our-work {
   line-height: 1.5;
   letter-spacing: normal;
 }
+@media (min-width: 1440px) {
+  .rgn-about__body {
+    max-width: 76.7rem;
+  }
+}
 
 .rgn-contact {
   padding: 8.8rem 2.8rem 5.9rem;
   width: 100%;
+  position: relative;
 }
 @media (min-width: 768px) {
   .rgn-contact {
@@ -2243,8 +2249,41 @@ rgn-our-work__body__image--active .rng-our-work {
 }
 @media (min-width: 768px) {
   .rgn-contact__form-container {
+    position: relative;
     padding: 3.3rem 9rem 6.2rem 3rem;
     background-color: #fbfbfb;
+  }
+}
+@media (min-width: 1024px) {
+  .rgn-contact__form-container {
+    padding: 2.8rem 1.2rem;
+  }
+}
+@media (min-width: 1440px) {
+  .rgn-contact__form-container {
+    padding: 18.2rem 9.8rem 20.3rem 11rem;
+  }
+}
+.rgn-contact__form-container p {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0;
+}
+.rgn-contact__form-container form .rgn-contact__return {
+  display: none;
+}
+.rgn-contact__form-container form.sent .rgn-contact__return {
+  display: flex;
+  position: absolute;
+  top: 38rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+@media (min-width: 1440px) {
+  .rgn-contact__form-container form.sent .rgn-contact__return {
+    top: 50.5rem;
   }
 }
 .rgn-contact__image {
@@ -2264,11 +2303,6 @@ rgn-our-work__body__image--active .rng-our-work {
     height: 100%;
   }
 }
-@media (min-width: 1440px) {
-  .rgn-contact__image {
-    height: 77.3rem;
-  }
-}
 .rgn-contact__header {
   font-family: "Noto Serif TC", serif;
   font-size: 3rem;
@@ -2280,20 +2314,55 @@ rgn-our-work__body__image--active .rng-our-work {
   color: #3d3d3d;
   margin-bottom: 1.2rem;
 }
+@media (max-width: 767px) {
+  .rgn-contact__header {
+    margin-top: 3.1rem;
+  }
+}
+.rgn-contact__message {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #666666;
+  margin-bottom: 4.2rem;
+}
 @media (min-width: 1024px) {
   .rgn-contact__image-container, .rgn-contact__form-container, .rgn-contact__submit {
-    width: 100%;
     margin: 0 auto;
   }
 }
-.rgn-contact__submit {
+.rgn-contact__submit, .rgn-contact__return {
   max-width: 26.21rem;
+  width: 100%;
 }
 .rgn-contact__subheader {
   margin-bottom: 4.2rem;
 }
 .rgn-contact__label {
-  display: inline;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+.rgn-contact__label:focus-within {
+  font-weight: bold;
+}
+@media (min-width: 1024px) {
+  .rgn-contact__label {
+    width: 100%;
+  }
+}
+.rgn-contact__label.rgn-contact__input--half-width {
+  width: 100%;
+}
+@media (min-width: 1024px) {
+  .rgn-contact__label.rgn-contact__input--half-width {
+    width: 50%;
+    max-width: 24rem;
+  }
 }
 .rgn-contact__subheader, .rgn-contact__label {
   font-family: "Nunito Sans", sans-serif;
@@ -2319,6 +2388,45 @@ rgn-our-work__body__image--active .rng-our-work {
 }
 .rgn-contact__input.wpcf7-textarea {
   height: 18.2rem;
+}
+.rgn-contact .wpcf7-response-output.wpcf7-display-none.wpcf7-mail-sent-ok {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 20.2rem 2.8rem 0;
+  background: #fbfbfb;
+  color: #3d3d3d;
+  display: flex;
+  justify-content: center;
+  border: none;
+  font-family: "Noto Serif TC", serif;
+  font-size: 3rem;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #3d3d3d;
+  z-index: 5;
+}
+@media (min-width: 768px) {
+  .rgn-contact .wpcf7-response-output.wpcf7-display-none.wpcf7-mail-sent-ok {
+    padding: 18.1rem 6rem;
+  }
+}
+@media (min-width: 1024px) {
+  .rgn-contact .wpcf7-response-output.wpcf7-display-none.wpcf7-mail-sent-ok {
+    padding: 26.7rem 3.5rem;
+  }
+}
+@media (min-width: 1440px) {
+  .rgn-contact .wpcf7-response-output.wpcf7-display-none.wpcf7-mail-sent-ok {
+    padding: 38.2rem 14.1rem;
+  }
 }
 
 .rgn-blog__banner {
@@ -3509,6 +3617,255 @@ rgn-our-work__body__image--active .rng-our-work {
   .rgn-case-study__references-text {
     width: 100%;
     max-width: 114.5rem;
+  }
+}
+
+.rgn-literature-page__banner {
+  width: 100%;
+  height: 40rem;
+  position: relative;
+}
+.rgn-literature-page__featured-post {
+  width: 100%;
+  height: 100%;
+  padding: 11.1rem 1.2rem 0 1.5rem;
+}
+@media (min-width: 768px) {
+  .rgn-literature-page__featured-post {
+    padding: 11.6rem 30rem 0 2.7rem;
+  }
+}
+@media (min-width: 1024px) {
+  .rgn-literature-page__featured-post {
+    padding: 11.6rem 42rem 0 16.3rem;
+  }
+}
+.rgn-literature-page__featured-post__scrim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.73);
+}
+.rgn-literature-page__featured-post__info {
+  width: 100%;
+  max-width: 45.1rem;
+  position: relative;
+}
+.rgn-literature-page__featured-post__title {
+  margin-bottom: 1.8rem;
+}
+@media (min-width: 768px) {
+  .rgn-literature-page__featured-post__title {
+    margin-bottom: 3.2rem;
+  }
+}
+.rgn-literature-page__featured-post__title a {
+  font-family: "Noto Serif TC", serif;
+  font-size: 3rem;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #FFF;
+}
+@media (min-width: 768px) {
+  .rgn-literature-page__featured-post__title a {
+    font-size: 4rem;
+  }
+}
+.rgn-literature-page__featured-post__title a:hover {
+  text-decoration: underline;
+}
+.rgn-literature-page__featured-post__description {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.8rem;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #FFF;
+  margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+  .rgn-literature-page__featured-post__description {
+    margin-bottom: 1.6rem;
+  }
+}
+.rgn-literature-page__nav {
+  width: 100%;
+  height: 10.3rem;
+  display: flex;
+  align-items: center;
+  padding: 2.7rem 1.3rem 4rem;
+}
+@media (min-width: 768px) {
+  .rgn-literature-page__nav {
+    height: 8.8rem;
+    padding: 2.5rem 10.7rem;
+  }
+}
+@media (min-width: 1024px) {
+  .rgn-literature-page__nav {
+    height: 10.2rem;
+    padding: 2.5rem 10.7rem 3.9rem;
+  }
+}
+@media (min-width: 1440px) {
+  .rgn-literature-page__nav {
+    height: 10.4rem;
+    padding: 2.7rem 16.8rem 3.9rem;
+  }
+}
+.rgn-literature-page__nav__list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+}
+.rgn-literature-page__nav__list__item {
+  margin-right: 1.6rem;
+  padding-bottom: 1rem;
+  font-family: "Noto Serif TC", serif;
+  font-size: 1.8rem;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+.rgn-literature-page__nav__list__item a {
+  color: rgba(61, 61, 61, 0.28);
+}
+.rgn-literature-page__nav__list__item a :hover {
+  cursor: pointer;
+}
+.rgn-literature-page__nav__list__item.active {
+  border-bottom: solid 0.2rem #007aff;
+}
+.rgn-literature-page__nav__list__item.active a {
+  color: #3d3d3d;
+}
+.rgn-literature-page__cards {
+  background-color: #f2f2f2;
+  padding: 2.4rem 0.6rem;
+}
+@media (min-width: 768px) {
+  .rgn-literature-page__cards {
+    padding: 7.3rem 1.4rem;
+  }
+}
+@media (min-width: 768px) {
+  .rgn-literature-page__cards__inner {
+    width: 100%;
+    max-width: 76.8rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1440px) {
+  .rgn-literature-page__cards__inner {
+    max-width: 113rem;
+  }
+}
+.rgn-literature-page__card {
+  width: 100%;
+  max-width: 30.9rem;
+  min-height: 44.3rem;
+  background-color: #FFF;
+  margin: 0 auto 2.1rem;
+}
+@media (min-width: 768px) {
+  .rgn-literature-page__card {
+    max-width: 35.5rem;
+    margin: 0 0 3rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 1439px) {
+  .rgn-literature-page__card:nth-child(even) {
+    margin-left: 3rem;
+  }
+}
+@media (min-width: 1440px) {
+  .rgn-literature-page__card:nth-child(3n-1) {
+    margin: 0 3rem 3rem;
+  }
+}
+.rgn-literature-page__card__image {
+  height: 25.6rem;
+}
+@media (min-width: 768px) {
+  .rgn-literature-page__card__image {
+    height: 29.4rem;
+  }
+}
+.rgn-literature-page__card__info {
+  padding: 2.2rem 1.6rem;
+}
+@media (min-width: 768px) {
+  .rgn-literature-page__card__info {
+    padding: 2.55rem 1.58rem 2.52rem 1.77rem;
+  }
+}
+.rgn-literature-page__card__type {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.5rem;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.72;
+  letter-spacing: 0.22rem;
+  color: #b6b6b6;
+  margin-bottom: 0.9rem;
+}
+@media (min-width: 768px) {
+  .rgn-literature-page__card__type {
+    font-size: 1.8rem;
+  }
+}
+.rgn-literature-page__card__title {
+  font-family: "Noto Serif TC", serif;
+  font-size: 1.62rem;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #3d3d3d;
+  margin-bottom: 0.4rem;
+}
+@media (min-width: 768px) {
+  .rgn-literature-page__card__title {
+    font-size: 1.86rem;
+  }
+}
+.rgn-literature-page__card__description {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.5rem;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.72;
+  letter-spacing: normal;
+  color: #666666;
+  margin-bottom: 1.6rem;
+}
+@media (min-width: 768px) {
+  .rgn-literature-page__card__description {
+    font-size: 1.8rem;
+    min-height: 53.8px;
+  }
+}
+.rgn-literature-page__card__read-more {
+  justify-content: flex-end;
+  font-size: 1.22rem;
+}
+@media (min-width: 768px) {
+  .rgn-literature-page__card__read-more {
+    font-size: 1.4rem;
   }
 }
 

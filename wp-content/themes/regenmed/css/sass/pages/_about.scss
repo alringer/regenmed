@@ -27,5 +27,8 @@
         font-stretch: normal;
         line-height: 1.5;
         letter-spacing: normal;
+        @include media(">=bigdesktop"){
+            max-width: 76.7rem;
+        }
     }
 }
