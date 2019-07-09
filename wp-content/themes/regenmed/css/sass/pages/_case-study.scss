@@ -1,0 +1,279 @@
+.rgn-case-study{
+    position: relative;
+    &__banner{
+        width:100%;
+        height: 30.3rem;
+        position: relative;
+        @include media("<tablet"){
+            background-position: left;
+        }
+        @include media(">=tablet"){
+            height: 33.3rem;
+        }
+        @include media(">=bigdesktop"){
+            height: 45rem;
+        }
+    }
+    &__scrim{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to top, rgba(0, 0, 0, 0.77), rgba(0, 0, 0, 0.48));
+    }
+    &__body{
+        position: relative;
+        margin-top:-30.3rem;
+        @include media(">=tablet"){
+            margin-top: -33.3rem;
+        }
+        @include media(">=bigdesktop"){
+            margin-top: -45rem;
+        }
+    }
+    &__header{
+        color:$color-white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 30.3rem;
+        @include media(">=tablet"){
+            height: 30.2rem;
+        }
+        @include media(">=bigdesktop"){
+            height: 39.3rem;
+        }
+        h1{
+            margin-top: 12rem;
+            font-family: $noto-tc;
+            font-size: 4rem;
+            font-weight: bold;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            @include media(">=tablet"){
+                margin-top: 14.3rem;
+            }
+            @include media(">=desktop"){
+                margin-top: 16.7rem;
+            }
+            @include media(">=bigdesktop"){
+                margin-top: 24.8rem;
+            }
+        }
+    }
+    &__headline{
+        font-family: $nunito-sans;
+        font-size: 1.8rem;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        text-align: center;
+        color: $color-white;
+        max-width: 23.5rem;
+        @include media(">=tablet"){
+            max-width: 33.3rem;
+        }
+    }
+    &__summary{
+        background-color: black;
+        color: $color-white;
+        font-family: $nunito-sans;
+        font-size: 1.8rem;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        text-align: center;
+        color: $color-mid-light-gray-2;
+        width: 100%;
+        height: 45rem;
+        margin: 0 auto 6rem;
+        padding: 6.7rem 2.2rem;
+        @include media(">=tablet"){
+            height: 27rem;
+            max-width: 66.6rem;
+            padding: 5.4rem 6.3rem;
+            margin-bottom: 11.3rem;
+        }
+        @include media(">=desktop"){
+            max-width: 92rem;
+            padding: 8.1rem 9.9rem;
+            margin-bottom: 10.2rem;
+        }
+        @include media(">=bigdesktop"){
+            margin-bottom: 6.7rem;
+        }
+    }
+    &__heading{
+        font-family: $noto-tc;
+        font-size: 24px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.25;
+        letter-spacing: normal;
+        text-align: center;
+        color: $color-gray;
+        margin-bottom: 3.3rem;
+        @include media(">=bigdesktop"){
+            margin-bottom: 1.3rem;
+        }
+    }
+    &__background,&__references{
+        width: 100%;
+        padding: 0 3rem;
+        margin-bottom: 2.4rem;
+        &-text{
+            font-family: $noto-tc;
+            font-size: 1.8rem;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.5;
+            letter-spacing: normal;
+            color: $color-gray;
+        }
+    }
+    &__content{
+        padding: 0 1.8rem;
+        max-width: 110.4rem;
+        margin: 0 auto;
+        @include media(">=tablet"){
+            padding: 0 4.8rem;
+        }
+        @include media(">=desktop"){
+            padding: 0 5.4rem;
+        }
+        @include media(">=bigdesktop"){
+            padding: 0;
+            max-width: 114.5rem;
+        }
+        .wp-block-columns.has-2-columns{
+            margin-bottom:11.8rem;
+            @include media("<desktop"){
+                &:nth-child(odd){
+                    flex-direction: column-reverse;
+                }
+                &:nth-child(even){
+                    flex-direction: column;
+                }
+            }
+            @include media(">=tablet"){
+                margin-bottom: 12.6rem;
+            }
+            @include media(">=desktop"){
+                margin-bottom: 9.6rem;
+            }
+            @include media(">=bigdesktop"){
+                margin-bottom: 17.2rem;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .wp-block-column{
+                @include media(">=tablet"){
+                    margin: 0;
+                }
+                @include media(">=bigdesktop"){
+                    max-width: 52rem;
+                }
+            }
+            
+        }
+        h3, h4{
+            font-family: $noto-tc;
+            font-weight: bold;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.67;
+            letter-spacing: normal;
+            color: $color-gray;
+        }
+        .wp-block-image{
+            margin:0;
+            @include media(">=desktop"){
+                max-width: 42.9rem;
+                max-height: 37.7rem;
+            }
+            @include media(">=bigdesktop"){
+                max-width: unset;
+                max-height: unset;
+            }
+        }
+        h3{
+            font-size: 2.4rem;
+            margin: 3.9rem 0;
+        }
+        h4{
+            font-size: 1.8rem;
+            margin: 3.8rem 0 2.4rem;
+        }
+        p{
+            font-family: $noto-tc;
+            font-size: 1.8rem;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.5;
+            letter-spacing: normal;
+            color: $color-gray;
+        }
+        // &>p{
+        //     @include media(">=tablet"){
+        //         max-width: 63.5rem;
+        //     }
+        // }
+    }
+    &__background{
+        max-width: 82.1rem;
+        margin: 0 auto;
+        &-text{
+            text-align: center;
+            min-height: 31.2rem;
+        }
+    }
+    &__references{
+        min-height: 30.4rem;
+        background-color: $color-lighter-gray;
+        padding: 2.4rem 1.8rem;
+        text-align: left;
+        margin-top: 5rem;
+        @include media(">=tablet"){
+            min-height: 15rem;
+            padding: 6.4rem 4.8rem;
+        }
+        @include media(">=desktop"){
+            padding: 7.2rem 11rem 7.1rem 5.1rem;
+        }
+        @include media(">=bigdesktop"){
+            padding: 7.2rem 0;
+        }
+        &-inner{
+            max-width: 110.4rem;
+            margin: 0 auto;
+            @include media(">=bigdesktop"){
+                max-width: 114.5rem;
+            }
+        }
+        h3{
+            text-align: left;
+            @include media(">=bigdesktop"){
+                max-width: 114.5rem;
+            }
+        }
+        &-text{
+            @include media(">=desktop"){
+                max-width: 85.5rem;
+            }
+            @include media(">=bigdesktop"){
+                width: 100%;
+                max-width: 114.5rem;
+            }
+        }
+    }
+}
