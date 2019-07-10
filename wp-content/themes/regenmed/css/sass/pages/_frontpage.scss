@@ -110,7 +110,10 @@
 }
 
 .hero__slide--disciplines__subsection__info{
-    width: 90%
+    width: 90%;
+    @include media(">=desktop"){
+        background-color: rgba(0, 0, 0, 0.6);
+    }
 }
 
 .hero__slide--disciplines__subsection__title{
@@ -448,9 +451,11 @@
         .hero__slide--disciplines__subsection__item{
             transform: translate(-100%,-100%);
             border-radius: 100% 0 0 0;
-            border-width: 1.5rem 0.1rem 0.1rem 1.5rem;
             padding-left: 8rem;
             padding-top: 8rem;
+        }
+        .hero__slide--disciplines__subsection__info{
+            border-width: 1.5rem 0.1rem 0.1rem 1.5rem;
         }
     }
     .hero__slide--disciplines__subsection:nth-child(2) {
@@ -462,9 +467,11 @@
         .hero__slide--disciplines__subsection__item{
             transform: translateY(-100%);
             border-radius: 0 100% 0 0;
-            border-width: 1.5rem 1.5rem 0.1rem 0.1rem;
             padding-right: 8rem;
             padding-top: 8rem;
+        }
+        .hero__slide--disciplines__subsection__info{
+            border-width: 1.5rem 1.5rem 0.1rem 0.1rem;
         }
     }
     .hero__slide--disciplines__subsection:nth-child(3){
@@ -475,9 +482,11 @@
         .hero__slide--disciplines__subsection__item{
             transform: translateX(-100%);
             border-radius: 0 0 0 100%;
-            border-width: 0.1rem 0.1rem 1.5rem 1.5rem;
             padding-left: 8rem;
             padding-bottom: 8rem;
+        }
+        .hero__slide--disciplines__subsection__info{
+            border-width: 0.1rem 0.1rem 1.5rem 1.5rem;
         }
     }
     .hero__slide--disciplines__subsection:nth-child(4){
@@ -487,9 +496,11 @@
         }
         .hero__slide--disciplines__subsection__item{
             border-radius: 0 0 100% 0;
-            border-width: 0.1rem 1.5rem 1.5rem 0.1rem;
             padding-right: 8rem;
             padding-bottom: 8rem;
+        }
+        .hero__slide--disciplines__subsection__info{
+            border-width: 0.1rem 1.5rem 1.5rem 0.1rem;
         }
     }
 

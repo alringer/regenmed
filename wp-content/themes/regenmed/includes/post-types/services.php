@@ -144,7 +144,7 @@ function regenmed_service_alt_image_callback( $post ) {
     ?>
     <div id="metabox-wrapper">
         <p> <?php echo $value; ?> </p>
-        <img id="regenmed_service_alt_image_image_tag">
+        <img id="regenmed_alt_image_tag">
         <input type="hidden" id="regenmed_alt_image_field" name="regenmed_alt_image_field">
         <input type="button" id="regenmed_alt_image_upload" value="Upload">
         <input type="button" id="regenmed_alt_image_delete" value="Delete">

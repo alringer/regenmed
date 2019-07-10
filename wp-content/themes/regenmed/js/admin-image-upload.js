@@ -20,7 +20,6 @@ if(wp.media){
         var attachment = customUploader.state().get('selection').first().toJSON();
         img.setAttribute('src',attachment.url);
         img.setAttribute('style','width:100%');
-        console.log(attachment);
         hiddenField.setAttribute('value', JSON.stringify( [{ id: attachment.id, url: attachment.url }] ));
     })
     
@@ -36,8 +35,11 @@ if(wp.media){
             if(customUploads.imageData.src){
                 img.setAttribute( 'src', customUploads.imageData.src);
                 img.setAttribute('style','width:100%');
-            }
-            hiddenField.setAttribute( 'value', JSON.stringify( [customUploads.imageData] ));
+                var value = JSON.stringify( [customUploads.imageData]);
+                console.log(value);
+                console.log(hiddenField);
+                hiddenField.setAttribute( 'value', value );
+            }            
         }
     })
 }

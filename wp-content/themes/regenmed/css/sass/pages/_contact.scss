@@ -124,6 +124,10 @@
                 width: 50%;
                 max-width: 24rem;
             }
+            @include media(">bigdesktop"){
+                width: 48%;
+                max-width: unset;
+            }
         }
     }
     &__subheader, &__label{

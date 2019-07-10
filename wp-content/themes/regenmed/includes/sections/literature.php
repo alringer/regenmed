@@ -3,7 +3,7 @@ $menuLocations = get_nav_menu_locations(); // Get our nav locations (set in our 
 // This returns an array of menu locations ([LOCATION_NAME] = MENU_ID);
 
 $menuID = $menuLocations['extra-menu']; // Get the *primary* menu ID
-
+$max_chars = 180;
 $primaryNav = wp_get_nav_menu_items($menuID); // Get the array of wp objects, the nav items for our queried location.
 
 function get_post_type_text($type){
@@ -30,8 +30,8 @@ function get_post_type_text($type){
                     <div class="rgn-literature__article__title"><a href="<?php echo get_post_permalink($post0->ID); ?>"><?php echo $post0->post_title ?></a></div>
                     <div class="rgn-literature__article__description">
                     <?php 
-                    if (strlen($post0->post_excerpt) >= 140)
-                        echo substr($post0->post_excerpt , 0, 140). "...";
+                    if (strlen($post0->post_excerpt) >= $max_chars)
+                        echo substr($post0->post_excerpt , 0, $max_chars). "...";
                     else
                         echo $post0->post_excerpt;
                     ?>
@@ -49,8 +49,8 @@ function get_post_type_text($type){
                 <div class="rgn-literature__article__title"><a href="<?php echo get_post_permalink($post1->ID); ?>"><?php echo $post1->post_title ?></a></div>
                 <div class="rgn-literature__article__description">
                     <?php 
-                    if (strlen($post1->post_excerpt) >= 140)
-                        echo substr($post1->post_excerpt , 0, 140). "...";
+                    if (strlen($post1->post_excerpt) >= $max_chars)
+                        echo substr($post1->post_excerpt , 0, $max_chars). "...";
                     else
                         echo $post1->post_excerpt;
                     ?>
@@ -71,8 +71,8 @@ function get_post_type_text($type){
                     <div class="rgn-literature__article__title"><a href="<?php echo get_post_permalink($post2->ID);?>"><?php echo $post2->post_title ?></a></div>
                     <div class="rgn-literature__article__description">
                     <?php 
-                    if (strlen($post2->post_excerpt) >= 140)
-                        echo substr($post2->post_excerpt , 0, 140). "...";
+                    if (strlen($post2->post_excerpt) >= $max_chars)
+                        echo substr($post2->post_excerpt , 0, $max_chars). "...";
                     else
                         echo $post2->post_excerpt;
                     ?>
@@ -89,8 +89,8 @@ function get_post_type_text($type){
                     <div class="rgn-literature__article__title"><a href="<?php echo get_post_permalink($post3->ID); ?>"><?php echo $post3->post_title ?></a></div>
                     <div class="rgn-literature__article__description">
                     <?php 
-                        if (strlen($post3->post_excerpt) >= 140)
-                            echo substr($post3->post_excerpt , 0, 140). "...";
+                        if (strlen($post3->post_excerpt) >= $max_chars)
+                            echo substr($post3->post_excerpt , 0, $max_chars). "...";
                         else
                             echo $post3->post_excerpt;
                         ?>
@@ -108,8 +108,8 @@ function get_post_type_text($type){
                 <div class="rgn-literature__article__title"><a href="<?php echo get_post_permalink($post4->ID); ?>"><?php echo $post4->post_title ?></a></div>
                 <div class="rgn-literature__article__description">
                     <?php 
-                    if (strlen($post4->post_excerpt) >= 140)
-                        echo substr($post4->post_excerpt , 0, 140). "...";
+                    if (strlen($post4->post_excerpt) >= $max_chars)
+                        echo substr($post4->post_excerpt , 0, $max_chars). "...";
                     else
                         echo $post4->post_excerpt;
                     ?>
@@ -119,5 +119,5 @@ function get_post_type_text($type){
         <?php } ?>
     </div>
     <?php }?>
-    <a class="rgn-literature__read-more rgn-read-more-link" href="#">READ MORE <i class="icon icon-sm icon-right-arrow"></i></a>
+    <a class="rgn-literature__read-more rgn-read-more-link" href="<?php echo get_home_url() ?>/literature">READ MORE <i class="icon icon-sm icon-right-arrow"></i></a>
 </section>

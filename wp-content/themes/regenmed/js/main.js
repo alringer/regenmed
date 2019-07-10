@@ -57,6 +57,12 @@ function initCarouselPagination(){
             document.getElementById("ourWorkSlides").className = "rgn-our-work__body__info__slides rgn-our-work__body__info__slides--"+page;
             $('.rgn-our-work__body__info__pagination__page--active').removeClass('rgn-our-work__body__info__pagination__page--active');
             button.addClass('rgn-our-work__body__info__pagination__page--active');
+            
+            var  active = document.getElementsByClassName("rgn-our-work__body__image--active")
+            active[0].classList.remove('rgn-our-work__body__image--active');
+            var newActive = document.getElementsByClassName("rgn-our-work__body__image--"+page)
+            newActive[0].classList.add('rgn-our-work__body__image--active');
+
         }
     })
 }

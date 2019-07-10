@@ -1,4 +1,6 @@
 <?php
+$max_chars = 75;
+
 get_header();
 ?>
 
@@ -17,7 +19,14 @@ get_header();
         <article class="rgn-case-study__body">
             <header class="rgn-case-study__header">
                 <h1><?php the_title(); ?></h1>
-                <p class="rgn-case-study__headline"><?php echo $excerpt; ?></p>
+                <p class="rgn-case-study__headline">
+                    <?php 
+                    if (strlen($excerpt) >= $max_chars)
+                        echo substr($excerpt , 0, $max_chars). "...";
+                    else
+                        echo $excerpt;
+                    ?>
+                </p>
             </header>
             <section class="rgn-case-study__summary">
                 <?php echo $headline; ?>

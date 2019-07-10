@@ -18,6 +18,14 @@
         letter-spacing: normal;
         color: $color-white;
         padding-bottom: 3.65rem;
+        &:after{
+            content: "";
+            width: 8.3rem;
+            display: block;
+            height: 1rem;
+            margin: 3.8rem 0;
+            border-bottom: 0.2rem solid $color-blue;
+        }
     }
     &__body{
         font-family: $nunito-sans;
