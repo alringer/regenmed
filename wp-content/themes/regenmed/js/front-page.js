@@ -7,6 +7,8 @@
             section : ".hero__slide",
             standardScrollElements: ".standard-scroll",
             setHeights: false,
+            updateHash: false,
+            interstitialSection: ".footer",
             before: function(index){
                 var pageNumber = document.getElementById("heroPageNumber");
                 pageNumber.innerText = '0'+(index+1);

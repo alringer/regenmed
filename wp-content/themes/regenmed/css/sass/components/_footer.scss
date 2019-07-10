@@ -9,12 +9,13 @@
     }    
 }
 
-.footer__neesletter{
+.footer__newsletter{
     @include media (">=bigdesktop"){
         width: 100%;
         max-width: 45.7rem;    
     }
 }
+//  mc4wp-form-127 mc4wp-form-submitted mc4wp-form-success
 
 .footer__newsletter__title{
     font-family: $noto-tc;
@@ -47,9 +48,91 @@
     }
 }
 
-.footer__newsletter__form{
-    display: flex;
+.footer__newsletter__form, .mc4wp-form{
+    // display: flex;
     margin-bottom: 3.1rem;
+    &.mc4wp-form-submitted{
+        &.mc4wp-form-success{
+            .mc4wp-response{
+                display: flex;
+            }
+        }
+        .mc4wp-response{
+            display: none;
+            position: fixed;
+            bottom: 0;
+            height: 8.2rem;
+            background-color: white;
+            width: 100%;
+            box-shadow: 0 2px 9px 0 rgba(135, 135, 135, 0.27);
+            border: solid 1px #dddddd;
+            animation: opacityFadeOut 6s normal forwards;
+            animation-delay: 3s;
+            @include media("<tablet"){
+                left: 0;
+            }
+            @include media(">=tablet"){
+                bottom: 4.7rem;
+                right: 4.6rem;
+                max-width: 39.1rem;
+            }
+            @include media (">=desktop"){
+                max-width: 527px;
+                bottom: 4.5rem;
+                right: 4.5rem;
+            }
+            .mc4wp-alert{
+                font-family: $nunito-sans;
+                font-size: 1.8rem;
+                font-weight: bold;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 1.5;
+                letter-spacing: normal;
+                font-weight: normal;
+                color: $color-mid-gray;                
+                &.mc4wp-success{
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    &::before{
+                        content: 'Success';
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: #84c45b;
+                        max-width: 9.8rem;
+                        width: 100%;
+                        height: 100%;
+                        color: #ffffff;
+                        font-weight: bold;
+                        @include media(">=desktop"){
+                            max-width: 118px;
+                        }
+                    }
+                    p{
+                        width: 100%;
+                        height: 100%;
+                        margin: 0;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        text-align: center;
+                    }
+                }
+
+            }
+        }
+    }
+    .mc4wp-form-fields{
+        display: flex;
+        width: 100%;
+    }
+    .mc4wp-response{
+        display: none;
+    }
 }
 
 .footer__newsletter__form__email{
@@ -67,7 +150,20 @@
     font-stretch: normal;
     line-height: 1.5;
     letter-spacing: normal;
-    color: $color-mid-gray;
+    color: $color-white;
+
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: $color-mid-gray;
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+        color: $color-mid-gray;
+    }
+    &:-ms-input-placeholder { /* IE 10+ */
+        color: $color-mid-gray;
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+        color: $color-mid-gray;
+    }
 
     @include media(">=tablet","<desktop"){
         max-width: 40rem;
@@ -139,4 +235,17 @@
     line-height: 1.5;
     letter-spacing: normal;
     color: $color-mid-light-gray;
+}
+
+@keyframes opacityFadeOut{
+    0% {
+        opacity: 1;
+        
+    }
+    50%{
+        opacity: 0
+    }
+    100% {
+        top: 100vh;
+    }
 }
