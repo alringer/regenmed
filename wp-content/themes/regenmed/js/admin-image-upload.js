@@ -31,13 +31,10 @@ if(wp.media){
 
     window.addEventListener('DOMContentLoaded', function(){
         if(customUploads && customUploads.imageData){
-            console.log(customUploads.imageData);
             if(customUploads.imageData.src){
                 img.setAttribute( 'src', customUploads.imageData.src);
                 img.setAttribute('style','width:100%');
                 var value = JSON.stringify( [customUploads.imageData]);
-                console.log(value);
-                console.log(hiddenField);
                 hiddenField.setAttribute( 'value', value );
             }            
         }
