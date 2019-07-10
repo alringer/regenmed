@@ -66,6 +66,8 @@
             width: 100%;
             box-shadow: 0 2px 9px 0 rgba(135, 135, 135, 0.27);
             border: solid 1px #dddddd;
+            animation: opacityFadeOut 6s normal forwards;
+            animation-delay: 3s;
             @include media("<tablet"){
                 left: 0;
             }
@@ -88,7 +90,7 @@
                 line-height: 1.5;
                 letter-spacing: normal;
                 font-weight: normal;
-                color: $color-mid-gray;
+                color: $color-mid-gray;                
                 &.mc4wp-success{
                     width: 100%;
                     height: 100%;
@@ -233,4 +235,17 @@
     line-height: 1.5;
     letter-spacing: normal;
     color: $color-mid-light-gray;
+}
+
+@keyframes opacityFadeOut{
+    0% {
+        opacity: 1;
+        
+    }
+    50%{
+        opacity: 0
+    }
+    100% {
+        top: 100vh;
+    }
 }

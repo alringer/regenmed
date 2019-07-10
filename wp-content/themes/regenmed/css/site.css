@@ -637,6 +637,8 @@ h3 {
   width: 100%;
   box-shadow: 0 2px 9px 0 rgba(135, 135, 135, 0.27);
   border: solid 1px #dddddd;
+  animation: opacityFadeOut 6s normal forwards;
+  animation-delay: 3s;
 }
 @media (max-width: 767px) {
   .footer__newsletter__form.mc4wp-form-submitted .mc4wp-response, .mc4wp-form.mc4wp-form-submitted .mc4wp-response {
@@ -830,6 +832,17 @@ h3 {
   color: #858585;
 }
 
+@keyframes opacityFadeOut {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    top: 100vh;
+  }
+}
 .rgn-our-people {
   width: 100%;
 }
