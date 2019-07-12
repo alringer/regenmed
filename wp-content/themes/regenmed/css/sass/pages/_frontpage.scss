@@ -62,18 +62,42 @@
 
 .hero__slide--disciplines__subsection:nth-child(1) .hero__slide--disciplines__subsection__background{
     background-image: url('../img/frontpage/hero-image-mobile/slide2-business.png');
+    @include media(">=desktop"){
+        background-image: url('../img/frontpage/hero-image-desktop/slide2-business.png');
+    }
+    @include media(">=bigdesktop"){
+        background-image: url('../img/frontpage/hero-image-big-desktop/slide2-business.png');
+    }
 }
 
 .hero__slide--disciplines__subsection:nth-child(2) .hero__slide--disciplines__subsection__background{
     background-image: url('../img/frontpage/hero-image-mobile/slide2-clinical.png');
+    @include media(">=desktop"){
+        background-image: url('../img/frontpage/hero-image-desktop/slide2-clinical.png');
+    }
+    @include media(">=bigdesktop"){
+        background-image: url('../img/frontpage/hero-image-big-desktop/slide2-clinical.png');
+    }
 }
 
 .hero__slide--disciplines__subsection:nth-child(3) .hero__slide--disciplines__subsection__background{
     background-image: url('../img/frontpage/hero-image-mobile/slide2-science.png');
+    @include media(">=desktop"){
+        background-image: url('../img/frontpage/hero-image-desktop/slide2-science.png');
+    }
+    @include media(">=bigdesktop"){
+        background-image: url('../img/frontpage/hero-image-big-desktop/slide2-science.png');
+    }
 }
 
 .hero__slide--disciplines__subsection:nth-child(4) .hero__slide--disciplines__subsection__background{
     background-image: url('../img/frontpage/hero-image-mobile/slide2-communications.png');
+    @include media(">=desktop"){
+        background-image: url('../img/frontpage/hero-image-desktop/slide2-communications.png');
+    }
+    @include media(">=bigdesktop"){
+        background-image: url('../img/frontpage/hero-image-big-desktop/slide2-communications.png');
+    }
 }
 
 .hero__slide--disciplines__section--main__title{
@@ -92,13 +116,15 @@
         z-index: 40;
         left:4.1%;
         top: 14.4rem;
+        text-align: left;
+        max-width: 25.6rem;
+        font-size: 2.4rem;
     }
     @include media (">=desktop","<bigdesktop"){
         top: 11.4%;
     }
     @include media (">=bigdesktop"){
         left: 11.1%;
-        text-align: left;
         font-size: 3rem;
         max-width: 30.1rem;
     }
@@ -413,6 +439,7 @@
     .hero__slide--disciplines__subsection__trigger{
         background:transparent;
         display: block;
+        border: none;
         z-index: 11;
     }
 

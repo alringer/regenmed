@@ -51,7 +51,7 @@ get_header();
         </ul>
     </nav>
     <section class="rgn-literature-page__cards">
-        <div  class="rgn-literature-page__cards__inner">
+        <div  class="rgn-literature-page__cards__inner" id="cardsContainer">
         <?php
         if( have_posts() ) :
         while ( have_posts() ) : the_post();
@@ -86,5 +86,8 @@ get_header();
         ?>
         </div>
     </section>
+    <div class="rgn-literature-page__bottom">
+        <button id="rgnLiteratureViewMore" class="rgn-literature-page__view-more" data-posttype="whitepapers">VIEW MORE</button>
+    </div>
 </main>
 <?php get_footer(); 

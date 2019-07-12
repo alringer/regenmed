@@ -5,6 +5,9 @@
     padding: 16.8rem 2.3rem 5rem;
     color: $color-white;
     background-color: $color-black;
+    @include media(">=tablet"){
+        margin-bottom: 12.5rem;
+    }
     @include media(">=desktop"){
         padding: 17rem 10.8rem 3.2rem 14.9rem;
     }

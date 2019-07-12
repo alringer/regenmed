@@ -24,7 +24,7 @@ function create_case_study_posttype() {
     );
     
     $args = array(
-        'label'               => __( 'whitepapers', 'regenmed' ),
+        'label'               => __( 'case studies', 'regenmed' ),
         'description'         => __( 'Case Studies', 'regenmed' ),
         'labels'              => $labels,
         // Features this CPT supports in Post Editor

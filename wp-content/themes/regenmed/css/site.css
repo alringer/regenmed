@@ -572,14 +572,25 @@ h3 {
   background-color: #171717;
   padding: 7rem 2rem 5.3rem 2.3rem;
 }
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
   .footer {
     display: flex;
+    justify-content: space-between;
+    padding: 22.4rem 14.6rem 0 8.7rem;
+  }
+}
+@media (min-width: 1440px) {
+  .footer {
     justify-content: space-around;
     padding: 16.4rem 27.8rem 0 16.4rem;
   }
 }
 
+@media (min-width: 1024px) {
+  .footer__newsletter {
+    max-width: 33.4rem;
+  }
+}
 @media (min-width: 1440px) {
   .footer__newsletter {
     width: 100%;
@@ -716,6 +727,7 @@ h3 {
   width: 100%;
   height: 4.42rem;
   border: solid 0.9px rgba(244, 244, 244, 0.24);
+  border-right: none;
   background-color: rgba(255, 255, 255, 0.09);
   padding: 1.4rem 2.2rem 1.3rem;
   font-family: "Nunito Sans", sans-serif;
@@ -830,6 +842,9 @@ h3 {
   line-height: 1.5;
   letter-spacing: normal;
   color: #858585;
+}
+.footer__links__section__list__link:hover {
+  color: #FFF;
 }
 
 @keyframes opacityFadeOut {
@@ -1177,8 +1192,8 @@ rgn-our-work__body__image--active .rng-our-work {
 }
 
 .rgn-our-work__body__info__pagination__page {
-  width: 1.12rem;
-  height: 1.12rem;
+  width: 1.1rem;
+  height: 1.1rem;
   border-radius: 50%;
   background: none;
   border: 0.1rem solid #2c2c2c;
@@ -1529,17 +1544,57 @@ rgn-our-work__body__image--active .rng-our-work {
 .hero__slide--disciplines__subsection:nth-child(1) .hero__slide--disciplines__subsection__background {
   background-image: url("../img/frontpage/hero-image-mobile/slide2-business.png");
 }
+@media (min-width: 1024px) {
+  .hero__slide--disciplines__subsection:nth-child(1) .hero__slide--disciplines__subsection__background {
+    background-image: url("../img/frontpage/hero-image-desktop/slide2-business.png");
+  }
+}
+@media (min-width: 1440px) {
+  .hero__slide--disciplines__subsection:nth-child(1) .hero__slide--disciplines__subsection__background {
+    background-image: url("../img/frontpage/hero-image-big-desktop/slide2-business.png");
+  }
+}
 
 .hero__slide--disciplines__subsection:nth-child(2) .hero__slide--disciplines__subsection__background {
   background-image: url("../img/frontpage/hero-image-mobile/slide2-clinical.png");
+}
+@media (min-width: 1024px) {
+  .hero__slide--disciplines__subsection:nth-child(2) .hero__slide--disciplines__subsection__background {
+    background-image: url("../img/frontpage/hero-image-desktop/slide2-clinical.png");
+  }
+}
+@media (min-width: 1440px) {
+  .hero__slide--disciplines__subsection:nth-child(2) .hero__slide--disciplines__subsection__background {
+    background-image: url("../img/frontpage/hero-image-big-desktop/slide2-clinical.png");
+  }
 }
 
 .hero__slide--disciplines__subsection:nth-child(3) .hero__slide--disciplines__subsection__background {
   background-image: url("../img/frontpage/hero-image-mobile/slide2-science.png");
 }
+@media (min-width: 1024px) {
+  .hero__slide--disciplines__subsection:nth-child(3) .hero__slide--disciplines__subsection__background {
+    background-image: url("../img/frontpage/hero-image-desktop/slide2-science.png");
+  }
+}
+@media (min-width: 1440px) {
+  .hero__slide--disciplines__subsection:nth-child(3) .hero__slide--disciplines__subsection__background {
+    background-image: url("../img/frontpage/hero-image-big-desktop/slide2-science.png");
+  }
+}
 
 .hero__slide--disciplines__subsection:nth-child(4) .hero__slide--disciplines__subsection__background {
   background-image: url("../img/frontpage/hero-image-mobile/slide2-communications.png");
+}
+@media (min-width: 1024px) {
+  .hero__slide--disciplines__subsection:nth-child(4) .hero__slide--disciplines__subsection__background {
+    background-image: url("../img/frontpage/hero-image-desktop/slide2-communications.png");
+  }
+}
+@media (min-width: 1440px) {
+  .hero__slide--disciplines__subsection:nth-child(4) .hero__slide--disciplines__subsection__background {
+    background-image: url("../img/frontpage/hero-image-big-desktop/slide2-communications.png");
+  }
 }
 
 .hero__slide--disciplines__section--main__title {
@@ -1560,6 +1615,9 @@ rgn-our-work__body__image--active .rng-our-work {
     z-index: 40;
     left: 4.1%;
     top: 14.4rem;
+    text-align: left;
+    max-width: 25.6rem;
+    font-size: 2.4rem;
   }
 }
 @media (min-width: 1024px) and (max-width: 1439px) {
@@ -1570,7 +1628,6 @@ rgn-our-work__body__image--active .rng-our-work {
 @media (min-width: 1440px) {
   .hero__slide--disciplines__section--main__title {
     left: 11.1%;
-    text-align: left;
     font-size: 3rem;
     max-width: 30.1rem;
   }
@@ -1926,6 +1983,7 @@ rgn-our-work__body__image--active .rng-our-work {
   .hero__slide--disciplines__subsection__trigger {
     background: transparent;
     display: block;
+    border: none;
     z-index: 11;
   }
 
@@ -2334,6 +2392,11 @@ rgn-our-work__body__image--active .rng-our-work {
   color: #FFF;
   background-color: #171717;
 }
+@media (min-width: 768px) {
+  .rgn-about {
+    margin-bottom: 12.5rem;
+  }
+}
 @media (min-width: 1024px) {
   .rgn-about {
     padding: 17rem 10.8rem 3.2rem 14.9rem;
@@ -2374,14 +2437,14 @@ rgn-our-work__body__image--active .rng-our-work {
 }
 
 .rgn-contact {
-  padding: 8.8rem 2.8rem 5.9rem;
+  padding: 6rem 2.8rem 5.9rem;
   width: 100%;
   position: relative;
 }
 @media (min-width: 768px) {
   .rgn-contact {
     display: flex;
-    padding: 8.8rem 0 0;
+    padding: 6rem 0 0;
   }
 }
 @media (min-width: 768px) {
@@ -3595,7 +3658,6 @@ rgn-our-work__body__image--active .rng-our-work {
 .rgn-case-study__background, .rgn-case-study__references {
   width: 100%;
   padding: 0 3rem;
-  margin-bottom: 2.4rem;
 }
 .rgn-case-study__background-text, .rgn-case-study__references-text {
   font-family: "Noto Serif TC", serif;
@@ -3857,7 +3919,8 @@ rgn-our-work__body__image--active .rng-our-work {
   width: 100%;
   height: 10.3rem;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   padding: 2.7rem 1.3rem 4rem;
 }
 @media (min-width: 768px) {
@@ -3884,6 +3947,7 @@ rgn-our-work__body__image--active .rng-our-work {
   margin: 0;
 }
 .rgn-literature-page__nav__list__item {
+  display: flex;
   margin-right: 1.6rem;
   padding-bottom: 1rem;
   font-family: "Noto Serif TC", serif;
@@ -3896,15 +3960,20 @@ rgn-our-work__body__image--active .rng-our-work {
 }
 .rgn-literature-page__nav__list__item a {
   color: rgba(61, 61, 61, 0.28);
+  padding-bottom: 1rem;
 }
 .rgn-literature-page__nav__list__item a :hover {
   cursor: pointer;
 }
-.rgn-literature-page__nav__list__item.active {
-  border-bottom: solid 0.2rem #007aff;
-}
-.rgn-literature-page__nav__list__item.active a {
+.rgn-literature-page__nav__list__item.active a, .rgn-literature-page__nav__list__item.hovered a {
   color: #3d3d3d;
+}
+.rgn-literature-page__nav__list__indicator {
+  width: 0;
+  border-bottom: solid 0.2rem #007aff;
+  transition: 0.5s;
+  /* width: 100%; */
+  transition: 0.5s;
 }
 .rgn-literature-page__cards {
   background-color: #f2f2f2;
@@ -4025,6 +4094,31 @@ rgn-our-work__body__image--active .rng-our-work {
   .rgn-literature-page__card__read-more {
     font-size: 1.4rem;
   }
+}
+.rgn-literature-page__bottom {
+  width: 100%;
+  height: 11.7rem;
+  background-color: #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rgn-literature-page__view-more {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #2e2e2e;
+  padding-bottom: 0.9rem;
+  border: none;
+  border-bottom: 0.2rem solid #007aff;
+}
+.rgn-literature-page__view-more:disabled {
+  color: #858585;
+  border-color: #666666;
 }
 
 /*# sourceMappingURL=site.css.map */

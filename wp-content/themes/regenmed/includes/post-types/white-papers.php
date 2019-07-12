@@ -28,6 +28,7 @@ function create_whitepaper_posttype() {
         * Parent and child items. A non-hierarchical CPT
         * is like Posts.
         */ 
+        'show_in_rest'        => true,
         'hierarchical'        => false,
         'public'              => true,
         'show_ui'             => true,
