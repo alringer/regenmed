@@ -1263,18 +1263,17 @@ rgn-our-work__body__image--active .rng-our-work {
 
 .rgn-literature__article {
   overflow: hidden;
+  position: relative;
 }
 .rgn-literature__article:hover .rgn-literature__article__image {
   transform: scale(1.05);
 }
-.rgn-literature__article .rgn-literature__article__title {
-  cursor: pointer;
-}
-.rgn-literature__article .rgn-literature__article__title a {
-  color: inherit;
-}
-.rgn-literature__article .rgn-literature__article__title:hover {
+.rgn-literature__article:hover .rgn-literature__article__title {
   text-decoration: underline;
+}
+.rgn-literature__article__anchor {
+  width: 100%;
+  height: 100%;
 }
 .rgn-literature__article .rgn-literature__article__image, .rgn-literature__article .rgn-literature__article__title {
   transition: 0.5s;
@@ -1336,6 +1335,10 @@ rgn-our-work__body__image--active .rng-our-work {
   display: flex;
   flex-wrap: wrap;
 }
+.rgn-literature__article--white-image .rgn-literature__article__anchor, .rgn-literature__article--black .rgn-literature__article__anchor {
+  display: flex;
+  flex-wrap: wrap;
+}
 .rgn-literature__article--white-image .rgn-literature__article__image, .rgn-literature__article--black .rgn-literature__article__image {
   width: 100%;
   height: 32.3rem;
@@ -1365,47 +1368,47 @@ rgn-our-work__body__image--active .rng-our-work {
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  .rgn-literature__article--white-image {
+  .rgn-literature__article--white-image .rgn-literature__article__anchor {
     flex-wrap: nowrap;
   }
 }
 @media (min-width: 1024px) {
-  .rgn-literature__article--white-image {
+  .rgn-literature__article--white-image .rgn-literature__article__anchor {
     display: flex;
   }
-  .rgn-literature__article--white-image .rgn-literature__article__image {
+  .rgn-literature__article--white-image .rgn-literature__article__anchor .rgn-literature__article__image {
     width: 34.78%;
   }
-  .rgn-literature__article--white-image .rgn-literature__article__info {
+  .rgn-literature__article--white-image .rgn-literature__article__anchor .rgn-literature__article__info {
     width: 65.21%;
   }
 }
 @media (min-width: 1440px) {
-  .rgn-literature__article--white-image .rgn-literature__article__title {
+  .rgn-literature__article--white-image .rgn-literature__article__anchor .rgn-literature__article__title {
     margin: 1.6rem 0;
   }
-  .rgn-literature__article--white-image .rgn-literature__article__description {
+  .rgn-literature__article--white-image .rgn-literature__article__anchor .rgn-literature__article__description {
     max-width: 26.9rem;
     width: 100%;
   }
 }
-.rgn-literature__article--white-image.rgn-literature__article--white-image--reverse {
+.rgn-literature__article--white-image.rgn-literature__article--white-image--reverse .rgn-literature__article__anchor {
   display: flex;
   flex-direction: row;
 }
 @media (min-width: 1024px) {
-  .rgn-literature__article--white-image.rgn-literature__article--white-image--reverse {
+  .rgn-literature__article--white-image.rgn-literature__article--white-image--reverse .rgn-literature__article__anchor {
     flex-direction: row-reverse;
   }
-  .rgn-literature__article--white-image.rgn-literature__article--white-image--reverse .rgn-literature__article__image {
+  .rgn-literature__article--white-image.rgn-literature__article--white-image--reverse .rgn-literature__article__anchor .rgn-literature__article__image {
     height: 28.3rem;
   }
 }
 @media (min-width: 1440px) {
-  .rgn-literature__article--white-image.rgn-literature__article--white-image--reverse .rgn-literature__article__image {
+  .rgn-literature__article--white-image.rgn-literature__article--white-image--reverse .rgn-literature__article__anchor .rgn-literature__article__image {
     width: 43.97%;
   }
-  .rgn-literature__article--white-image.rgn-literature__article--white-image--reverse .rgn-literature__article__info {
+  .rgn-literature__article--white-image.rgn-literature__article--white-image--reverse .rgn-literature__article__anchor .rgn-literature__article__info {
     width: 56.03%;
     padding-left: 7.6%;
   }
@@ -2590,6 +2593,7 @@ rgn-our-work__body__image--active .rng-our-work {
   height: 3.2rem;
   border: solid 0.1rem rgba(151, 151, 151, 0.43);
   margin-bottom: 3.2rem;
+  background: none;
 }
 .rgn-contact__input--half-width {
   width: 50%;

@@ -2,7 +2,7 @@
 
 .rgn-literature{
     display: flex;
-    flex-wrap: wrap
+    flex-wrap: wrap;
 } 
 
 .rgn-literature-title {
@@ -50,19 +50,18 @@
 
 .rgn-literature__article{
     overflow: hidden;
+    position: relative;
     &:hover{
         .rgn-literature__article__image{
             transform: scale(1.05);
         }
-    }
-    .rgn-literature__article__title{
-        cursor: pointer;
-        a{
-            color:inherit;
-        }
-        &:hover{
+        .rgn-literature__article__title{
             text-decoration: underline;
         }
+    }
+    &__anchor{
+        width: 100%;
+        height: 100%;
     }
     .rgn-literature__article__image, .rgn-literature__article__title{
         transition: 0.5s;
@@ -117,6 +116,10 @@
 .rgn-literature__article--white-image, .rgn-literature__article--black{
     display:flex;
     flex-wrap: wrap;
+    .rgn-literature__article__anchor{
+        display:flex;
+        flex-wrap: wrap;
+    }
     .rgn-literature__article__image{
         width: 100%;
         height: 32.3rem;    
@@ -144,45 +147,49 @@
     }
 }
 .rgn-literature__article--white-image{
-    @include media(">=tablet","<desktop"){
-        flex-wrap: nowrap;
-    }
+    .rgn-literature__article__anchor{
+        @include media(">=tablet","<desktop"){
+            flex-wrap: nowrap;
+        }
 
-    @include media(">=desktop"){
-        display: flex;
-        .rgn-literature__article__image {
-            width: 34.78%;
+        @include media(">=desktop"){
+            display: flex;
+            .rgn-literature__article__image {
+                width: 34.78%;
+            }
+            .rgn-literature__article__info{
+                width: 65.21%;
+            }
         }
-        .rgn-literature__article__info{
-            width: 65.21%;
-        }
-    }
-    @include media(">=bigdesktop"){
-        .rgn-literature__article__title{
-            margin: 1.6rem 0;
-        }
-        .rgn-literature__article__description{
-            max-width: 26.9rem;
-            width: 100%;
+        @include media(">=bigdesktop"){
+            .rgn-literature__article__title{
+                margin: 1.6rem 0;
+            }
+            .rgn-literature__article__description{
+                max-width: 26.9rem;
+                width: 100%;
+            }
         }
     }
 
     &.rgn-literature__article--white-image--reverse{
-        display:flex;
-        flex-direction: row;
-        @include media(">=desktop"){
-            flex-direction: row-reverse;
-            .rgn-literature__article__image{ 
-                height: 28.3rem;
+        .rgn-literature__article__anchor{
+            display:flex;
+            flex-direction: row;
+            @include media(">=desktop"){
+                flex-direction: row-reverse;
+                .rgn-literature__article__image{ 
+                    height: 28.3rem;
+                }
             }
-        }
-        @include media(">=bigdesktop"){
-            .rgn-literature__article__image {
-                width: 43.97%;
-            }
-            .rgn-literature__article__info{
-                width: 56.03%;
-                padding-left: 7.6%;
+            @include media(">=bigdesktop"){
+                .rgn-literature__article__image {
+                    width: 43.97%;
+                }
+                .rgn-literature__article__info{
+                    width: 56.03%;
+                    padding-left: 7.6%;
+                }
             }
         }
     }
