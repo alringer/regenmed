@@ -49,6 +49,7 @@ get_header();
                 <a href="<?php echo get_site_url() ?>/whitepapers">White Papers</a>
             </li>
         </ul>
+        <div id="rgnListIndicator" class="rgn-literature-page__nav__list__indicator"></div>
     </nav>
     <section class="rgn-literature-page__cards">
         <div  class="rgn-literature-page__cards__inner" id="cardsContainer">

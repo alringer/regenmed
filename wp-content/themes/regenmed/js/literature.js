@@ -51,7 +51,12 @@
     function initTabIndicator(){
         var items = $(".rgn-literature-page__nav__list__item");
         var indicator = $("#rgnListIndicator");
-        indicator.width(items.first().width());
+        var activeItem = items.filter(".active")
+        indicator.width(activeItem.width());
+        indicator.offset({
+            top: indicator.position().top,
+            left: activeItem.position().left
+        })
         items.hover(function(event){
                 event.stopPropagation();
                 var hoveredItem = $(this);

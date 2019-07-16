@@ -4,6 +4,7 @@ $menuLocations = get_nav_menu_locations(); // Get our nav locations (set in our 
 
 $menuID = $menuLocations['extra-menu']; // Get the *primary* menu ID
 $max_chars = 180;
+$max_chars_sm = 90;
 $primaryNav = wp_get_nav_menu_items($menuID); // Get the array of wp objects, the nav items for our queried location.
 
 function get_post_type_text($type){
@@ -52,8 +53,8 @@ function get_post_type_text($type){
                     <div class="rgn-literature__article__title"><?php echo $post1->post_title ?></div>
                     <div class="rgn-literature__article__description">
                         <?php 
-                        if (strlen($post1->post_excerpt) >= $max_chars)
-                            echo substr($post1->post_excerpt , 0, $max_chars). "...";
+                        if (strlen($post1->post_excerpt) >= $max_chars_sm)
+                            echo substr($post1->post_excerpt , 0, $max_chars_sm). "...";
                         else
                             echo $post1->post_excerpt;
                         ?>
@@ -70,14 +71,14 @@ function get_post_type_text($type){
         ?>
             <article class="rgn-literature__article rgn-literature__article--white-image rgn-appear-animation">
                 <a class="rgn-literature__article__anchor" href="<?php echo get_post_permalink($post2->ID);?>">
-                    <div class="rgn-literature__article__image rgn-tablet-start" style="background-image:url('<?php echo get_the_post_thumbnail_url($post2->ID)?>')"></div>
+                    <div class="rgn-literature__article__image" style="background-image:url('<?php echo get_the_post_thumbnail_url($post2->ID)?>')"></div>
                     <div class="rgn-literature__article__info">
                         <div class="rgn-literature__article__type"><?php echo get_post_type_text($post2->post_type); ?></div>
                         <div class="rgn-literature__article__title"><?php echo $post2->post_title ?></div>
                         <div class="rgn-literature__article__description">
                         <?php 
-                        if (strlen($post2->post_excerpt) >= $max_chars)
-                            echo substr($post2->post_excerpt , 0, $max_chars). "...";
+                        if (strlen($post2->post_excerpt) >= $max_chars_sm)
+                            echo substr($post2->post_excerpt , 0, $max_chars_sm). "...";
                         else
                             echo $post2->post_excerpt;
                         ?>
@@ -111,14 +112,14 @@ function get_post_type_text($type){
         ?>
         <article class="rgn-literature__article rgn-literature__article--white-image rgn-literature__article--white-image--reverse rgn-appear-animation">
             <a class="rgn-literature__article__anchor" href="<?php echo get_post_permalink($post4->ID); ?>">
-                <div class="rgn-literature__article__image rgn-tablet-start" style="background-image:url('<?php echo get_the_post_thumbnail_url($post4->ID)?>')"></div>
+                <div class="rgn-literature__article__image" style="background-image:url('<?php echo get_the_post_thumbnail_url($post4->ID)?>')"></div>
                 <div class="rgn-literature__article__info">
                     <div class="rgn-literature__article__type"><?php echo get_post_type_text($post4->post_type);?></div>
                     <div class="rgn-literature__article__title"><?php echo $post4->post_title ?></div>
                     <div class="rgn-literature__article__description">
                         <?php 
-                        if (strlen($post4->post_excerpt) >= $max_chars)
-                            echo substr($post4->post_excerpt , 0, $max_chars). "...";
+                        if (strlen($post4->post_excerpt) >= $max_chars_sm)
+                            echo substr($post4->post_excerpt , 0, $max_chars_sm). "...";
                         else
                             echo $post4->post_excerpt;
                         ?>

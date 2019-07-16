@@ -1176,12 +1176,18 @@ rgn-our-work__body__image--active .rng-our-work {
 .rgn-our-work__body__info__pagination {
   max-width: 6rem;
   width: 100%;
-  margin: 0 auto;
+  margin: 0 auto 4.8rem;
   display: flex;
   justify-content: space-between;
 }
+@media (min-width: 768px) {
+  .rgn-our-work__body__info__pagination {
+    margin: 0 auto 10.2rem;
+  }
+}
 @media (min-width: 1024px) {
   .rgn-our-work__body__info__pagination {
+    margin: 0 auto;
     margin-left: 11.9%;
   }
 }
@@ -1635,6 +1641,12 @@ rgn-our-work__body__image--active .rng-our-work {
     max-width: 30.1rem;
   }
 }
+@media only screen and (min-width: 1440px) and (max-height: 79rem) {
+  .hero__slide--disciplines__section--main__title {
+    left: 6%;
+    top: 10rem;
+  }
+}
 
 .hero__slide--disciplines__subsection {
   color: #ffffff;
@@ -1660,6 +1672,11 @@ rgn-our-work__body__image--active .rng-our-work {
   letter-spacing: normal;
   color: #FFF;
 }
+@media (max-width: 1023px) {
+  .hero__slide--disciplines__subsection__title {
+    margin-bottom: 2.1rem;
+  }
+}
 
 .hero__slide--disciplines__subsection__title::after {
   content: "";
@@ -1680,12 +1697,22 @@ rgn-our-work__body__image--active .rng-our-work {
   letter-spacing: normal;
   color: #ffffff;
 }
+@media (max-width: 767px) {
+  .hero__slide--disciplines__subsection__description > p {
+    min-height: 7.9rem;
+  }
+}
 
 .hero__slide--disciplines__subsection__description a {
   font-size: 14px;
   line-height: normal;
   letter-spacing: 0.12rem;
   color: #ffffff;
+}
+@media (max-width: 1023px) {
+  .hero__slide--disciplines__subsection__description a {
+    margin-bottom: 4.4rem;
+  }
 }
 
 .hero__slide--disciplines__subsection__trigger {
@@ -4108,6 +4135,7 @@ rgn-our-work__body__image--active .rng-our-work {
   align-items: center;
 }
 .rgn-literature-page__view-more {
+  background: none;
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.8rem;
   font-weight: bold;

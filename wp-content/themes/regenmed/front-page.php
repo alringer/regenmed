@@ -28,7 +28,6 @@ get_header();
 		<main id="main" class="site-main">
             <section id="heroJack" class="hero hero--jacked">
                 <div id="heroSlide1" class="hero__slide hero__slide--first" <?php if($slideImage){ ?> style="background-image:url(' <?php echo $slideImage ?>')" <?php } ?> >
-                    Slide1
                     <div class="hero__slide__text">
                         <p class="hero__slide__text__top">
                             <?php 
