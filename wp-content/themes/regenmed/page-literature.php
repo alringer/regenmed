@@ -89,13 +89,13 @@ get_header();
         <?php
         endwhile;
         endif;
-        wp_reset_query();  // Restore global post data stomped by the_post().
+        // wp_reset_query();  // Restore global post data stomped by the_post().
         ?>
         </div>
     </section>
     <div class="rgn-literature-page__bottom">
         <button id="rgnLiteratureViewMore" class="rgn-literature-page__view-more" data-posttype="literature" <?php if( ! ($query->have_posts()) )?> disabled ?>>VIEW MORE</button>
     </div>
-    <!-- wp_reset_query(); -->
+    <?php wp_reset_query(); ?>
 </main>
 <?php get_footer(); 

@@ -11,7 +11,6 @@
             'post_status'   => 'publish',
             'numberposts'   => 6,
             'order'         => 'ASC',
-            'orderby'       => 'menu_order'
         ]);
         foreach ($posts as $post):
             setup_postdata( $post );

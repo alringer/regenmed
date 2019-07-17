@@ -23,7 +23,9 @@
                 $img = get_post_meta( $id, '_case_study_alt_image_value_key', true );
             ?>
             
-            <img src="<?php echo $img['src'] ?>" class="rgn-our-work__body__image rgn-our-work__body__image--<?php echo $key+1; if($key==0){?> rgn-our-work__body__image--active<?php } ?>">
+            <?php if($img && $img[0] && $img[0]['src']){?> 
+                <img src="<?php echo $img[0]['src'] ?>" class="rgn-our-work__body__image rgn-our-work__body__image--<?php echo $key+1; if($key==0){?> rgn-our-work__body__image--active<?php } ?>">
+            <?php } ?>
             <?php endforeach; ?> 
         </div>
         <div class="rgn-our-work__body__info rgn-appear-animation">

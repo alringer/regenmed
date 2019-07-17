@@ -10,6 +10,21 @@ if(wp.media){
         },
         multiple: false
     })
+
+    var setVisibility = function( action ){
+        if( action === 'ADD'){
+            addButton.style.display="none";
+            deleteButton.style.display="";
+            img.setAttribute( 'style', 'width: 100%');
+        }
+        if( action === 'DELETE'){
+            addButton.style.display="";
+            deleteButton.style.display="none";
+            img.removeAttribute( 'style' );
+        }
+    }
+
+
     addButton.addEventListener( 'click', function(){
         if(customUploader){
             customUploader.open();
@@ -20,7 +35,8 @@ if(wp.media){
         var attachment = customUploader.state().get('selection').first().toJSON();
         img.setAttribute('src',attachment.url);
         img.setAttribute('style','width:100%');
-        hiddenField.setAttribute('value', JSON.stringify( [{ id: attachment.id, url: attachment.url }] ));
+        hiddenField.setAttribute('value', JSON.stringify( [{ id: attachment.id, src: attachment.url }] ));
+        setVisibility("ADD");
     })
     
     deleteButton.addEventListener('click', function(){
@@ -30,13 +46,14 @@ if(wp.media){
     })
 
     window.addEventListener('DOMContentLoaded', function(){
-        if(customUploads && customUploads.imageData){
-            if(customUploads.imageData.src){
-                img.setAttribute( 'src', customUploads.imageData.src);
-                img.setAttribute('style','width:100%');
-                var value = JSON.stringify( [customUploads.imageData]);
-                hiddenField.setAttribute( 'value', value );
-            }            
+        if( customUploads.imageData === "" || customUploads.imageData.length === 0){
+            setVisibility("DELETE");
+        }
+        else{
+            img.setAttribute( 'src', customUploads.imageData[0].src);
+            var value = JSON.stringify( customUploads.imageData);
+            hiddenField.setAttribute( 'value', value );
+            setVisibility("ADD");
         }
     })
 }

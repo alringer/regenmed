@@ -1,9 +1,13 @@
 <?php
 function regenmed_case_study_register_admin_script(){
+    $screen = get_current_screen();
+    if ( $screen->post_type != "case-studies" ) {
+        return;
+    }
     wp_register_script('imgUploads', get_template_directory_uri() . '/js/admin-image-upload.js', '', '1.0', true);
     wp_enqueue_script('imgUploads');
     $postId = get_the_ID();
-    wp_localize_script('imgUploads', 'customUploads', array( 'imageData'=> get_post_meta( $postId, '_case_study_alt_image_value_key', true )));
+    wp_localize_script('imgUploads', 'customUploads', array( 'imageData'=> get_post_meta( $postId, '_case_study_alt_image_value_key', true ), 'type'=>'case' ));
 }
 
 function create_case_study_posttype() {
@@ -65,7 +69,7 @@ function regenmed_case_study_fields_callback( $post ) {
 	
     $headline = get_post_meta( $post->ID, '_case_study_headline_value_key', true );
     $background = get_post_meta( $post->ID, '_case_study_background_value_key', true );
-    $conclusion = get_post_meta( $post->ID, '_case_study_conclusion_value_key', true );
+    // $conclusion = get_post_meta( $post->ID, '_case_study_conclusion_value_key', true );
     $references = get_post_meta( $post->ID, '_case_study_references_value_key', true );
     
     ?>
@@ -77,10 +81,10 @@ function regenmed_case_study_fields_callback( $post ) {
             <label for="_case_study_background_field">Background:</label>
             <textarea type="text" class="components-textarea-control__input" id="_case_study_background_field" name="_case_study_background_field"> <?php echo esc_attr( $background )  ?> </textarea>
         </div>
-        <div class="rgn-case-study-metabox__field">
+        <!-- <div class="rgn-case-study-metabox__field">
             <label for="_case_study_conclusion_field">Conclusion:</label>
             <textarea type="text" class="components-textarea-control__input" id="_case_study_conclusion_field" name="_case_study_conclusion_field"> <?php echo esc_attr( $conclusion )  ?> </textarea>
-        </div>
+        </div> -->
         <div class="rgn-case-study-metabox__field">
             <label for="_case_study_references_field">References:</label>
             <textarea type="text" class="components-textarea-control__input" id="_case_study_references_field" name="_case_study_references_field"> <?php echo esc_attr( $references )  ?> </textarea>
@@ -113,10 +117,10 @@ function regenmed_save_case_study_fields_data( $post_id ) {
         $background_data = sanitize_text_field( $_POST['_case_study_background_field'] );        
         update_post_meta( $post_id, '_case_study_background_value_key', $background_data );
     }
-    if( isset( $_POST['_case_study_conclusion_field'] ) ) {
-        $conclusion_data = sanitize_text_field( $_POST['_case_study_conclusion_field'] );        
-        update_post_meta( $post_id, '_case_study_conclusion_value_key', $conclusion_data );
-    }
+    // if( isset( $_POST['_case_study_conclusion_field'] ) ) {
+    //     $conclusion_data = sanitize_text_field( $_POST['_case_study_conclusion_field'] );        
+    //     update_post_meta( $post_id, '_case_study_conclusion_value_key', $conclusion_data );
+    // }
     if( isset( $_POST['_case_study_references_field'] ) ) {
         $references_data = sanitize_text_field( $_POST['_case_study_references_field'] );        
         update_post_meta( $post_id, '_case_study_references_value_key', $references_data );
@@ -156,10 +160,10 @@ function regenmed_save_case_study_alt_image_data( $post_id ) {
     if( isset($_POST['regenmed_alt_image_field'])){
         $image_data = json_decode( stripslashes($_POST['regenmed_alt_image_field']) );
         if( is_object($image_data[0]) ){
-            $image_data = array(
+            $image_data = array(array(
                 'id' => intval($image_data[0]->id),
-                'src' => esc_url_raw($image_data[0]->url)
-            );
+                'src' => esc_url_raw($image_data[0]->src)
+            ));
         }
         else{
             $image_data = [];
