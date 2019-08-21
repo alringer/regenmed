@@ -1,4 +1,7 @@
 <?php
+
+require(get_template_directory() . '/includes/taxonomies/services.php');
+
 function regenmed_case_study_register_admin_script(){
     $screen = get_current_screen();
     if ( $screen->post_type != "case-studies" ) {
@@ -32,10 +35,10 @@ function create_case_study_posttype() {
         'description'         => __( 'Case Studies', 'regenmed' ),
         'labels'              => $labels,
         // Features this CPT supports in Post Editor
-        'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'custom-fields', ),
+        'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'custom-fields', ),
         'show_in_rest' => true, //Gutemberg
         // You can associate this CPT with a taxonomy or custom taxonomy. 
-        'taxonomies'          => array( 'categories' ),
+        'taxonomies'            => array( 'service_category' ),
         /* A hierarchical CPT is like Pages and can have
         * Parent and child items. A non-hierarchical CPT
         * is like Posts.

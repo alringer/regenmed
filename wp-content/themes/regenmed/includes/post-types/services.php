@@ -1,4 +1,9 @@
 <?php
+
+/*
+    While this filename is called 'services' in code, they are "services categories" for the final user.
+*/
+
 function regenmed_service_register_admin_script(){
     $screen = get_current_screen();
     if ( $screen->post_type != "services" ) {
@@ -33,7 +38,7 @@ function regenmed_service_post_type() {
 		'description'           => 'Service categories the company manages',
 		'labels'                => $labels,
 		'supports'              => array( 'title', 'excerpt', 'thumbnail'),
-		'taxonomies'            => array( 'product_category' ),
+		// 'taxonomies'            => array( 'service_category' ),
 		'hierarchical'          => false,
 		'public'                => true,
 		'show_ui'               => true,
@@ -60,9 +65,9 @@ function regenmed_service_post_type() {
 
 /* SERVICE META BOXES */
 function regenmed_service_add_meta_box() {
-    add_meta_box( 'service_title', 'Categories title', 'regenmed_service_title_callback', 'Service categories', 'advanced', 'high' );
-    add_meta_box( 'service_description', 'Categories description', 'regenmed_service_description_callback', 'Service categories', 'advanced', 'high' );
-    add_meta_box( 'service_alt_image', 'Alt image', 'regenmed_service_alt_image_callback', 'Service categories', 'side', 'high' );
+    add_meta_box( 'service_title', 'Categories title', 'regenmed_service_title_callback', 'services', 'advanced', 'high' );
+    add_meta_box( 'service_description', 'Categories description', 'regenmed_service_description_callback', 'services', 'advanced', 'high' );
+    add_meta_box( 'service_alt_image', 'Alt image', 'regenmed_service_alt_image_callback', 'services', 'side', 'high' );
 }
 
 //TITLE
@@ -70,7 +75,6 @@ function regenmed_service_title_callback( $post ) {
 	wp_nonce_field( 'regenmed_save_service_title_data', 'regenmed_service_title_meta_box_nonce' );
 	
 	$value = get_post_meta( $post->ID, '_service_title_value_key', true );
-	echo '<p>'. the_permalink() .'</p>';
 	echo '<label for="regenmed_service_title_field">Categories title: </label>';
 	echo '<input type="text" id="regenmed_service_title_field" name="regenmed_service_title_field" value="' . esc_attr( $value ) . '" />';
 }
@@ -109,7 +113,7 @@ function regenmed_service_description_callback( $post ) {
 	$value = get_post_meta( $post->ID, '_service_description_value_key', true );
 	
 	echo '<label for="regenmed_service_description_field">Categories description: </label>';
-	echo '<textarea id="regenmed_service_description_field" name="regenmed_service_description_field" value="" />' . esc_attr( $value ) . '</textarea>';
+	echo '<textarea style="width:100%;    min-height: 120px;" id="regenmed_service_description_field" name="regenmed_service_description_field" value="" />' . esc_attr( $value ) . '</textarea>';
 }
 function regenmed_save_service_description_data( $post_id ) {
 	
@@ -147,7 +151,6 @@ function regenmed_service_alt_image_callback( $post ) {
     
     ?>
     <div id="metabox-wrapper">
-        <p> <?php echo $value; ?> </p>
         <img id="regenmed_alt_image_tag">
         <input type="hidden" id="regenmed_alt_image_field" name="regenmed_alt_image_field">
         <input type="button" id="regenmed_alt_image_upload" value="Upload">

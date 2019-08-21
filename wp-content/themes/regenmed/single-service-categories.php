@@ -38,6 +38,8 @@
         <?php endif; ?>
         <?php                    
             include("includes/sections/our-work.php");
+
+            include("includes/sections/microservices.php");
         ?>
     </main>
     </section>

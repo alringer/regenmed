@@ -1,11 +1,25 @@
 <?php 
-        $posts = get_posts([
-            'post_type'     => 'case-studies',
-            'post_status'   => 'publish',
-            'numberposts'   => 3,
-            'order'         => 'ASC',
-            'orderby'       => 'menu_order'
-        ]);
+    global $wp;
+    if($wp->request===""){
+        $post_slug = "homepage";
+    }else{
+        $post_slug = $post->post_name;
+    }
+
+    $posts = get_posts([
+        'post_type'     => 'case-studies',
+        'post_status'   => 'publish',
+        'numberposts'   => 3,
+        'order'         => 'ASC',
+        'orderby'       => 'menu_order',
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'service_category',
+                'field'    => 'slug',
+                'terms'    => $post_slug,
+            ),
+        ),
+    ]);
 ?>
 
 <section class="rgn-our-work">
@@ -71,3 +85,4 @@
         </div>
     </div>
 </section>
+<?php wp_reset_postdata();

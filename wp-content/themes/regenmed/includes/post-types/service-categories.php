@@ -1,4 +1,9 @@
 <?php
+
+/*
+    While this filename is called 'Services categories' in code, they are "services" for the final user.
+*/
+
 function regenmed_service_category_register_admin_script(){
     $screen = get_current_screen();
     if ( $screen->post_type != "service-categories" ) {

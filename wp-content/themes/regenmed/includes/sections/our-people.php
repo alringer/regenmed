@@ -6,11 +6,14 @@
     </h1>
     <div class="rgn-our-people__body">
         <?php 
+        $post_slug = $post->post_name;
         $posts = get_posts([
             'post_type'     => 'bios',
             'post_status'   => 'publish',
             'numberposts'   => 6,
             'order'         => 'ASC',
+            'orderby'       => 'menu_order',
+            'category_name'    => $post_slug,
         ]);
         foreach ($posts as $post):
             setup_postdata( $post );

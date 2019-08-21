@@ -18,7 +18,7 @@ $footerPagesNav = wp_get_nav_menu_items($pagesMenuID);
 			<footer class="footer" role="contentinfo">
                 <div class="footer__newsletter rgn-appear-animation">
                     <h1 class="footer__newsletter__title">Join Our Newsletter</h1>
-                    <p class="footer__newsletter__message">Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+                    <p class="footer__newsletter__message">Receive regular observations on the evolving Regenerative Medicine market.</p>
                     <?php echo do_shortcode('[mc4wp_form]'); ?>
                     <!-- <form method="POST" class="footer__newsletter__form">
                         <input type="text" class="footer__newsletter__form__email" name="email" placeholder="Email address">
