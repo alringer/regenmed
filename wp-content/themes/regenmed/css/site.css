@@ -1084,7 +1084,7 @@ rgn-our-work__body__image--active .rng-our-work {
 }
 @media (min-width: 1440px) {
   .rgn-our-work__body__info__slide {
-    padding-left: 3.23%;
+    padding-left: 8.6rem;
   }
 }
 
@@ -1178,7 +1178,6 @@ rgn-our-work__body__image--active .rng-our-work {
   width: 100%;
   margin: 0 auto 4.8rem;
   display: flex;
-  justify-content: space-between;
 }
 @media (min-width: 768px) {
   .rgn-our-work__body__info__pagination {
@@ -1210,6 +1209,9 @@ rgn-our-work__body__image--active .rng-our-work {
 }
 .rgn-our-work__body__info__pagination__page--active {
   background-color: #2c2c2c;
+}
+.rgn-our-work__body__info__pagination__page + .rgn-our-work__body__info__pagination__page {
+  margin-left: 1.3rem;
 }
 
 /* Literature */
@@ -1505,12 +1507,12 @@ rgn-our-work__body__image--active .rng-our-work {
   padding: 0;
   display: flex;
   flex-direction: column-reverse;
+  background-color: #fbfbfb;
 }
 @media (min-width: 768px) {
   .rgn-microservices__container {
     flex-direction: row;
-    justify-content: space-between;
-    padding: 12.9rem 3.7rem 12.9rem 3.9rem;
+    padding: 12.9rem 14.8rem 12.9rem;
   }
 }
 .rgn-microservices__title {
@@ -3901,7 +3903,17 @@ rgn-our-work__body__image--active .rng-our-work {
 }
 .rgn-case-study__background {
   max-width: 82.1rem;
-  margin: 0 auto;
+  margin: 6rem auto 0;
+}
+@media (min-width: 1024px) {
+  .rgn-case-study__background {
+    margin-top: 10rem;
+  }
+}
+@media (min-width: 1440px) {
+  .rgn-case-study__background {
+    margin-top: 15rem;
+  }
 }
 .rgn-case-study__background-text {
   text-align: center;
