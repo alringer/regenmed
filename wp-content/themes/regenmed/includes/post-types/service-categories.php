@@ -76,6 +76,7 @@ function regenmed_service_category_post_type() {
 function regenmed_service_category_add_meta_box() {
     add_meta_box( 'service_alt_image', 'Icon image', 'regenmed_service_category_alt_image_callback', 'service-categories', 'side', 'high' );
     add_meta_box( 'service_category_description', 'Main Description', 'regenmed_service_category_description_callback', 'service-categories', 'advanced', 'high' );
+    add_meta_box( 'service_category_microservices', 'Categories microservices', 'regenmed_service_category_microservices_callback', 'service-categories', 'advanced', 'high' );
 }
 
 //DESCRIPTION
@@ -85,7 +86,7 @@ function regenmed_service_category_description_callback( $post ) {
 	$value = get_post_meta( $post->ID, '_service_category_description_value_key', true );
 	
 	echo '<label for="regenmed_service_category_description_field">Categories description: </label>';
-	echo '<textarea id="regenmed_service_category_description_field" name="regenmed_service_category_description_field" value="" />' . esc_attr( $value ) . '</textarea>';
+	echo '<textarea style="width:100%; min-height: 120px;" id="regenmed_service_category_description_field" name="regenmed_service_category_description_field" value="" />' . esc_attr( $value ) . '</textarea>';
 }
 function regenmed_save_service_category_description_data( $post_id ) {
 	
@@ -112,6 +113,44 @@ function regenmed_save_service_category_description_data( $post_id ) {
 	$my_data = sanitize_text_field( $_POST['regenmed_service_category_description_field'] );
 	
 	update_post_meta( $post_id, '_service_category_description_value_key', $my_data );
+	
+}
+
+
+// Micoreservices
+function regenmed_service_category_microservices_callback( $post ) {
+	wp_nonce_field( 'regenmed_save_service_category_microservices_data', 'regenmed_service_category_microservices_meta_box_nonce' );
+	
+	$value = get_post_meta( $post->ID, '_service_category_microservices_value_key', true );
+	
+	echo '<label for="regenmed_service_category_microservices_field">Categories microservices: </label>';
+	echo '<textarea style="width:100%; min-height: 120px;" id="regenmed_service_category_microservices_field" name="regenmed_service_category_microservices_field" value="" />' . esc_attr( $value ) . '</textarea>';
+}
+function regenmed_save_service_category_microservices_data( $post_id ) {
+	
+	if( ! isset( $_POST['regenmed_service_category_microservices_meta_box_nonce'] ) ){
+		return;
+	}
+	
+	if( ! wp_verify_nonce( $_POST['regenmed_service_category_microservices_meta_box_nonce'], 'regenmed_save_service_category_microservices_data') ) {
+		return;
+	}
+	
+	if( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ){
+		return;
+	}
+	
+	if( ! current_user_can( 'edit_post', $post_id ) ) {
+		return;
+	}
+	
+	if( ! isset( $_POST['regenmed_service_category_microservices_field'] ) ) {
+		return;
+	}
+	
+	$my_data = sanitize_text_field( $_POST['regenmed_service_category_microservices_field'] );
+	
+	update_post_meta( $post_id, '_service_category_microservices_value_key', $my_data );
 	
 }
 
@@ -164,4 +203,5 @@ add_action( 'init', 'regenmed_service_category_post_type' );
 add_action( 'add_meta_boxes', 'regenmed_service_category_add_meta_box' );
 add_action( 'save_post', 'regenmed_save_service_category_alt_image_data' );
 add_action( 'save_post', 'regenmed_save_service_category_description_data' );
+add_action( 'save_post', 'regenmed_save_service_category_microservices_data' );
 add_action( 'admin_enqueue_scripts', 'regenmed_service_category_register_admin_script');
