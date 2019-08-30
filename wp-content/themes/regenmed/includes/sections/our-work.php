@@ -72,15 +72,17 @@
                 <?php endforeach; ?> 
             </div>
             <div class="rgn-our-work__body__info__pagination">
-                <?php foreach ($posts as $key=>$post):
-                    setup_postdata( $post );
-                    $id = get_the_ID();
-                    $headline = get_post_meta( $id, '_case_study_headline_value_key', true );
+                <?php
+                    if (count($posts)>1):
+                        foreach ($posts as $key=>$post):
+                            setup_postdata( $post );
+                            $id = get_the_ID();
+                            $headline = get_post_meta( $id, '_case_study_headline_value_key', true );
                 ?>
-                <button class="rgn-our-work__body__info__pagination__page <?php if($key==0){echo 'rgn-our-work__body__info__pagination__page--active';} ?>" data-page="<?php echo $key + 1;  ?>"></button>
-                <!-- <button class="rgn-our-work__body__info__pagination__page" data-page="2"></button>
-                <button class="rgn-our-work__body__info__pagination__page" data-page="3"></button> -->
-                <?php endforeach; ?> 
+                <button class="rgn-our-work__body__info__pagination__page <?php if($key==0){echo 'rgn-our-work__body__info__pagination__page--active';} ?>" data-page="<?php echo $key + 1;  ?>"></button>                
+                <?php 
+                        endforeach;
+                    endif;?> 
             </div>
         </div>
     </div>
