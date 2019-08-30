@@ -28,9 +28,9 @@ get_header();
                     ?>
                 </p>
             </header>
-            <section class="rgn-case-study__summary">
+            <!-- <section class="rgn-case-study__summary">
                 <?php echo $headline; ?>
-            </section>
+            </section> -->
             <section class="rgn-case-study__background">
                 <h3 class="rgn-case-study__heading">Background</h3>
                 <p class="rgn-case-study__background-text"><?php echo $background ?></p>
@@ -40,12 +40,12 @@ get_header();
                 <?php the_content(); ?>
             </section>
 
-            <section class="rgn-case-study__references">
+            <!-- <section class="rgn-case-study__references">
                 <div class="rgn-case-study__references-inner">
                     <h3 class="rgn-case-study__heading">References</h3>
                     <p class="rgn-case-study__references-text"><?php echo $references ?></p>
                 </div>
-            </section>
+            </section> -->
         </article>
     <?php endwhile; ?>
     <?php else: ?>

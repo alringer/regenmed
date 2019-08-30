@@ -240,7 +240,13 @@
     }
     &__background{
         max-width: 82.1rem;
-        margin: 0 auto;
+        margin: 6rem auto 0;
+        @include media(">=desktop"){
+            margin-top: 10rem;
+        }
+        @include media(">=bigdesktop"){
+            margin-top: 15rem;
+        }
         &-text{
             text-align: center;
             min-height: 31.2rem;
