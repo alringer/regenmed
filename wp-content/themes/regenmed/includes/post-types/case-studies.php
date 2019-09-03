@@ -49,7 +49,8 @@ function create_case_study_posttype() {
         'show_in_menu'        => true,
         'show_in_nav_menus'   => true,
         'show_in_admin_bar'   => true,
-        'menu_headline'       => 5,
+        'menu_position'       => 5,
+        'menu_icon'			    => 'dashicons-clipboard',
         'can_export'          => true,
         'has_archive'         => true,
         'exclude_from_search' => false,
@@ -61,10 +62,8 @@ function create_case_study_posttype() {
 
 /* SERVICE META BOXES */
 function regenmed_case_study_add_meta_box() {
-    add_meta_box( 'case_study_metabox', 'Other data', 'regenmed_case_study_fields_callback', 'case-studies', 'side', 'high' );
+    // add_meta_box( 'case_study_metabox', 'Other data', 'regenmed_case_study_fields_callback', 'case-studies', 'side', 'high' );
     add_meta_box( 'case_study_alt_image', 'Alt image', 'regenmed_case_study_alt_image_callback', 'case-studies', 'side', 'high' );
-    // add_meta_box( 'case_study_education_metabox', 'Education', 'regenmed_case_study_education_callback', 'case-studies', 'normal', 'high' );
-    // add_meta_box( 'case_study_links_metabox', 'Publications', 'regenmed_case_study_links_callback', 'case-studies', 'normal', 'high' );
 }
 
 function regenmed_case_study_fields_callback( $post ) {
@@ -72,22 +71,12 @@ function regenmed_case_study_fields_callback( $post ) {
 	
     $headline = get_post_meta( $post->ID, '_case_study_headline_value_key', true );
     $background = get_post_meta( $post->ID, '_case_study_background_value_key', true );
-    // $conclusion = get_post_meta( $post->ID, '_case_study_conclusion_value_key', true );
-    $references = get_post_meta( $post->ID, '_case_study_references_value_key', true );
     
     ?>
         <div class="rgn-case-study-metabox__field">
             <label for="_case_study_headline_field">Headline</label>
             <textarea type="text" class="components-textarea-control__input" id="_case_study_headline_field" name="_case_study_headline_field"> <?php echo esc_attr( $headline )  ?> </textarea> 
         </div>
-        <div class="rgn-case-study-metabox__field">
-            <label for="_case_study_background_field">Background:</label>
-            <textarea type="text" class="components-textarea-control__input" id="_case_study_background_field" name="_case_study_background_field"> <?php echo esc_attr( $background )  ?> </textarea>
-        </div>
-        <!-- <div class="rgn-case-study-metabox__field">
-            <label for="_case_study_conclusion_field">Conclusion:</label>
-            <textarea type="text" class="components-textarea-control__input" id="_case_study_conclusion_field" name="_case_study_conclusion_field"> <?php echo esc_attr( $conclusion )  ?> </textarea>
-        </div> -->
         <div class="rgn-case-study-metabox__field">
             <label for="_case_study_references_field">References:</label>
             <textarea type="text" class="components-textarea-control__input" id="_case_study_references_field" name="_case_study_references_field"> <?php echo esc_attr( $references )  ?> </textarea>
@@ -110,7 +99,7 @@ function regenmed_save_case_study_fields_data( $post_id ) {
 	
 	if( ! current_user_can( 'edit_post', $post_id ) ) {
 		return;
-	}
+    }
 	
 	if( isset( $_POST['_case_study_headline_field'] ) ) {
         $headline_data = sanitize_text_field( $_POST['_case_study_headline_field'] );        
@@ -120,10 +109,10 @@ function regenmed_save_case_study_fields_data( $post_id ) {
         $background_data = sanitize_text_field( $_POST['_case_study_background_field'] );        
         update_post_meta( $post_id, '_case_study_background_value_key', $background_data );
     }
-    // if( isset( $_POST['_case_study_conclusion_field'] ) ) {
-    //     $conclusion_data = sanitize_text_field( $_POST['_case_study_conclusion_field'] );        
-    //     update_post_meta( $post_id, '_case_study_conclusion_value_key', $conclusion_data );
-    // }
+    if( isset( $_POST['_case_study_conclusion_field'] ) ) {
+        $conclusion_data = sanitize_text_field( $_POST['_case_study_conclusion_field'] );        
+        update_post_meta( $post_id, '_case_study_conclusion_value_key', $conclusion_data );
+    }
     if( isset( $_POST['_case_study_references_field'] ) ) {
         $references_data = sanitize_text_field( $_POST['_case_study_references_field'] );        
         update_post_meta( $post_id, '_case_study_references_value_key', $references_data );
@@ -178,6 +167,6 @@ function regenmed_save_case_study_alt_image_data( $post_id ) {
 
 add_action( 'init', 'create_case_study_posttype' );
 add_action( 'add_meta_boxes', 'regenmed_case_study_add_meta_box' );
-add_action( 'save_post', 'regenmed_save_case_study_fields_data' );
+// add_action( 'save_post', 'regenmed_save_case_study_fields_data' );
 add_action( 'save_post', 'regenmed_save_case_study_alt_image_data' );
 add_action( 'admin_enqueue_scripts', 'regenmed_case_study_register_admin_script');
