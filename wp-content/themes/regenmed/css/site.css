@@ -3089,6 +3089,7 @@ rgn-our-work__body__image--active .rng-our-work {
   margin: 0.8rem auto 0;
 }
 .rgn-white-paper__download {
+  max-width: 26.2rem;
   margin: 4.8rem auto 0;
 }
 
