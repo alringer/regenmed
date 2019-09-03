@@ -2,8 +2,6 @@
 
 function regenmed_white_paper_register_admin_script(){
     $screen = get_current_screen();
-    echo "POSTTYPE";
-    echo $screen->post_type;
     if ( $screen->post_type != "whitepapers" ) {
         return;
     }
