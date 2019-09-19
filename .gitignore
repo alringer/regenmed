@@ -29,5 +29,7 @@ index.php
 !wp-content/themes/regenmed/index.php
 wp-admin
 wp-config.php
+wp-config-deploy.php
+wp-config-local.php
 wp-links-opml.php
 wp-settings.php

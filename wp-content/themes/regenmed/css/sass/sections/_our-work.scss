@@ -16,7 +16,9 @@ rgn-our-work__body__image--active
     min-height: 40.1rem;
     @include media(">=tablet", "<desktop")  {
         // margin: 3.9rem auto;
-        min-height: 0;
+        // min-height: 0;
+        min-height: 37rem;
+        display: flex;
     }
     @include media(">=desktop") {
         width: 53%;
@@ -36,12 +38,14 @@ rgn-our-work__body__image--active
         }
         @include media(">=tablet", "<desktop") {
             margin: auto;
-            width: 33.2rem;
-            height: 37rem;
+            max-width: 33.2rem;
+            max-height: 37rem;
+            width: unset;
         }
         @include media(">=desktop"){
             max-width: 46.7rem;
-            height: 52rem;
+            max-height: 52rem;
+            width: unset;
         }
         @include media(">=bigdesktop"){
             max-width: 55.6rem;
@@ -65,6 +69,7 @@ rgn-our-work__body__image--active
     }
     @include media(">=desktop") {
         width: 47%;
+        height: 76.5rem;
         display: flex;
         flex-direction: column;
         justify-content: center;

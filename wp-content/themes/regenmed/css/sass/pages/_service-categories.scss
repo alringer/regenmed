@@ -120,7 +120,14 @@
     }
     &-icon{
         margin: 0 auto 5.4rem;
-        height: 7rem
+        height: 7rem;
+    }
+    &-icon-container{
+        height: 7rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 5.4rem;
     }
     &-title{
         font-family: $noto-tc;

@@ -32,6 +32,7 @@ include( get_template_directory() . '/includes/post-types/bios.php' );
 include( get_template_directory() . '/includes/post-types/case-studies.php' );
 add_post_type_support( 'page', 'excerpt' );
 add_filter('use_block_editor_for_post_type', 'digwp_disable_gutenberg', 10, 2);
+remove_filter( 'get_the_excerpt', 'wp_trim_excerpt' );
 
 function theme_header_scripts()
 {

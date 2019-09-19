@@ -977,7 +977,8 @@ rgn-our-work__body__image--active .rng-our-work {
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .rgn-our-work__body__image-container {
-    min-height: 0;
+    min-height: 37rem;
+    display: flex;
   }
 }
 @media (min-width: 1024px) {
@@ -1003,14 +1004,16 @@ rgn-our-work__body__image--active .rng-our-work {
 @media (min-width: 768px) and (max-width: 1023px) {
   .rgn-our-work__body__image-container .rgn-our-work__body__image {
     margin: auto;
-    width: 33.2rem;
-    height: 37rem;
+    max-width: 33.2rem;
+    max-height: 37rem;
+    width: unset;
   }
 }
 @media (min-width: 1024px) {
   .rgn-our-work__body__image-container .rgn-our-work__body__image {
     max-width: 46.7rem;
-    height: 52rem;
+    max-height: 52rem;
+    width: unset;
   }
 }
 @media (min-width: 1440px) {
@@ -1038,6 +1041,7 @@ rgn-our-work__body__image--active .rng-our-work {
 @media (min-width: 1024px) {
   .rgn-our-work__body__info {
     width: 47%;
+    height: 76.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -3224,14 +3228,24 @@ rgn-our-work__body__image--active .rng-our-work {
   }
 }
 .rgn-services__category-icon {
-  margin: 0 auto 5.4rem;
-  height: 7rem;
   display: block;
+  margin: 0 auto;
+  max-height: 7rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 @media (min-width: 1024px) {
   .rgn-services__category-icon {
     padding-right: 3.2rem;
   }
+}
+.rgn-services__category-icon-container {
+  height: 7rem;
+  width: 100%;
+  margin: 0 auto 5.4rem;
+  position: relative;
 }
 .rgn-services__category-title {
   font-family: "Noto Serif TC", serif;
@@ -3244,7 +3258,7 @@ rgn-our-work__body__image--active .rng-our-work {
   color: #FFF;
   margin-bottom: 1.2rem;
 }
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
   .rgn-services__category-title {
     min-height: 6.9rem;
   }
@@ -3334,9 +3348,6 @@ rgn-our-work__body__image--active .rng-our-work {
     position: relative;
     width: 100%;
     max-width: 99.6rem;
-    /* left: 50%; */
-    /* transform: translate(-50%, 0); */
-    /* top: 40rem; */
     min-height: 39.8rem;
     padding: 8.9rem 13.7rem;
     margin: -8rem auto 0;
@@ -3407,6 +3418,13 @@ rgn-our-work__body__image--active .rng-our-work {
 .rgn-service-categories__category-icon {
   margin: 0 auto 5.4rem;
   height: 7rem;
+}
+.rgn-service-categories__category-icon-container {
+  height: 7rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 5.4rem;
 }
 .rgn-service-categories__category-title {
   font-family: "Noto Serif TC", serif;
@@ -3738,13 +3756,13 @@ rgn-our-work__body__image--active .rng-our-work {
   text-align: center;
   color: #d8d8d8;
   width: 100%;
-  height: 45rem;
+  min-height: 45rem;
   margin: 0 auto 6rem;
   padding: 6.7rem 2.2rem;
 }
 @media (min-width: 768px) {
   .rgn-case-study__summary {
-    height: 27rem;
+    min-height: 27rem;
     max-width: 66.6rem;
     padding: 5.4rem 6.3rem;
     margin-bottom: 11.3rem;

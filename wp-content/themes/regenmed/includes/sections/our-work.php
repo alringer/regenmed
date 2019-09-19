@@ -20,8 +20,8 @@
             ),
         ),
     ]);
+    if( $posts && count($posts)>0 ){
 ?>
-
 <section class="rgn-our-work">
     <h1 class="rgn-section-title">
         <?php 
@@ -87,4 +87,6 @@
         </div>
     </div>
 </section>
-<?php wp_reset_postdata();
+<?php
+    }
+ wp_reset_postdata();

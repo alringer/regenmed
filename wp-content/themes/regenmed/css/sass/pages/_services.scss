@@ -107,12 +107,25 @@
         max-width: 19rem;
     }
     &-icon{
-        margin: 0 auto 5.4rem;
-        height: 7rem;
-        display:block;
+        // margin: 0 auto 5.4rem;
+        // height: 7rem;
+        // display:block;
+        display: block;
+        margin: 0 auto;
+        max-height: 7rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         @include media(">=desktop"){
             padding-right: 3.2rem;
         }
+    }
+    &-icon-container{
+        height: 7rem;
+        width: 100%;
+        margin: 0 auto 5.4rem;
+        position: relative;
     }
     &-title{
         font-family: $noto-tc;
@@ -124,7 +137,7 @@
         letter-spacing: normal;
         color: $color-white;
         margin-bottom: 1.2rem;
-        @include media(">=bigdesktop"){
+        @include media(">=desktop"){
             min-height: 6.9rem;
         }
     }
