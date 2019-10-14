@@ -34,7 +34,7 @@
 				<div class="header__container">
 					<div class="header__left">
 						<!-- logo -->
-						<div class="">
+						<!-- <div class=""> -->
                             <a class="header__main-logo" href="<?php echo home_url(); ?>">
                                 <img src="<?php echo $mainUrl; ?>/img/logos/main-logo-light.svg" alt="Logo" class="logo-img logo-img--main">
                                 <img src="<?php echo $mainUrl; ?>/img/logos/main-logo.svg" alt="Logo" class="logo-img logo-img--alt">
@@ -42,7 +42,7 @@
 							<span class="">
 								<span></span>
 							</span>
-						</div>
+						<!-- </div> -->
 						<!-- /logo -->						
 					</div>
 					

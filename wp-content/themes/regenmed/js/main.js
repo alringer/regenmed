@@ -47,14 +47,16 @@ function initAppearAnimation(){
 }
 
 function initCarouselPagination(){
-    console.log("carousel");
     var currentPage = 1;
+    var slidesContainer = document.getElementById("ourWorkSlides");
+    var slidesNumber = document.getElementsByClassName("rgn-our-work__body__info__slide").length;
+    slidesContainer.style.width= (100 * slidesNumber) + "%";
     $('.rgn-our-work__body__info__pagination__page').click(function(){
         var button = $(this);
         var page = button.data('page');
         if(currentPage != page){
             currentPage = page;
-            document.getElementById("ourWorkSlides").className = "rgn-our-work__body__info__slides rgn-our-work__body__info__slides--"+page;
+            slidesContainer.className = "rgn-our-work__body__info__slides rgn-our-work__body__info__slides--"+page;
             $('.rgn-our-work__body__info__pagination__page--active').removeClass('rgn-our-work__body__info__pagination__page--active');
             button.addClass('rgn-our-work__body__info__pagination__page--active');
             
@@ -68,7 +70,6 @@ function initCarouselPagination(){
 }
 
 (function(){
-    console.log("Main");
     var menuButton = document.getElementById('mainMenuButton');
     if(menuButton){
         menuButton.addEventListener("click", toggleMenu);

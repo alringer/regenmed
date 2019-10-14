@@ -13,6 +13,17 @@ add_theme_support( 'post-thumbnails' ); //adds featured image field
 /*------------------------------------*\
 	Includes
 \*------------------------------------*/
+function digwp_disable_gutenberg($is_enabled, $post_type) {
+    if (
+        $post_type === 'service-categories'||
+        $post_type === 'whitepapers'||
+        $post_type === 'post'
+    ) return false; // change book to your post type
+	
+	return $is_enabled;
+	
+}
+include( get_template_directory() . '/includes/rest-api.php' );
 include( get_template_directory() . '/includes/theme-customizer.php'); 
 include( get_template_directory() . '/includes/post-types/white-papers.php' );
 include( get_template_directory() . '/includes/post-types/services.php' );
@@ -20,6 +31,8 @@ include( get_template_directory() . '/includes/post-types/service-categories.php
 include( get_template_directory() . '/includes/post-types/bios.php' );
 include( get_template_directory() . '/includes/post-types/case-studies.php' );
 add_post_type_support( 'page', 'excerpt' );
+add_filter('use_block_editor_for_post_type', 'digwp_disable_gutenberg', 10, 2);
+remove_filter( 'get_the_excerpt', 'wp_trim_excerpt' );
 
 function theme_header_scripts()
 {
@@ -46,6 +59,13 @@ function theme_homepage_scripts()
     if(is_front_page()){
         wp_register_script('frontPageScripts', get_template_directory_uri() . '/js/front-page.js', '', '1.0', true);
         wp_enqueue_script('frontPageScripts'); // Enqueue it!
+    }
+}
+
+function theme_literature_scripts(){
+    if(is_page('literature')||is_page('blog')|| get_post_type() == 'whitepapers'){
+        wp_register_script('literatureScripts', get_template_directory_uri() . '/js/literature.js', '', '1.0', true);
+        wp_enqueue_script('literatureScripts'); // Enqueue it!
     }
 }
 
@@ -95,10 +115,8 @@ function register_theme_menu()
         'header-menu' => __('Header Menu', 'html5blank'), // Main Navigation
         'sidebar-menu' => __('Sidebar Menu', 'html5blank'), // Sidebar Navigation
         'extra-menu' => __('Extra Menu', 'html5blank'), // Extra Navigation if needed (duplicate as many as you need!)
-        'communications-menu' => __('Communications Menu', 'html5blank'),
-        'business-menu' => __('Business Menu', 'html5blank'),
-        'clinical-menu' => __('Clinical Menu', 'html5blank'),
-        'science-menu' => __('Science Menu', 'html5blank'),
+        'footer-menu' => __('Footer Services Menu', 'html5blank'),
+        'footer-pages-menu' => __('Footer Pages Menu', 'html5blank'),
     ));
 }
 
@@ -127,6 +145,7 @@ add_action('admin_menu', 'custom_menu');
  add_action('wp_enqueue_scripts', 'theme_footer_scripts'); // Add Custom Scripts to wp_footer
 add_action('wp_enqueue_scripts', 'theme_styles'); // Add Theme Stylesheet
 add_action('wp_enqueue_scripts','theme_homepage_scripts'); // Add custom scripts to frontpage
+add_action('wp_enqueue_scripts','theme_literature_scripts'); //Add custom script to literature/blog/whitepage
 add_action('customize_register','theme_customize_register');
 
 ?>

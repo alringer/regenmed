@@ -6,7 +6,9 @@ get_header("light");
 <section id="primary" class="content-area">
     <main id="main" class="site-main">
     <?php 
-        if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+        if ( have_posts() ) : while ( have_posts() ) : the_post();
+            $post_att = get_post_meta( $post->ID, '_white_paper_attatchment_value_key', true );
+        ?>
         <article class="rgn-white-paper">
             <div class="rgn-white-paper__banner"></div>
             <div class="rgn-white-paper__container">
@@ -21,7 +23,7 @@ get_header("light");
                     <div class="rgn-white-paper__abstract">
                         <h3 class="rgn-white-paper__abstract__title">Abstract</h3>
                         <?php the_content();?>
-                        <button class="rgn-white-paper__download rgn-button">DOWNLOAD WHITE PAPER</button>
+                        <a class="rgn-white-paper__download rgn-button" href="<?php echo $post_att[0]["src"]; ?>"  target="_blank">DOWNLOAD WHITE PAPER</a>
                     </div>
                 </div>
             </div>
@@ -30,7 +32,7 @@ get_header("light");
         <?php else: ?>
             <!-- article -->
             <article>
-                <h1><?php _e( 'Sorry, nothing to displayHEHE.', 'html5blank' ); ?></h1>
+                <h1><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h1>
             </article>
             <!-- /article -->
 

@@ -5,7 +5,8 @@
         return str_replace('<p', '<p class="rgn-services__subtitle"', $excerpt);
     }
 
-
+    global $post;
+    $post_slug = $post->post_name;
     get_header();    
 ?>
     <section id="primary" class="content-area">
@@ -21,11 +22,14 @@
                     <p class="rgn-services__categories-description"><?php echo get_post_meta( get_the_ID(), '_service_description_value_key', true ); ?> </p>
                     <div class="rgn-services__categories-container">
                         <?php 
+
                         $posts = get_posts([
                             'post_type' => 'service-categories',
                             'post_status' => 'publish',
                             'numberposts' => 4,
-                            'order'    => 'ASC'
+                            'order'    => 'ASC',
+                            'orderby'       => 'menu_order',
+                            'category_name'    => $post_slug,
                         ]);
                         foreach ($posts as $post):
                             setup_postdata( $post );
@@ -33,7 +37,11 @@
                             $image = get_post_meta( get_the_ID(), '_service_category_alt_image_value_key', true );
                             ?>
                             <div class="rgn-services__category">
-                                <?php if($image && $image["src"]){ ?> <img src="<?php echo $image["src"]; ?>" class="rgn-services__category-icon"> <?php } ?>
+                                <div class="rgn-services__category-icon-container">
+                                    <?php if($image && $image[0] && $image[0]["src"]){ ?>
+                                        <img src="<?php echo $image[0]["src"]; ?>" class="rgn-services__category-icon">
+                                    <?php } ?>
+                                </div>
                                 <h3 class="rgn-services__category-title"><?php the_title(); ?></h3>
                                 <p class="rgn-services__category-description"><?php echo get_the_excerpt() ?></p>
                                 <a class="rgn-services__category-read-more rgn-read-more-link rgn-read-more-link--white" href="<?php the_permalink(); ?>">READ MORE <i class="icon icon-sm icon-right-arrow"></i></a>

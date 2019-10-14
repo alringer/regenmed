@@ -1,0 +1,81 @@
+.rgn-microservices{
+    padding: 0;
+    width: 100%;
+    .rgn-section-title{
+        color:white;
+    }
+    &__container{
+        width: 100%;
+        padding:0;
+        display: flex;
+        flex-direction: column-reverse;
+        background-color: $color-lighter-gray;
+        @include media(">=tablet"){
+            flex-direction: row;
+            padding: 12.9rem 14.8rem 12.9rem;
+            
+        }
+    }
+    &__title{
+        font-family: $noto-tc;
+        font-size: 3rem;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: $color-gray;
+        margin-bottom: 4.7rem;
+    }
+    &__list-container{
+        width: 100%;
+        padding: 6.8rem 3.1rem 6.8rem 4rem;
+        @include media(">=tablet"){
+            max-width: 29.3rem;
+            padding: 0;
+        }
+    }
+    &__list{
+        list-style: none;
+    }
+    &__list-item{
+        position: relative;
+        padding-left: 1.9rem;
+        margin-bottom: 1.7rem;
+        font-family: $nunito-sans;
+        font-size: 1.8rem;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        color: $color-mid-gray;
+        @include media(">=tablet"){
+            max-width: 26rem;
+        }
+
+        &::before{
+            content: "";
+            width: 0.7rem;
+            height: 0.7rem;
+            opacity: 0.58;
+            background-color: #007aff;
+            border-radius: 50%;
+            display: inline-block;
+            position: absolute;
+            left: 0;
+            top: 1rem;
+        }
+    }
+    &__image-container{
+        width: 100%;
+        @include media(">=tablet"){
+            max-width: 33.4rem;
+        }
+    }
+    &__image{
+        width: 100%;
+        min-height: 35.8rem;
+        background-color: $color-mid-light-gray-2;
+    }
+}

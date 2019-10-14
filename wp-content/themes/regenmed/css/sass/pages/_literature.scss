@@ -69,7 +69,8 @@
         width: 100%;
         height: 10.3rem;
         display: flex;
-        align-items: center;
+        flex-direction: column;
+        justify-content: center;
         padding: 2.7rem 1.3rem 4rem;
         @include media(">=tablet"){
             height: 8.8rem;
@@ -88,6 +89,7 @@
             list-style: none;
             margin: 0;
             &__item{
+                display: flex;
                 margin-right: 1.6rem;
                 padding-bottom: 1rem;
                 font-family: $noto-tc;
@@ -99,16 +101,39 @@
                 letter-spacing: normal;
                 a{
                     color: rgba($color-gray, 0.28);
+                    padding-bottom: 1rem;
                     :hover{
                         cursor: pointer;
                     }
                 }
-                &.active{
+                // &:after{
+                //     content: '';
+                //     display: block;
+                //     width: 0%;
+                // }
+                &.active, &.hovered{
                     a{
                         color: $color-gray;
                     }                    
-                    border-bottom: solid 0.2rem $color-blue;
+                    // &::after{
+                    //     width: 100%;
+                    //     border-bottom: solid 0.2rem $color-blue;
+                    // }
                 }
+                // &:hover{
+                //     &::after{
+                //         width: 100%;
+                //         border-bottom: solid 0.2rem $color-blue;
+                //         transition: 0.5s
+                //     }
+                // }
+            }
+            &__indicator{
+                width: 0;
+                border-bottom: solid 0.2rem $color-blue;
+                transition: 0.5s;
+                /* width: 100%; */
+                transition: 0.5s;
             }
         }
     }
@@ -212,6 +237,32 @@
             @include media(">=tablet"){
                 font-size: 1.4rem;
             }
+        }
+    }
+    &__bottom{
+        width: 100%;
+        height: 11.7rem;
+        background-color: $color-white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__view-more{
+        background: none;
+        font-family: $nunito-sans;
+        font-size: 1.8rem;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #2e2e2e;
+        padding-bottom: 0.9rem;
+        border: none;
+        border-bottom: 0.2rem solid $color-blue;
+        &:disabled{
+            color: $color-mid-light-gray;
+            border-color: $color-mid-gray;
         }
     }
 }

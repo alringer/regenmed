@@ -29,23 +29,23 @@ get_header();
                 </p>
             </header>
             <section class="rgn-case-study__summary">
-                <?php echo $headline; ?>
+                <?php echo $background; ?>
             </section>
-            <section class="rgn-case-study__background">
+            <!-- <section class="rgn-case-study__background">
                 <h3 class="rgn-case-study__heading">Background</h3>
                 <p class="rgn-case-study__background-text"><?php echo $background ?></p>
-            </section>
+            </section> -->
 
             <section class="rgn-case-study__content">
                 <?php the_content(); ?>
             </section>
 
-            <section class="rgn-case-study__references">
+            <!-- <section class="rgn-case-study__references">
                 <div class="rgn-case-study__references-inner">
                     <h3 class="rgn-case-study__heading">References</h3>
                     <p class="rgn-case-study__references-text"><?php echo $references ?></p>
                 </div>
-            </section>
+            </section> -->
         </article>
     <?php endwhile; ?>
     <?php else: ?>

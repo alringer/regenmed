@@ -55,9 +55,10 @@ get_header();
                 <a href="<?php echo get_site_url() ?>/whitepapers">White Papers</a>
             </li>
         </ul>
+        <div id="rgnListIndicator" class="rgn-literature-page__nav__list__indicator"></div>
     </nav>
     <section class="rgn-literature-page__cards">
-        <div  class="rgn-literature-page__cards__inner">
+        <div  class="rgn-literature-page__cards__inner" id="cardsContainer">
         <?php
         if( $query->have_posts() ) :
         while ( $query->have_posts() ) : $query->the_post();
@@ -88,9 +89,13 @@ get_header();
         <?php
         endwhile;
         endif;
-        wp_reset_query();  // Restore global post data stomped by the_post().
+        // wp_reset_query();  // Restore global post data stomped by the_post().
         ?>
         </div>
     </section>
+    <div class="rgn-literature-page__bottom">
+        <button id="rgnLiteratureViewMore" class="rgn-literature-page__view-more" data-posttype="literature" <?php if( ! ($query->have_posts()) )?> disabled ?>>VIEW MORE</button>
+    </div>
+    <?php wp_reset_query(); ?>
 </main>
 <?php get_footer(); 

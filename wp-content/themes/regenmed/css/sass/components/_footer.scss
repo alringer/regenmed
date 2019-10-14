@@ -2,14 +2,21 @@
     min-height: 64rem;
     background-color: $color-black;
     padding: 7rem 2rem 5.3rem 2.3rem;
-    @include media(">desktop"){
+    @include media(">=desktop"){
         display: flex;
+        justify-content: space-between;
+        padding: 22.4rem 14.6rem 0 8.7rem;
+    }   
+    @include media(">=bigdesktop") {
         justify-content: space-around;
         padding: 16.4rem 27.8rem 0 16.4rem;
-    }    
+    }
 }
 
 .footer__newsletter{
+    @include media (">=desktop"){
+        max-width: 33.4rem;
+    }
     @include media (">=bigdesktop"){
         width: 100%;
         max-width: 45.7rem;    
@@ -140,6 +147,7 @@
     width: 100%;
     height: 4.42rem;
     border: solid 0.9px rgba(244, 244, 244, 0.24);
+    border-right: none;
     background-color: rgba(255, 255, 255, 0.09);
     padding: 1.4rem 2.2rem 1.3rem;
 
@@ -235,6 +243,9 @@
     line-height: 1.5;
     letter-spacing: normal;
     color: $color-mid-light-gray;
+    &:hover{
+        color: $color-white;
+    }
 }
 
 @keyframes opacityFadeOut{

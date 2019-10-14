@@ -1,8 +1,24 @@
-			<!-- footer -->
+<?php 
+$menuLocations = get_nav_menu_locations(); // Get our nav locations (set in our theme, usually functions.php)
+// This returns an array of menu locations ([LOCATION_NAME] = MENU_ID);
+$max_chars = 180;
+
+$menuID = $menuLocations['footer-menu']; //get ID of the menu
+$footerNav = wp_get_nav_menu_items($menuID);
+
+$pagesMenuID = $menuLocations['footer-pages-menu']; //get ID of the menu
+$footerPagesNav = wp_get_nav_menu_items($pagesMenuID);
+// foreach ($arr as $key => $value) {
+//     // $arr[3] will be updated with each value from $arr...
+//     echo "{$key} => {$value} ";
+//     print_r($arr);
+// }
+ ?>
+            <!-- footer -->
 			<footer class="footer" role="contentinfo">
                 <div class="footer__newsletter rgn-appear-animation">
                     <h1 class="footer__newsletter__title">Join Our Newsletter</h1>
-                    <p class="footer__newsletter__message">Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+                    <p class="footer__newsletter__message">Receive regular observations on the evolving Regenerative Medicine market.</p>
                     <?php echo do_shortcode('[mc4wp_form]'); ?>
                     <!-- <form method="POST" class="footer__newsletter__form">
                         <input type="text" class="footer__newsletter__form__email" name="email" placeholder="Email address">
@@ -14,32 +30,27 @@
                     <div class="footer__links__section">
                         <h4 class="footer__links__section__name">Services</h4>
                         <ul class="footer__links__section__list">
+                        <?php                        
+                        for ($i = 0; $i < count($footerNav); $i++) {
+                            $post = get_post($footerNav[$i]->object_id);
+                        ?>
                             <li class="footer__links__section__list__item">
-                                <a class="footer__links__section__list__link" href="#">Communications</a>
-                            </li>
-                            <li class="footer__links__section__list__item">
-                                <a class="footer__links__section__list__link" href="#">Business</a>
-                            </li>
-                            <li class="footer__links__section__list__item">
-                                <a class="footer__links__section__list__link" href="#">Science</a>
-                            </li>
-                            <li class="footer__links__section__list__item">
-                                <a class="footer__links__section__list__link" href="#">Clinical</a>
-                            </li>
+                                <a class="footer__links__section__list__link" href="<?php echo get_permalink($post->ID) ?>"><?php echo $post->post_title ?></a>
+                            </li>                        
+                        <?php } ?>
                         </ul>
                     </div>
                     <div class="footer__links__section">
                         <h4 class="footer__links__section__name">Resources</h4>
                         <ul class="footer__links__section__list">
+                        <?php                        
+                        for ($i = 0; $i < count($footerPagesNav); $i++) {
+                            $page = get_post($footerPagesNav[$i]->object_id);
+                        ?>
                             <li class="footer__links__section__list__item">
-                                <a class="footer__links__section__list__link" href="#">About</a>
+                            <a class="footer__links__section__list__link" href="<?php echo get_permalink($page->ID) ?>"><?php echo $page->post_title ?></a>
                             </li>
-                            <li class="footer__links__section__list__item">
-                                <a class="footer__links__section__list__link" href="#">Contact</a>
-                            </li>
-                            <li class="footer__links__section__list__item">
-                                <a class="footer__links__section__list__link" href="#">Literature</a>
-                            </li>
+                        <?php }?>
                         </ul>
                     </div>
                 </div>

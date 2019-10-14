@@ -20,7 +20,8 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-$db = 'regenmed_db';
+$db = 'regenmed_staging';
+// $db = 'regenmed_db';
 $user= 'regenmed_admin';
 $pass= 'Seamgen1!';
 $host= 'regenmed-db.cxqqkvcahv5b.us-west-1.rds.amazonaws.com';

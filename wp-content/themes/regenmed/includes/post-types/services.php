@@ -1,5 +1,14 @@
 <?php
+
+/*
+    While this filename is called 'services' in code, they are "services categories" for the final user.
+*/
+
 function regenmed_service_register_admin_script(){
+    $screen = get_current_screen();
+    if ( $screen->post_type != "services" ) {
+        return;
+    }
     wp_register_script('imgUploads', get_template_directory_uri() . '/js/admin-image-upload.js', '', '1.0', true);
     wp_enqueue_script('imgUploads');
     $postId = get_the_ID();
@@ -8,34 +17,34 @@ function regenmed_service_register_admin_script(){
 /* SERVICE CPT */
 function regenmed_service_post_type() {
 	$labels = array(
-        'name'                => _x( 'Services', 'Post Type General Name', 'regenmed' ),
-        'singular_name'       => _x( 'Service', 'Post Type Singular Name', 'regenmed' ),
-        'menu_name'           => __( 'Services', 'regenmed' ),
-        'parent_item_colon'   => __( 'Parent Service', 'regenmed' ),
-        'all_items'           => __( 'All Services', 'regenmed' ),
-        'view_item'           => __( 'View Service', 'regenmed' ),
-        'add_new_item'        => __( 'Add New Service', 'regenmed' ),
+        'name'                => _x( 'Service categories', 'Post Type General Name', 'regenmed' ),
+        'singular_name'       => _x( 'Service Category', 'Post Type Singular Name', 'regenmed' ),
+        'menu_name'           => __( 'Service categories', 'regenmed' ),
+        'parent_item_colon'   => __( 'Parent Service Category', 'regenmed' ),
+        'all_items'           => __( 'All Service categories', 'regenmed' ),
+        'view_item'           => __( 'View Service Category', 'regenmed' ),
+        'add_new_item'        => __( 'Add New Service Category', 'regenmed' ),
         'add_new'             => __( 'Add New', 'regenmed' ),
-        'edit_item'           => __( 'Edit Service', 'regenmed' ),
-        'update_item'         => __( 'Update Service', 'regenmed' ),
-        'search_items'        => __( 'Search Service', 'regenmed' ),
+        'edit_item'           => __( 'Edit Service Category', 'regenmed' ),
+        'update_item'         => __( 'Update Service Category', 'regenmed' ),
+        'search_items'        => __( 'Search Service Category', 'regenmed' ),
         'not_found'           => __( 'Not Found', 'regenmed' ),
         'not_found_in_trash'  => __( 'Not found in Trash', 'regenmed' ),
     );
 	
 	$args = array(
 
-        'label'                 => 'Service',
-		'description'           => 'Services the company gives',
+        'label'                 => 'Service Category',
+		'description'           => 'Service categories the company manages',
 		'labels'                => $labels,
 		'supports'              => array( 'title', 'excerpt', 'thumbnail'),
-		'taxonomies'            => array( 'product_category' ),
+		// 'taxonomies'            => array( 'service_category' ),
 		'hierarchical'          => false,
 		'public'                => true,
 		'show_ui'               => true,
 		'show_in_menu'          => true,
         'menu_position'         => 5,
-        'menu_icon'			    => 'dashicons-businessman',
+        'menu_icon'			    => 'dashicons-list-view',
 		'show_in_admin_bar'     => true,
 		'show_in_nav_menus'     => true,
 		'can_export'            => true,
@@ -44,10 +53,10 @@ function regenmed_service_post_type() {
 		'publicly_queryable'    => true,
 		'capability_type'       => 'post',
 
-        // 'rewrite'           => array( 
-        //     'slug' => 'services', // use this slug instead of post type name
+        'rewrite'           => array( 
+            'slug' => 'our-service-categories', // use this slug instead of post type name
         //     'with_front' => FALSE // if you have a permalink base such as /blog/ then setting this to false ensures your custom post type permalink structure will be /products/ instead of /blog/products/
-        // )
+        )
 	);
 	
 	register_post_type( 'services', $args );
@@ -66,7 +75,6 @@ function regenmed_service_title_callback( $post ) {
 	wp_nonce_field( 'regenmed_save_service_title_data', 'regenmed_service_title_meta_box_nonce' );
 	
 	$value = get_post_meta( $post->ID, '_service_title_value_key', true );
-	echo '<p>'. the_permalink() .'</p>';
 	echo '<label for="regenmed_service_title_field">Categories title: </label>';
 	echo '<input type="text" id="regenmed_service_title_field" name="regenmed_service_title_field" value="' . esc_attr( $value ) . '" />';
 }
@@ -105,7 +113,7 @@ function regenmed_service_description_callback( $post ) {
 	$value = get_post_meta( $post->ID, '_service_description_value_key', true );
 	
 	echo '<label for="regenmed_service_description_field">Categories description: </label>';
-	echo '<textarea id="regenmed_service_description_field" name="regenmed_service_description_field" value="" />' . esc_attr( $value ) . '</textarea>';
+	echo '<textarea style="width:100%;    min-height: 120px;" id="regenmed_service_description_field" name="regenmed_service_description_field" value="" />' . esc_attr( $value ) . '</textarea>';
 }
 function regenmed_save_service_description_data( $post_id ) {
 	
@@ -143,7 +151,6 @@ function regenmed_service_alt_image_callback( $post ) {
     
     ?>
     <div id="metabox-wrapper">
-        <p> <?php echo $value; ?> </p>
         <img id="regenmed_alt_image_tag">
         <input type="hidden" id="regenmed_alt_image_field" name="regenmed_alt_image_field">
         <input type="button" id="regenmed_alt_image_upload" value="Upload">
@@ -167,10 +174,10 @@ function regenmed_save_service_alt_image_data( $post_id ) {
     if( isset($_POST['regenmed_alt_image_field'])){
         $image_data = json_decode( stripslashes($_POST['regenmed_alt_image_field']) );
         if( is_object($image_data[0]) ){
-            $image_data = array(
+            $image_data = array(array(
                 'id' => intval($image_data[0]->id),
-                'src' => esc_url_raw($image_data[0]->url)
-            );
+                'src' => esc_url_raw($image_data[0]->src)
+            ));
         }
         else{
             $image_data = [];

@@ -4,7 +4,7 @@ $title      = apply_filters( 'the_title', $current_page->post_title );
 $excerpt     = apply_filters( 'the_title', $current_page->post_excerpt );
 $content      = apply_filters( 'the_content', $current_page->post_content );
 
-$contact_image = get_theme_mod('contact_page_image', get_template_directory_uri() . '/img/contact/contact.png');
+$contact_image = get_theme_mod('contact_page_image', get_template_directory_uri() . '/img/contact/regenmedcontact.png');
 
 get_header("white");
 ?>

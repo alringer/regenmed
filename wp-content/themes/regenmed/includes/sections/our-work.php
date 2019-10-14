@@ -1,13 +1,27 @@
 <?php 
-        $posts = get_posts([
-            'post_type'     => 'case-studies',
-            'post_status'   => 'publish',
-            'numberposts'   => 3,
-            'order'         => 'ASC',
-            'orderby'       => 'menu_order'
-        ]);
-?>
+    global $wp;
+    if($wp->request===""){
+        $post_slug = "homepage";
+    }else{
+        $post_slug = $post->post_name;
+    }
 
+    $posts = get_posts([
+        'post_type'     => 'case-studies',
+        'post_status'   => 'publish',
+        'numberposts'   => 3,
+        'order'         => 'ASC',
+        'orderby'       => 'menu_order',
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'service_category',
+                'field'    => 'slug',
+                'terms'    => $post_slug,
+            ),
+        ),
+    ]);
+    if( $posts && count($posts)>0 ){
+?>
 <section class="rgn-our-work">
     <h1 class="rgn-section-title">
         <?php 
@@ -23,7 +37,9 @@
                 $img = get_post_meta( $id, '_case_study_alt_image_value_key', true );
             ?>
             
-            <img src="<?php echo $img['src'] ?>" class="rgn-our-work__body__image rgn-our-work__body__image--<?php echo $key+1; if($key==0){?> rgn-our-work__body__image--active<?php } ?>">
+            <?php if($img && $img[0] && $img[0]['src']){?> 
+                <img src="<?php echo $img[0]['src'] ?>" class="rgn-our-work__body__image rgn-our-work__body__image--<?php echo $key+1; if($key==0){?> rgn-our-work__body__image--active<?php } ?>">
+            <?php } ?>
             <?php endforeach; ?> 
         </div>
         <div class="rgn-our-work__body__info rgn-appear-animation">
@@ -56,16 +72,21 @@
                 <?php endforeach; ?> 
             </div>
             <div class="rgn-our-work__body__info__pagination">
-                <?php foreach ($posts as $key=>$post):
-                    setup_postdata( $post );
-                    $id = get_the_ID();
-                    $headline = get_post_meta( $id, '_case_study_headline_value_key', true );
+                <?php
+                    if (count($posts)>1):
+                        foreach ($posts as $key=>$post):
+                            setup_postdata( $post );
+                            $id = get_the_ID();
+                            $headline = get_post_meta( $id, '_case_study_headline_value_key', true );
                 ?>
-                <button class="rgn-our-work__body__info__pagination__page <?php if($key==0){echo 'rgn-our-work__body__info__pagination__page--active';} ?>" data-page="<?php echo $key + 1;  ?>"></button>
-                <!-- <button class="rgn-our-work__body__info__pagination__page" data-page="2"></button>
-                <button class="rgn-our-work__body__info__pagination__page" data-page="3"></button> -->
-                <?php endforeach; ?> 
+                <button class="rgn-our-work__body__info__pagination__page <?php if($key==0){echo 'rgn-our-work__body__info__pagination__page--active';} ?>" data-page="<?php echo $key + 1;  ?>"></button>                
+                <?php 
+                        endforeach;
+                    endif;?> 
             </div>
         </div>
     </div>
 </section>
+<?php
+    }
+ wp_reset_postdata();
