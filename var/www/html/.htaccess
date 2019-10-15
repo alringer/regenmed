@@ -1,5 +1,13 @@
 # ==================================== redirects =====================================
 
+Redirect 301 /doctors/diego-correa-m-d-m-sc-ph-d /bios/diego-correa
+Redirect 301 /doctors/alan-j-russell-ph-d /bios/alan-russell
+Redirect 301 /doctors/christian-jorgensen-m-d-ph-d /bios/christian-jorgensen
+Redirect 301 /doctors/j-william-futrell-m-d /bios/william-futrell
+Redirect 301 /doctors/peter-rubin-m-d /bios/peter-rubin/
+Redirect 301 /doctors/michael-p-tierney /bios/michael-tierney
+Redirect 301 /doctors/nicolas-tierney-2 /bios/nicolas-tierney
+
 Redirect 410 /affiliates
 Redirect 410 /translation
 Redirect 410 /research
@@ -25,28 +33,21 @@ Redirect 410 /literature/incytes-overview
 Redirect 410 /cellsms2016/photo-gallery
 Redirect 410 /search-template/page/4
 Redirect 410 /renevia-02-pivotal-trial
-Redirect 410 /doctors/michael-p-tierney
 Redirect 410 /incytes-software-under-development
 Redirect 410 /renevia-01-safety-trial
-Redirect 410 /doctors/nicolas-tierney-2
 Redirect 410 /departments/corporate-board-members
 Redirect 410 /fellow-members-presentation-cellsorthopedics-2015
-Redirect 410 /doctors/peter-rubin-m-d
 Redirect 410 /provisional-program-available-for-download
 Redirect 410 /doctors/dietrich-stephan-ph-d
 Redirect 410 /hct-centers-frequently-asked-questions
 Redirect 410 /doctors/beijing-puhua-international-hospital
 Redirect 410 /save-the-date-cellsmusculoskeletal-2016
-Redirect 410 /doctors/alan-j-russell-ph-d
 Redirect 410 /regenmed-sends-official-save-the-dates
 Redirect 410 /cells-musculoskeletal-2016-post-conference-resources
 Redirect 410 /doctors/james-r-urbaniak-m-d
-Redirect 410 /doctors/j-william-futrell-m-d
-Redirect 410 /doctors/christian-jorgensen-m-d-ph-d
 Redirect 410 /bringing-cell-therapies-to-the-clinic-brochure
 Redirect 410 /literature/one-sheet-the-regen-med-network
 Redirect 410 /wp-content/uploads/2015/03/Ahrens_et_al-2014-Magnetic_Resonance_in_Medicine.pdf
-Redirect 410 /doctors/diego-correa-m-d-m-sc-ph-d
 Redirect 410 /gold-winner-osteoblastic-cell-based-therapy-for-delayed-union-fractures
 Redirect 410 /literature/balancing-safety-and-innovation-for-cell-based-regenerative-medicine
 Redirect 410 /literature/geometric-cues-for-directing-the-differentiation-of-mesenchymal-stem-cells
