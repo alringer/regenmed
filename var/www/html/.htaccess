@@ -1,0 +1,103 @@
+# ==================================== redirects =====================================
+
+Redirect 301 /doctors/diego-correa-m-d-m-sc-ph-d /bios/diego-correa
+Redirect 301 /doctors/alan-j-russell-ph-d /bios/alan-russell
+Redirect 301 /doctors/christian-jorgensen-m-d-ph-d /bios/christian-jorgensen
+Redirect 301 /doctors/j-william-futrell-m-d /bios/william-futrell
+Redirect 301 /doctors/peter-rubin-m-d /bios/peter-rubin/
+Redirect 301 /doctors/michael-p-tierney /bios/michael-tierney
+Redirect 301 /doctors/nicolas-tierney-2 /bios/nicolas-tierney
+
+Redirect 410 /affiliates
+Redirect 410 /translation
+Redirect 410 /research
+Redirect 410 /education
+Redirect 410 /cellsms2016
+Redirect 410 /category/corporate
+Redirect 410 /author/atimofeeva
+Redirect 410 /category/education
+Redirect 410 /event-registration
+Redirect 410 /literature_categories/orthopedics
+Redirect 410 /literature_categories/corporate
+Redirect 410 /privacy-policy
+Redirect 410 /literature_categories/neurology
+Redirect 410 /literature_categories/endocrinology
+Redirect 410 /literature-base
+Redirect 410 /event-registration/preferred
+Redirect 410 /medicenter_sidebars/events-sidebar
+Redirect 410 /literature_categories/internal-organs
+Redirect 410 /guest-welcome-letter
+Redirect 410 /literature_categories/veterinary-applications
+Redirect 410 /doctors/michael-sago
+Redirect 410 /literature/incytes-overview
+Redirect 410 /cellsms2016/photo-gallery
+Redirect 410 /search-template/page/4
+Redirect 410 /renevia-02-pivotal-trial
+Redirect 410 /incytes-software-under-development
+Redirect 410 /renevia-01-safety-trial
+Redirect 410 /departments/corporate-board-members
+Redirect 410 /fellow-members-presentation-cellsorthopedics-2015
+Redirect 410 /provisional-program-available-for-download
+Redirect 410 /doctors/dietrich-stephan-ph-d
+Redirect 410 /hct-centers-frequently-asked-questions
+Redirect 410 /doctors/beijing-puhua-international-hospital
+Redirect 410 /save-the-date-cellsmusculoskeletal-2016
+Redirect 410 /regenmed-sends-official-save-the-dates
+Redirect 410 /cells-musculoskeletal-2016-post-conference-resources
+Redirect 410 /doctors/james-r-urbaniak-m-d
+Redirect 410 /bringing-cell-therapies-to-the-clinic-brochure
+Redirect 410 /literature/one-sheet-the-regen-med-network
+Redirect 410 /wp-content/uploads/2015/03/Ahrens_et_al-2014-Magnetic_Resonance_in_Medicine.pdf
+Redirect 410 /gold-winner-osteoblastic-cell-based-therapy-for-delayed-union-fractures
+Redirect 410 /literature/balancing-safety-and-innovation-for-cell-based-regenerative-medicine
+Redirect 410 /literature/geometric-cues-for-directing-the-differentiation-of-mesenchymal-stem-cells
+Redirect 410 /wp-content/uploads/2015/05/2015.pdf
+Redirect 410 /wp-content/uploads/2013/02/HCTCenter_Brochure_DIGITAL.pdf
+Redirect 410 /bone-marrow-concentrate-for-knee-and-hip-oa-one-year-follow-up
+Redirect 410 /wp-content/uploads/2014/12/CELLSFinalConferenceProgram.pdf
+Redirect 410 /establishing-a-regenerative-medicine-center-at-the-galeazzi-orthopedic-institute-milan-italy
+Redirect 410 /wp-content/uploads/2017/02/CELLS_Abstract_BMC_Catalan.pdf
+Redirect 410 /wp-content/uploads/2013/02/InCytes_Product_Brochure.pdf
+Redirect 410 /wp-content/uploads/2017/02/Affiliate_Project_Playbook.pdf
+Redirect 410 /wp-content/uploads/2015/03/StemNeuralCrestEtchevers.pdf
+Redirect 410 /wp-content/uploads/2013/05/CellsOrthopedics_ProgramBook_v5.pdf
+Redirect 410 /silver-winner-treatment-of-degenerative-joint-disease-djd-in-racehorses-by-mixing-prp-and-microfat
+Redirect 410 /literature/clinical-cell-therapy-imaging-using-a-perfluorocarbon-tracer-and-fluorine-19-mri
+Redirect 410 /wp-content/uploads/2017/02/Affiliate_Project_Plan.pdf
+Redirect 410 /wp-content/uploads/2015/03/Updated-CellsOrthopedics_ProgramFlyer_WIP1.pdf
+Redirect 410 /wp-content/uploads/2013/05/CellsOrthopedics_ProgramBook_v5-1.pdf
+Redirect 410 /wp-content/uploads/2017/11/RMOS_Company_Overview_Interactive-1.pdf
+Redirect 410 /wp-content/uploads/2015/03/An-update-review-of-stem-cell-applications-in-burns-and-wound-care.html
+Redirect 410 /event-report/allogeneic-mesenchymal-stromal-cells-msc-for-the-treatments-of-osteoarthritis-and-degenerative-disc-disease
+Redirect 410 /wp-content/uploads/2013/05/Dzmitry-Bukach-Poster.pdf
+Redirect 410 /literature/sources-of-adult-mesenchymal-stem-cells-applicable-for-musculoskeletal-applications-a-systematic-review-of-the-literature
+Redirect 410 /event-report/clinical-evidence-series-phase-iii-trial-of-svf-for-maxillary-sinus-floor-one-augmentation
+Redirect 410 /wp-content/uploads/2017/11/inCyte-CliniciansA4-Digital.pdf
+Redirect 410 /wp-content/uploads/2013/05/Regen-Med-HCT-Centers-FAQs.pdf
+Redirect 410 /literature/comprehensive-characterization-of-four-different-populations-of-human-mesenchymal-stem-cells-as-regards-their-immune-properties-proliferation-and-differentiation
+Redirect 410 /wp-content/uploads/2017/11/The-RegenMed-Network-A4-Digital.pdf
+Redirect 410 /wp-content/uploads/2014/12/Regen-Med-Concept-Paper-Clinical-Insurance.pdf
+Redirect 410 /literature/mesenchymal-stem-cells-alleviate-airway-inflammation-and-emphysema-in-copd-through-down-regulation-of-cyclooxygenase-2-via-p38-and-erk-mapk-pathways
+Redirect 410 /gold-winner-non-reconstructable-peripheral-vascular-disease-of-the-lower-extremity-in-ten-patients-treated-with-adipose-derived-stromal-vascular-fraction-cells-svf-cell-therapy-for-end-stage-dis
+Redirect 410 /wp-content/uploads/2015/03/Why-Fat-Grafts-Lose-Volume-Over-Time.pdf
+Redirect 410 /wp-content/uploads/2015/03/Adipose-derived-stem-cells-and-nerve-regeneration.pdf
+Redirect 410 /wp-content/uploads/2015/03/Mesenchymal-Stem-Cells-in-Hematopoietic-Stem-Cell-Transplantation.pdf
+Redirect 410 /wp-content/uploads/2015/03/Shots-of-brain-cells-restore-learning-memory-in-rats-Science-News.pdf
+Redirect 410 /wp-content/uploads/2015/03/Functional-properties-of-a-Brazilian-derived-mouse-embryonic-stem-cell-line-.pdf
+Redirect 410 /wp-content/uploads/2015/03/Effect-of-Fatty-Acids-on-Human-Bone-Marrow-Mesenchymal-Stem-Cell-Energy-Metabolism-and-Survival.pdf
+Redirect 410 /wp-content/uploads/2015/03/Chondrogenic-Differentiation-of-Human-Adipose-Derived-Stem-Cells-A-New-Path-in-Articular-Cartilage-Defect-Manag.pdf
+Redirect 410 /wp-content/uploads/2015/03/Comprehensive-characterization-of-four-different-populations-of-human-mesenchymal-stem-cells-as-regards-their-immune-properties-proliferation-and-differentiation.pdf
+Redirect 410 /wp-content/uploads/2015/03/Mesenchymal-stem-cells-alleviate-airway-inflammation-and-emphysema-in-COPD-through-down-regulation-of-cyclooxygenase-2-via-p38-and-ERK-MAPK-pathways.pdf
+
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
