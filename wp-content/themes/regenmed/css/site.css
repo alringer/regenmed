@@ -3855,7 +3855,7 @@ rgn-our-work__body__image--active .rng-our-work {
 
 @media (min-width: 768px) {
   .rgn-services__category {
-    width: 45%;
+    width: 38%;
   }
 }
 
@@ -3865,9 +3865,9 @@ rgn-our-work__body__image--active .rng-our-work {
   }
 }
 
-@media (min-width: 1440px) {
+@media screen and (min-width: 1001px) {
   .rgn-services__category {
-    max-width: 19rem;
+    width: 22%;
   }
 }
 
@@ -3914,7 +3914,7 @@ rgn-our-work__body__image--active .rng-our-work {
 }
 
 .rgn-services__category-description {
-  height: 18.9rem;
+  height: auto;
   overflow-y: hidden;
   margin-bottom: 3.2rem;
   font-family: "Nunito Sans", sans-serif;
@@ -3925,6 +3925,24 @@ rgn-our-work__body__image--active .rng-our-work {
   line-height: 1.5;
   letter-spacing: normal;
   color: #858585;
+}
+
+@media (min-width: 768px) {
+  .rgn-services__category-description {
+    height: 26.8rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .rgn-services__category-description {
+    min-height: 39.8rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .rgn-services__category-description {
+    min-height: 30.8rem;
+  }
 }
 
 .rgn-service-categories__header {
