@@ -1,7 +1,9 @@
-
-(function(){
-    function getCard(post){
-        typeName = post.type == "whitepapers"? "WHITE PAPERS" : "BLOG";
+(function() {
+    var literature = {
+        location: location.origin
+    };
+    function getCard(post) {
+        typeName = post.type == 'whitepapers' ? 'WHITE PAPERS' : 'BLOG';
         return `
             <article class="rgn-literature-page__card">
                 <div class="rgn-literature-page__card__image rgn-background-image" style="background-image:url('${post.featured_img_src}')"></div>
@@ -21,43 +23,53 @@
         `;
     }
 
-    function getMore(type,page,perPage){
-    
+    function getMore(type, page, perPage) {
         var theUrl;
-        if(!page) page=2;
-        if(!perPage) perPage=6;
-        if(!type) type="literature";
-        theUrl="/rgn/v1/literature?posttype="+type+"&page="+page+"&per-page="+perPage+"&offset=1";
+        if (!page) page = 2;
+        if (!perPage) perPage = 6;
+        if (!type) type = 'literature';
+        console.log(page);
+        theUrl =
+            '/rgn/v1/literature?posttype=' +
+            type +
+            '&page=' +
+            page +
+            '&per-page=' +
+            perPage +
+            '&offset=1';
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 var response = JSON.parse(this.responseText);
-                var cardsContainer = $("#cardsContainer");
-                if(response && response.length>=0){
-                    for(post of response){
+                var cardsContainer = $('#cardsContainer');
+                if (response && response.length >= 0) {
+                    for (post of response) {
                         var cardText = getCard(post);
                         $(cardText).appendTo(cardsContainer);
                     }
                 }
-                hasMore = response.length>=perPage;
-                if(hasMore){
+                hasMore = response.length >= perPage;
+                if (hasMore) {
                     viewMoreButton.disabled = false;
+                } else {
+                    viewMoreButton.hidden = true;
                 }
             }
         };
-        xhttp.open("GET", "http://localhost:8888/wordpress/wp-json"+theUrl, true);
+        xhttp.open('GET', `${literature.location}/wp-json` + theUrl, true);
         xhttp.send();
     }
-    function initTabIndicator(){
-        var items = $(".rgn-literature-page__nav__list__item");
-        var indicator = $("#rgnListIndicator");
-        var activeItem = items.filter(".active")
+    function initTabIndicator() {
+        var items = $('.rgn-literature-page__nav__list__item');
+        var indicator = $('#rgnListIndicator');
+        var activeItem = items.filter('.active');
         indicator.width(activeItem.width());
         indicator.offset({
             top: indicator.position().top,
             left: activeItem.position().left
-        })
-        items.hover(function(event){
+        });
+        items.hover(
+            function(event) {
                 event.stopPropagation();
                 var hoveredItem = $(this);
 
@@ -70,10 +82,13 @@
                 indicator.offset({
                     top: indictatorPosition.top,
                     left: hoveredPosition.left
-                })
-                $(this).addClass("hovered");
-            },function(event){
-                var activeItem = $(".rgn-literature-page__nav__list__item.active");
+                });
+                $(this).addClass('hovered');
+            },
+            function(event) {
+                var activeItem = $(
+                    '.rgn-literature-page__nav__list__item.active'
+                );
 
                 //Set width
                 indicator.width(activeItem.width());
@@ -84,20 +99,21 @@
                 indicator.offset({
                     top: indictatorPosition.top,
                     left: activePosition.left
-                })
-                console.log(this);
-                $(this).removeClass("hovered");
-            })
+                });
+                // console.log(this);
+                $(this).removeClass('hovered');
+            }
+        );
     }
 
-    var hasMore=false;
-    var currentPage=1;
-    var viewMoreButton = document.getElementById("rgnLiteratureViewMore");
-    viewMoreButton.addEventListener('click', function(){
+    var hasMore = false;
+    var currentPage = 1;
+    var viewMoreButton = document.getElementById('rgnLiteratureViewMore');
+    viewMoreButton.addEventListener('click', function() {
         viewMoreButton.disabled = true;
-        getMore(this.dataset.posttype,currentPage);
+        getMore(this.dataset.posttype, currentPage);
         currentPage++;
-    })
+    });
 
     initTabIndicator();
-})()
+})();

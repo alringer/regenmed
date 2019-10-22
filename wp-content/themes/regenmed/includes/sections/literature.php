@@ -17,7 +17,7 @@ function get_post_type_text($type){
             echo get_theme_mod('literature_title','Literature');
         ?>
     </h1>
-    <?php if($primaryNav){?>    
+    <?php if($primaryNav){ ?>    
     <div class="rgn-literature__left">
         <?php if($primaryNav[0]){ 
             $post0 = get_post($primaryNav[0]->object_id)

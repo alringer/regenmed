@@ -94,7 +94,10 @@ get_header();
         </div>
     </section>
     <div class="rgn-literature-page__bottom">
-        <button id="rgnLiteratureViewMore" class="rgn-literature-page__view-more" data-posttype="post">VIEW MORE</button>
+        <?php $count = $query->found_posts; ?>
+        <?php if ($count): ?> 
+            <button id="rgnLiteratureViewMore" class="rgn-literature-page__view-more" data-posttype="post" <?php if( $count < $query->max_num_pages) echo 'disabled'?>> VIEW MORE</button>
+        <?php endif; ?>
     </div>
 </main>
 <?php get_footer(); 
