@@ -28,7 +28,6 @@
         if (!page) page = 2;
         if (!perPage) perPage = 6;
         if (!type) type = 'literature';
-        console.log(page);
         theUrl =
             '/rgn/v1/literature?posttype=' +
             type +
