@@ -46,7 +46,7 @@ get_header();
                         echo $post_excerpt;
                     ?>
                 </div>
-                <a class="rgn-literature-page__read-more rgn-read-more-link rgn-read-more-link--white" href="<?php echo get_post_permalink($post_id); ?>?>">READ MORE <i class="icon icon-sm icon-right-arrow"></i></a>
+                <a class="rgn-literature-page__read-more rgn-read-more-link rgn-read-more-link--white" href="<?php echo get_post_permalink($post_id); ?>">READ MORE <i class="icon icon-sm icon-right-arrow"></i></a>
             </div>
         </article>
         <?php endif;?>
