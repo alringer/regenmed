@@ -38,7 +38,7 @@ get_header();
                         echo $post_excerpt;
                     ?>
                 </div>
-                <a class="rgn-literature-page__read-more rgn-read-more-link rgn-read-more-link--white" href="<?php echo get_post_permalink($post_id); ?>?>">READ MORE <i class="icon icon-sm icon-right-arrow"></i></a>
+                <a class="rgn-literature-page__read-more rgn-read-more-link rgn-read-more-link--white" href="<?php echo get_post_permalink($post_id); ?>">READ MORE <i class="icon icon-sm icon-right-arrow"></i></a>
             </div>
         </article>
         <?php endif;?>
@@ -83,7 +83,7 @@ get_header();
                             echo $post_excerpt;
                         ?>
                     </div>
-                    <a class="rgn-literature-page__card__read-more rgn-read-more-link" href="<?php echo get_post_permalink($post_id); ?>?>">READ MORE <i class="icon icon-sm icon-right-arrow"></i></a>
+                    <a class="rgn-literature-page__card__read-more rgn-read-more-link" href="<?php echo get_post_permalink($post_id); ?>">READ MORE <i class="icon icon-sm icon-right-arrow"></i></a>
                 </div>
             </article>
         <?php
@@ -94,7 +94,10 @@ get_header();
         </div>
     </section>
     <div class="rgn-literature-page__bottom">
-        <button id="rgnLiteratureViewMore" class="rgn-literature-page__view-more" data-posttype="post">VIEW MORE</button>
+        <?php $count = $query->found_posts; ?>
+        <?php if ($count): ?> 
+            <button id="rgnLiteratureViewMore" class="rgn-literature-page__view-more" data-posttype="post" <?php if( $count < $query->max_num_pages) echo 'disabled'?>> VIEW MORE</button>
+        <?php endif; ?>
     </div>
 </main>
 <?php get_footer(); 

@@ -5,15 +5,23 @@ function get_post_type_text($type){
 
 $max_chars = 100;
 $max_chars_card = 60;
+$max_post_per_page = 7;
 
 $args = array(
     'post_type' => array( 'post', 'whitepapers' ),
     'orderby' => 'date',
+    'posts_per_page' => $max_post_per_page,
+    'nopaging' => false,
 );
 $query = new WP_Query( $args );
 get_header();
 ?>
 <main id="main" class="site-main rgn-literature-page">
+    <!-- 
+        /**
+        * HEADER
+        * */
+     -->
     <section class="rgn-literature-page__banner">
         <?php 
         if( $query->have_posts() ) : $query->the_post();
@@ -38,11 +46,16 @@ get_header();
                         echo $post_excerpt;
                     ?>
                 </div>
-                <a class="rgn-literature-page__read-more rgn-read-more-link rgn-read-more-link--white" href="<?php echo get_post_permalink($post_id); ?>?>">READ MORE <i class="icon icon-sm icon-right-arrow"></i></a>
+                <a class="rgn-literature-page__read-more rgn-read-more-link rgn-read-more-link--white" href="<?php echo get_post_permalink($post_id); ?>">READ MORE <i class="icon icon-sm icon-right-arrow"></i></a>
             </div>
         </article>
         <?php endif;?>
     </section>
+    <!-- 
+        /**
+        * NAV
+        * */
+     -->
     <nav class="rgn-literature-page__nav">
         <ul class="rgn-literature-page__nav__list">
             <li class="rgn-literature-page__nav__list__item active">
@@ -57,6 +70,11 @@ get_header();
         </ul>
         <div id="rgnListIndicator" class="rgn-literature-page__nav__list__indicator"></div>
     </nav>
+    <!-- 
+        /**
+        * POSTS
+        * */
+     -->
     <section class="rgn-literature-page__cards">
         <div  class="rgn-literature-page__cards__inner" id="cardsContainer">
         <?php
@@ -66,6 +84,7 @@ get_header();
         $post_type = get_post_type();
         $post_excerpt = get_the_excerpt();
         ?>
+        
             <article class="rgn-literature-page__card">
                 <div class="rgn-literature-page__card__image rgn-background-image" style="background-image:url('<?php echo get_the_post_thumbnail_url($post_id)?>')"></div>
                 <div class="rgn-literature-page__card__info">
@@ -83,7 +102,7 @@ get_header();
                             echo $post_excerpt;
                         ?>
                     </div>
-                    <a class="rgn-literature-page__card__read-more rgn-read-more-link" href="<?php echo get_post_permalink($post_id); ?>?>">READ MORE <i class="icon icon-sm icon-right-arrow"></i></a>
+                    <a class="rgn-literature-page__card__read-more rgn-read-more-link" href="<?php echo get_post_permalink($post_id); ?>">READ MORE <i class="icon icon-sm icon-right-arrow"></i></a>
                 </div>
             </article>
         <?php
@@ -94,7 +113,10 @@ get_header();
         </div>
     </section>
     <div class="rgn-literature-page__bottom">
-        <button id="rgnLiteratureViewMore" class="rgn-literature-page__view-more" data-posttype="literature" <?php if( ! ($query->have_posts()) )?> disabled ?>>VIEW MORE</button>
+    <?php $count = $query->found_posts; ?>
+    <?php if ($count): ?> 
+        <button id="rgnLiteratureViewMore" class="rgn-literature-page__view-more" data-posttype="literature" <?php if( $count < $query->max_num_pages) echo 'disabled'?>> VIEW MORE</button>
+    <?php endif; ?>
     </div>
     <?php wp_reset_query(); ?>
 </main>
